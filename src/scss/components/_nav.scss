@@ -1,0 +1,62 @@
+.c-nav {
+  display: block;
+  background: $grey;
+  text-align: right;
+
+  // &__btn {
+  //   // fixme: add pading top?
+  //   margin-right: 10px;
+  // }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      font-size: 120%;
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+}
+
+.l-nav-list {
+  display: none;
+  list-style-type: none;
+  text-align: center;
+  padding: 0 15px;
+
+  &.is-expanded {
+    display: block;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: $b-l-h * 0.5rem;
+  }
+  // fixme:why there's no margin applied now to the last item??
+}
+
+@media only screen and (min-width: 800px) {
+  .c-nav {
+    padding: ($b-l-h * 0.5rem) 0;
+
+    &__btn {
+      display: none;
+    }
+  }
+
+  .l-nav-list {
+    display: block;
+    text-align: right;
+
+    &__item {
+      display: inline-block;
+      margin-left: 15px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.o-nav-btn {
+  display: inline-block;
+  width: 32px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding-top: 6px;
+
+  &__bar {
+    display: block;
+    height: 5px;
+    background: $white;
+    border-radius: 10px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    margin-bottom: 6px;
+
+    &:first-of-type.is-expanded {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    &:nth-last-of-type(2).is-expanded {
+      opacity: 0;
+    }
+    &:last-of-type.is-expanded {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+}

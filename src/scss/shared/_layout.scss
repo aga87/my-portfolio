@@ -1,0 +1,16 @@
+.l-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.l-logo-list {
+  display: block;
+  list-style-type: none;
+
+  &__item {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
