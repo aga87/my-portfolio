@@ -1,0 +1,32 @@
+/*
+  t1 - the largest font-size
+  t2 - second largest font-size  
+  t3 - third largest font-size 
+  t2-t3-t4:  type-scale: 1.25
+*/
+
+// todo: delete unnecessary mixins in modular typography partial
+
+.t1-fluid {
+  @include fluid-type(320px, 1200px, 52px, 64px);
+  line-height: 1.2;
+}
+
+.t2 {
+  @include h2($b-l-h, $type-scale);
+  // @include h1($b-l-h, $type-scale);
+}
+
+.t3 {
+  // @include h3($b-l-h, $type-scale);
+  @include h5($b-l-h, $type-scale);
+}
+
+.t-body {
+  font-size: 1rem;
+  line-height: $b-l-h;
+}
+
+.s1 {
+  @include s1($b-l-h, $type-scale);
+}

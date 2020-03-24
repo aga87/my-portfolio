@@ -3,10 +3,9 @@
   background: $grey;
   text-align: right;
 
-  // &__btn {
-  //   // fixme: add pading top?
-  //   margin-right: 10px;
-  // }
+  &__btn {
+    margin-right: 10px;
+  }
 
   &__link {
     display: block;
@@ -37,7 +36,6 @@
     display: block;
     margin-bottom: $b-l-h * 0.5rem;
   }
-  // fixme:why there's no margin applied now to the last item??
 }
 
 @media only screen and (min-width: 800px) {

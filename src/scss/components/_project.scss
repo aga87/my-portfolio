@@ -1,0 +1,13 @@
+.c-project {
+  display: block;
+
+  &__name {
+    margin-bottom: $b-l-h * 2rem;
+  }
+
+  &__img {
+    // fixme: responsive -  sizes
+    max-width: 450px;
+    height: auto;
+  }
+}

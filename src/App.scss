@@ -9,13 +9,21 @@
 
 // Helpers
 @import './scss/shared/helpers/arrows';
+@import './scss/shared/helpers/fluid-typography-mixin';
+@import './scss/shared/helpers/modular-typography-mixin';
+
+// Reset
+
+@import './scss/shared/reset';
 
 // Base
 @import './scss/shared/base';
 
-// Layout todo: after base?
-
+// Layout
 @import './scss/shared/layout';
 
-// Components
+// Components (including objects)
 @import './scss/components/all';
+
+// Utilities
+@import './scss/shared/utility';

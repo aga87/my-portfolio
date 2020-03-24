@@ -1,8 +1,14 @@
 // Objects (a small, context-independent type of component)
 
+@import './objects/typography'; // a "special" type of object fixme: move to shared
 @import './objects/nav-btn';
 @import './objects/logos';
+@import './objects/project-links';
 
 // Components
 @import './nav';
+@import './home';
 @import './ruler';
+@import './project';
+@import './project-info';
+@import './project-tags';

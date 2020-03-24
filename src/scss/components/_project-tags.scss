@@ -1,0 +1,13 @@
+.c-project-tags {
+  display: block;
+  list-style-type: none;
+
+  &__item {
+    display: inline-block;
+    margin-right: $b-l-h * 0.25rem;
+    margin-bottom: $b-l-h * 0.25rem;
+    border: 2px solid $grey;
+    border-radius: 10px;
+    padding: 0 0.5em;
+  }
+}

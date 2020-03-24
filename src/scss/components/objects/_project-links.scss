@@ -1,0 +1,15 @@
+.o-project-link {
+  color: $color-css;
+  &:visited {
+    color: $color-redux;
+  }
+  &:hover {
+    font-weight: bold;
+  }
+
+  &__logo {
+    width: auto;
+    height: 1rem;
+    vertical-align: baseline;
+  }
+}

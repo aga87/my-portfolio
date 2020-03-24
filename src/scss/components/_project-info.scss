@@ -1,0 +1,20 @@
+.c-project-info {
+  display: table;
+  border-collapse: collapse;
+  max-width: 800px;
+  text-align: left;
+
+  &__heading {
+    display: block;
+    font-weight: bold;
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: $b-l-h * 0.25rem;
+
+    &--justify {
+      text-align: justify;
+    }
+  }
+}

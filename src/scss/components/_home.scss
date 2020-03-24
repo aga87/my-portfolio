@@ -1,0 +1,32 @@
+.c-home {
+  min-height: 100vh;
+
+  &__heading {
+    font-family: $font-stack-display;
+    margin-bottom: $b-l-h * 1rem;
+  }
+
+  &__descr {
+    margin-bottom: $b-l-h * 1rem;
+  }
+}
+
+.l-home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  &__content {
+    // Center vertically
+    margin: auto 0;
+    // Fallback
+    padding: (4rem * $b-l-h) 0;
+  }
+}
+
+@media only screen and (min-width: 651px) {
+  .l-home__content {
+    // Fallback
+    padding: (6rem * $b-l-h) 0;
+  }
+}
