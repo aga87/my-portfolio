@@ -1,0 +1,13 @@
+.c-section {
+  display: block;
+
+  &__heading {
+    margin-bottom: $b-l-h * 2rem;
+    text-align: center;
+  }
+
+  &__text {
+    margin-bottom: $b-l-h * 1rem;
+    text-align: center;
+  }
+}

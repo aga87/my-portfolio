@@ -1,11 +1,5 @@
 import React from 'react';
 
-//  todo: https://www.w3.org/WAI/tutorials/tables/one-header/ -->
-
-// fixme: only image size - sizes? then can't keep it as a component!
-
-// todo: grid styles
-
 function Project(props) {
   const { name, imgSrc, altName, info } = props;
 

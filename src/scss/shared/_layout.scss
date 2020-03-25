@@ -9,22 +9,23 @@
   width: 90%;
   margin: 0 auto;
 }
+.l-section {
+  display: block;
+  // fixme: ? space for fixed nav
+  padding-top: 60px;
+  margin-bottom: $b-l-h * 4rem;
+}
+
+@media only screen and (min-width: 850px) {
+  .l-wrapper {
+    width: 80%;
+  }
+}
 
 // fixme: separate component or generalise with other lists?
 .l-project-link-list {
   display: block;
   list-style-position: inside;
-}
-
-// fixme: here or in project?
-@media only screen and (min-width: 1200px) {
-  .l-project-grid {
-    display: grid;
-    // fixme:
-    grid-template-columns: 400px 1fr;
-    // fixme:
-    gap: 0 100px;
-  }
 }
 
 .l-logo-list {

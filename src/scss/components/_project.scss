@@ -11,3 +11,13 @@
     height: auto;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .l-project-grid {
+    display: grid;
+    // fixme:
+    grid-template-columns: 400px 1fr;
+    // fixme:
+    gap: 0 100px;
+  }
+}
