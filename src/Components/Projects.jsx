@@ -3,7 +3,6 @@ import React from 'react';
 import Project from './Project';
 import ProjectInfo from './ProjectInfo';
 import ProjectTags from './ProjectTags';
-import ProjectLinkList from './ProjectLinkList';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
 
 import astromanMockup from '../img/smartmockups_astroman.png';
@@ -31,20 +30,16 @@ function Projects() {
               ]}
             />
           }
-          links={
-            <ProjectLinkList
-              links={[
-                <ProjectLinkGitHub
-                  name="See Astroman (Redux) on GitHub"
-                  href="www.google.com"
-                />,
-                <ProjectLinkGitHub
-                  name="See Astroman (Redux, React) on GitHub"
-                  href="www.google.com"
-                />,
-              ]}
-            />
-          }
+          links={[
+            <ProjectLinkGitHub
+              name="See Astroman (Redux) on GitHub"
+              href="www.google.com"
+            />,
+            <ProjectLinkGitHub
+              name="See Astroman (Redux, React) on GitHub"
+              href="www.google.com"
+            />,
+          ]}
         >
           <p>
             In this hangman-inspired game, set in space, two players compete to

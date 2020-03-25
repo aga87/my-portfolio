@@ -3,6 +3,8 @@ import React from 'react';
 function ProjectInfo(props) {
   const { date, children, tags, links } = props;
 
+  const projectLinkListItems = links.map((link) => <li>{link}</li>);
+
   return (
     <table className="c-project-info">
       <tr>
@@ -25,7 +27,11 @@ function ProjectInfo(props) {
         <th rowSpan="2" className="c-project-info__heading">
           Code:
         </th>
-        <td className="c-project-info__text">{links}</td>
+        <td className="c-project-info__text">
+          {/* fixme: classname? */}
+          <ul className="l-project-link-list">{projectLinkListItems}</ul>
+          {/* {links} */}
+        </td>
       </tr>
     </table>
   );
