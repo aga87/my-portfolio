@@ -67,8 +67,9 @@ function Project(props) {
             </th>
             <td className="c-project-info__text">
               {/* fixme: classname? */}
-              <ul className="l-project-link-list">{projectLinkListItems}</ul>
-              {/* {links} */}
+              <ul className="c-project-info__link-list">
+                {projectLinkListItems}
+              </ul>
             </td>
           </tr>
         </table>

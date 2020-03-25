@@ -1,0 +1,39 @@
+.c-skill-group {
+  display: block;
+  // todo: test
+  // padding-left: $b-l-h * 0.5rem;
+  padding-top: $b-l-h * 0.5rem;
+  padding-bottom: $b-l-h * 0.5rem;
+
+  &__heading {
+    margin-bottom: $b-l-h * 0.5rem;
+  }
+
+  &__list {
+    display: block;
+    // padding-left: $b-l-h * 1rem;
+
+    // list-style-position: inside;
+  }
+
+  &__skill-img {
+    width: auto;
+    height: 1rem;
+    vertical-align: baseline;
+
+    &--spin {
+      animation: spin infinite 20s linear;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// fixme: &.spin?

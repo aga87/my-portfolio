@@ -1,10 +1,11 @@
 import React from 'react';
 import logoRedux from '../img/redux.png';
 
-function LogoRedux() {
+function LogoRedux(props) {
+  const { className } = props;
   return (
     <img
-      className="o-logo"
+      className={className}
       src={logoRedux}
       alt="Redux logo"
       title="AAMINE1965 [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]"

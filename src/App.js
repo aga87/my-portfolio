@@ -4,6 +4,7 @@ import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Ruler from './Components/Ruler';
 import Projects from './Components/Projects';
+import Skills from './Components/Skills';
 import './App.scss';
 
 // todo: change browserlist settings or add prefixes myself?
@@ -17,6 +18,8 @@ function App() {
       <Home />
       <Ruler />
       <Projects />
+      <Ruler />
+      <Skills />
     </div>
   );
 }

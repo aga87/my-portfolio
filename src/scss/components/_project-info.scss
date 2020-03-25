@@ -9,6 +9,9 @@
     font-weight: bold;
   }
 
+  // fixme: this should be applied to table row
+  // __descr
+
   &__text {
     display: block;
     margin-bottom: $b-l-h * 0.25rem;
@@ -16,5 +19,10 @@
     &--justify {
       text-align: justify;
     }
+  }
+
+  &__link-list {
+    display: block;
+    list-style-position: inside;
   }
 }

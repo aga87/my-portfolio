@@ -9,6 +9,17 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.l-home-logo-list {
+  display: block;
+  list-style-type: none;
+
+  &__item {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
 .l-section {
   display: block;
   // fixme: ? space for fixed nav
@@ -19,21 +30,5 @@
 @media only screen and (min-width: 850px) {
   .l-wrapper {
     width: 80%;
-  }
-}
-
-// fixme: separate component or generalise with other lists?
-.l-project-link-list {
-  display: block;
-  list-style-position: inside;
-}
-
-.l-logo-list {
-  display: block;
-  list-style-type: none;
-
-  &__item {
-    display: inline-block;
-    margin-right: 5px;
   }
 }

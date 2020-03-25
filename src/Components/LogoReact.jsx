@@ -1,10 +1,11 @@
 import React from 'react';
 import logoReact from '../img/react.png';
 
-function LogoReact() {
+function LogoReact(props) {
+  const { className } = props;
   return (
     <img
-      className="o-logo o-logo--spin"
+      className={className}
       src={logoReact}
       alt="React logo"
       title="Facebook [Public domain], via Wikimedia Commons"

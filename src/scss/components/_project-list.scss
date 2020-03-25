@@ -2,8 +2,10 @@
   display: block;
   list-style-type: decimal-leading-zero;
   counter-reset: item;
+
   &__item {
     display: block;
+
     &:before {
       content: '0' counter(item) '. ';
       counter-increment: item;

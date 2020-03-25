@@ -1,10 +1,11 @@
 import React from 'react';
 import logoJS from '../img/js.svg.png';
 
-function LogoJS() {
+function LogoJS(props) {
+  const { className } = props;
   return (
     <img
-      className="o-logo"
+      className={className}
       src={logoJS}
       alt="Unofficial JavaScript logo"
       title="Chris Williams [Public domain], via Wikimedia Commons"
