@@ -2,7 +2,6 @@ import React from 'react';
 
 import Project from './Project';
 import ProjectInfo from './ProjectInfo';
-import ProjectTags from './ProjectTags';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
 
 import astromanMockup from '../img/smartmockups_astroman.png';
@@ -16,20 +15,16 @@ function Projects() {
       info={
         <ProjectInfo
           date="February 2020"
-          tags={
-            <ProjectTags
-              tags={[
-                { tag: 'CSS Grid', category: 'CSS' },
-                { tag: 'Canvas API', category: 'other' },
-                { tag: 'SVG', category: 'other' },
-                { tag: 'Redux architecture', category: 'Redux' },
-                { tag: 'Functional programming', category: 'JS' },
-                { tag: 'ES6', category: 'JS' },
-                { tag: 'SCSS', category: 'CSS' },
-                { tag: 'Responsive', category: 'CSS' },
-              ]}
-            />
-          }
+          tags={[
+            { tag: 'CSS Grid', category: 'CSS' },
+            { tag: 'Canvas API', category: 'other' },
+            { tag: 'SVG', category: 'other' },
+            { tag: 'Redux architecture', category: 'Redux' },
+            { tag: 'Functional programming', category: 'JS' },
+            { tag: 'ES6', category: 'JS' },
+            { tag: 'SCSS', category: 'CSS' },
+            { tag: 'Responsive', category: 'CSS' },
+          ]}
           links={[
             <ProjectLinkGitHub
               name="See Astroman (Redux) on GitHub"
