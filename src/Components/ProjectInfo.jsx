@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ProjectInfo(props) {
-  const { date, descr, tags, links } = props;
+  const { date, children, tags, links } = props;
 
   return (
     <table className="c-project-info">
@@ -12,7 +12,7 @@ function ProjectInfo(props) {
       <tr>
         <th className="c-project-info__heading">Project description:</th>
         <td className="c-project-info__text c-project-info__text--justify">
-          <p>{descr}</p>
+          {children}
         </td>
       </tr>
 
