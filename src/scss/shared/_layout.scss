@@ -27,6 +27,41 @@
   margin-bottom: $b-l-h * 4rem;
 }
 
+.l-skills-grid {
+  display: grid;
+  gap: $b-l-h * 1rem;
+  margin-bottom: $b-l-h * 2rem;
+}
+
+// fixme: todo: fallback for ie
+
+@media only screen and (min-width: 800px) {
+  .l-skills-grid {
+    grid-template-columns: 1fr 1fr;
+    // fixme:
+    grid-template-columns: 390px 420px;
+    // grid-template-columns: 400px 400px;
+    grid-template-areas: 'group1 group2' 'group3 group2' 'group4 .' 'group5 group5';
+    justify-content: center;
+
+    &__item-group1 {
+      grid-area: group1;
+    }
+    &__item-group2 {
+      grid-area: group2;
+    }
+    &__item-group3 {
+      grid-area: group3;
+    }
+    &__item-group4 {
+      grid-area: group4;
+    }
+    &__item-group5 {
+      grid-area: group5;
+    }
+  }
+}
+
 @media only screen and (min-width: 850px) {
   .l-wrapper {
     width: 80%;

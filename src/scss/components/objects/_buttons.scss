@@ -1,0 +1,16 @@
+.o-btn {
+  display: inline-block;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 0 ($b-l-h * 0.5rem) 0 ($b-l-h * 0.5rem);
+  border: 2px solid black;
+  border-radius: 5px;
+  background: #ffffff;
+
+  &:disabled {
+    color: #b6bbbb;
+    border-color: #b6bbbb;
+  }
+}

@@ -1,0 +1,30 @@
+@mixin input {
+  // display: block;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  padding: 0 0.5em;
+  // padding: 0 $b-l-h / 4;
+  border: 2px solid #b6bbbb;
+  border-radius: 5px;
+  // width: 100%;
+  // max-width: 400px;
+
+  &:focus {
+    border-color: $color-react;
+    -webkit-box-shadow: 0 0 8px $color-react;
+    box-shadow: 0 0 8px $color-react;
+    outline: none;
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'] {
+  @include input;
+}
+
+.o-textarea {
+  @include input;
+  resize: none;
+}

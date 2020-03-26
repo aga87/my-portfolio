@@ -38,8 +38,6 @@ function Project(props) {
           alt={`Screenshot of ${altName} on MacBook and iPhone 8`}
         />
 
-        {/* <div>{info}</div> */}
-
         <table className="c-project-info">
           <tr>
             <th className="c-project-info__heading">Completion date:</th>

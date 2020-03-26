@@ -1,4 +1,4 @@
-.o-project-link {
+.o-link {
   color: $color-css;
   &:visited {
     color: $color-redux;
@@ -6,10 +6,9 @@
   &:hover {
     font-weight: bold;
   }
-
-  &__logo {
+  &__img {
     width: auto;
-    height: 1rem;
+    height: 1em;
     vertical-align: baseline;
   }
 }

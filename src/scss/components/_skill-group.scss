@@ -1,19 +1,23 @@
 .c-skill-group {
   display: block;
+  // fixme: prefixes - move to grid
+  display: flex;
   // todo: test
-  // padding-left: $b-l-h * 0.5rem;
+  padding-left: $b-l-h * 1.5rem;
   padding-top: $b-l-h * 0.5rem;
   padding-bottom: $b-l-h * 0.5rem;
+  padding-right: $b-l-h * 0.5rem;
+  border: 4px dashed $grey;
+  // border: 4px solid $grey;
+
+  border-radius: 5px;
+
+  &__content {
+    margin: auto 0;
+  }
 
   &__heading {
     margin-bottom: $b-l-h * 0.5rem;
-  }
-
-  &__list {
-    display: block;
-    // padding-left: $b-l-h * 1rem;
-
-    // list-style-position: inside;
   }
 
   &__skill-img {
@@ -35,5 +39,3 @@
     transform: rotate(360deg);
   }
 }
-
-// fixme: &.spin?

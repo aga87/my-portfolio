@@ -17,3 +17,37 @@ export function getPreviousIndex(currentIndex, list) {
   }
   return list.length - 1;
 }
+
+export function validateField(field) {
+  // const inputType = field.getAttribute('type');
+  const { valid } = field.validity;
+
+  if (!valid) {
+    const inputType = field.getAttribute('type');
+    const { valueMissing, typeMismatch } = field.validity;
+
+    if (valueMissing) {
+      if (inputType === 'email') {
+        return 'Please enter your email address.';
+      }
+      return 'Please fill out this field.';
+    }
+
+    if (typeMismatch) {
+      return `Please enter a correct ${inputType} format.`;
+    }
+  }
+  return '';
+}
+
+export function validateTextarea(textarea) {
+  const { valid } = textarea.validity;
+
+  if (!valid) {
+    const { valueMissing, tooShort } = textarea.validity;
+    if (valueMissing || tooShort) {
+      return 'Please, fill out this field - at least say "hi":).';
+    }
+  }
+  return '';
+}

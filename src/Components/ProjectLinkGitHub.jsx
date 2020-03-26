@@ -5,10 +5,10 @@ function ProjectLinkGitHub(props) {
   const { name, href } = props;
 
   return (
-    <a className="o-project-link" href={href}>
+    <a className="o-link" href={href}>
       {name} &#8599;
       <img
-        className="o-project-link__logo"
+        className="o-link__img"
         src={gitHubLogo}
         alt="GitHub Octocat Logo"
         title="https://github.com/logos"

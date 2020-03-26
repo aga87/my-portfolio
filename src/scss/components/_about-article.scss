@@ -1,0 +1,33 @@
+.c-about-article {
+  display: block;
+  max-width: $b-l-h * 22rem;
+  margin: 0 auto;
+
+  &__img {
+    height: 7rem * $b-l-h;
+    width: auto;
+    margin-bottom: $b-l-h * 1rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: $b-l-h * 1rem;
+  }
+
+  &__text {
+    margin-bottom: $b-l-h * 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .l-about-article-float {
+    display: flow-root;
+    text-align: justify;
+
+    &__img {
+      float: right;
+      margin-left: $b-l-h * 1rem;
+      margin-bottom: $b-l-h * 0.5rem;
+    }
+  }
+}
