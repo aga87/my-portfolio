@@ -1,0 +1,51 @@
+.c-contact-form {
+  display: block;
+  max-width: 650px;
+  max-width: 700px;
+  margin: 0 auto;
+
+  &__input {
+    display: block;
+    width: 100%;
+
+    &:required:not(:focus):valid {
+      border-color: $grey;
+    }
+  }
+
+  &__error-label {
+    display: none;
+    padding-left: 0.5em;
+    color: $color-html;
+    // font-weight: bold;
+    background: $white;
+    border: 2px solid $color-html;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &__counter {
+    color: $grey;
+  }
+}
+
+.l-contact-form-grid {
+  display: grid;
+  gap: ($b-l-h * 0.5rem);
+  margin-bottom: $b-l-h * 0.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .l-contact-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: ($b-l-h * 0.5rem) ($b-l-h * 1rem);
+
+    &__item {
+      grid-column-end: span 2;
+    }
+  }
+}

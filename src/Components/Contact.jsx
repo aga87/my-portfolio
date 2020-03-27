@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form';
+import ContactForm from './ContactForm';
 
 import linkedinImg from '../img/linkedin.svg.png';
 
@@ -29,7 +29,7 @@ function Contact() {
           Or fill out the form below:
         </p>
 
-        <Form />
+        <ContactForm />
       </section>
     </div>
   );

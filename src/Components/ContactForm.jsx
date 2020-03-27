@@ -1,50 +1,19 @@
 import React, { useState } from 'react';
-import { validateField, validateTextarea } from '../Utils';
+import { validateTextarea, getCompanyLabelClassName } from '../Utils';
 
-/* todo: https://reactjs.org/docs/uncontrolled-components.html#default-values */
-// fixme: add tooLong? browser compatibility for preventing longer input?
-
-// fixme: add default message for invalid
+import useFormInput from '../Hooks/useFormInput';
 
 // fixme: eslint last comma in the object - change this setting
 
-function useFormInput() {
-  const initialValue = {
-    value: '',
-    valid: false,
-    touched: false,
-    errorMsg: '',
-  };
+// todo: test wai-aria
 
-  const [values, setValues] = useState(initialValue);
+// fixme: add focus
 
-  function handleChange(e) {
-    setValues({
-      value: e.target.value,
-      valid: e.target.validity.valid,
-      touched: true,
-      errorMsg: '',
-    });
-  }
+// FIXME: Add ticks and crosses for valid and invalid inputs
 
-  function handleBlur(e) {
-    // touched means smt was typed in (rather than just clicked on or tabbed through)
-    const { touched } = values;
-    if (!touched) return;
+// fixme: enbale button when all fields validate
 
-    const errorMsg = validateField(e.target);
-
-    setValues({ ...values, errorMsg });
-  }
-
-  return {
-    values,
-    handleChange,
-    handleBlur,
-  };
-}
-
-function Form() {
+function ContactForm() {
   const fullName = useFormInput();
   const prefName = useFormInput();
   const email = useFormInput();
@@ -85,14 +54,14 @@ function Form() {
       encType="text/plain"
       method="post"
       id="jsForm"
-      className="c-form"
+      className="c-contact-form"
       noValidate
     >
-      <div className="l-form-grid">
+      <div className="l-contact-form-grid">
         <div>
           <label htmlFor="full-name">Your full name:</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="text"
             name="full-name"
             id="full-name"
@@ -104,9 +73,13 @@ function Form() {
             onBlur={fullName.handleBlur}
           />
           <label
-            className="c-form__label s1"
+            className={
+              fullName.values.errorMsg === ''
+                ? 'c-contact-form__error-label s1'
+                : 'c-contact-form__error-label s1 show'
+            }
             htmlFor="full-name"
-            // 'assertive' because this field will validate on blur  todo: test?
+            // 'assertive' because this field will validate on blur
             aria-live="assertive"
           >
             {fullName.values.errorMsg}
@@ -116,7 +89,7 @@ function Form() {
         <div>
           <label htmlFor="pref-name">What can I call you?</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="text"
             name="pref-name"
             id="pref-name"
@@ -128,7 +101,11 @@ function Form() {
             onBlur={prefName.handleBlur}
           />
           <label
-            className="c-form__label s1"
+            className={
+              prefName.values.errorMsg === ''
+                ? 'c-contact-form__error-label s1'
+                : 'c-contact-form__error-label s1 show'
+            }
             htmlFor="pref-name"
             aria-live="assertive"
           >
@@ -139,7 +116,7 @@ function Form() {
         <div>
           <label htmlFor="email">Your email:</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="email"
             name="e-mail"
             id="email"
@@ -150,7 +127,11 @@ function Form() {
             onBlur={email.handleBlur}
           />
           <label
-            className="c-form__label s1"
+            className={
+              email.values.errorMsg === ''
+                ? 'c-contact-form__error-label s1'
+                : 'c-contact-form__error-label s1 show'
+            }
             htmlFor="email"
             aria-live="assertive"
           >
@@ -161,7 +142,7 @@ function Form() {
         <div>
           <label htmlFor="subject">Subject:</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="text"
             name="subject"
             id="subject"
@@ -174,7 +155,11 @@ function Form() {
             onBlur={subject.handleBlur}
           />
           <label
-            className="c-form__label"
+            className={
+              subject.values.errorMsg === ''
+                ? 'c-contact-form__error-label s1'
+                : 'c-contact-form__error-label s1 show'
+            }
             htmlFor="subject"
             aria-live="assertive"
           >
@@ -183,12 +168,10 @@ function Form() {
         </div>
 
         <div
-          className="l-form-grid__item"
+          className="l-contact-form-grid__item"
           role="radiogroup"
           aria-labelledby="employer-group"
         >
-          {/* <div class="l-form-grid__item" id="js-radio-btns"> */}
-          {/* <!-- todo: check wai aria  */}
           <p id="employer-group">
             Are you a potential employer (or writing on behalf of a company)?
           </p>
@@ -200,8 +183,8 @@ function Form() {
             defaultChecked
             required
             onClick={handleRadioClick}
-          />
-          <label htmlFor="employer-yes">Yes</label>
+          />{' '}
+          <label htmlFor="employer-yes">Yes</label>{' '}
           <input
             type="radio"
             name="employer"
@@ -209,14 +192,14 @@ function Form() {
             value="no"
             required
             onClick={handleRadioClick}
-          />
+          />{' '}
           <label htmlFor="employer-no">No</label>
         </div>
 
         <div>
           <label htmlFor="company-name">Company name:</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="text"
             name="company-name"
             id="company-name"
@@ -229,7 +212,10 @@ function Form() {
             onBlur={companyName.handleBlur}
           />
           <label
-            className="c-form__label s1"
+            className={getCompanyLabelClassName(
+              checked,
+              companyName.values.errorMsg
+            )}
             htmlFor="company-name"
             aria-live="assertive"
           >
@@ -240,7 +226,7 @@ function Form() {
         <div>
           <label htmlFor="company-url">Company website:</label>
           <input
-            className="c-form__input"
+            className="c-contact-form__input"
             type="url"
             name="company-url"
             id="company-url"
@@ -252,7 +238,10 @@ function Form() {
             onBlur={companyUrl.handleBlur}
           />
           <label
-            className="c-form__label s1"
+            className={getCompanyLabelClassName(
+              checked,
+              companyUrl.values.errorMsg
+            )}
             htmlFor="company-url"
             aria-live="assertive"
           >
@@ -260,10 +249,10 @@ function Form() {
           </label>
         </div>
 
-        <div className="l-form-grid__item">
+        <div className="l-contact-form-grid__item">
           <label htmlFor="message">Your message:</label>
           <textarea
-            className="o-textarea c-form__input"
+            className="o-textarea c-contact-form__input"
             name="message"
             id="message"
             rows="10"
@@ -274,8 +263,9 @@ function Form() {
             value={message.value}
             onChange={handleTextareaChange}
           />
+
           <label
-            className="c-form__counter s1"
+            className="c-contact-form__counter s1"
             htmlFor="message"
             // 'polite' because this field will validate onChange
             aria-live="polite"
@@ -296,4 +286,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default ContactForm;

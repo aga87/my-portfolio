@@ -1,9 +1,5 @@
-/**
- * // todo:
- * Get the index of the next element in a list
- * @param {Number} currentIndex
- * @param {*} list - an array or nodeList
- */
+// todo: jsDoc comments?
+
 export function getNextIndex(currentIndex, list) {
   if (currentIndex < list.length - 1) {
     return currentIndex + 1;
@@ -19,12 +15,11 @@ export function getPreviousIndex(currentIndex, list) {
 }
 
 export function validateField(field) {
-  // const inputType = field.getAttribute('type');
   const { valid } = field.validity;
 
   if (!valid) {
     const inputType = field.getAttribute('type');
-    const { valueMissing, typeMismatch } = field.validity;
+    const { valueMissing, typeMismatch, tooLong } = field.validity;
 
     if (valueMissing) {
       if (inputType === 'email') {
@@ -36,6 +31,14 @@ export function validateField(field) {
     if (typeMismatch) {
       return `Please enter a correct ${inputType} format.`;
     }
+
+    if (tooLong) {
+      const maxLength = field.getAttribute('maxlength');
+      const inputValue = field.getAttribute('value');
+      return `The maximum length for this field is ${maxLength} characters.
+      You are currently using ${inputValue.length} characters`;
+    }
+    return 'The value you entered for this field is invalid.';
   }
   return '';
 }
@@ -46,8 +49,17 @@ export function validateTextarea(textarea) {
   if (!valid) {
     const { valueMissing, tooShort } = textarea.validity;
     if (valueMissing || tooShort) {
-      return 'Please, fill out this field - at least say "hi":).';
+      return 'Please, fill out this field - at least say "hi" :).';
     }
+    return 'The value you entered for this field is invalid.';
   }
   return '';
+}
+
+export function getCompanyLabelClassName(enabled, errorMsg) {
+  if (enabled === 'yes') {
+    if (errorMsg !== '') return 'c-contact-form__error-label s1 show';
+    return 'c-contact-form__error-label s1';
+  }
+  return 'c-contact-form__error-label s1';
 }
