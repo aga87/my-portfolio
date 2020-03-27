@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { validateTextarea, getCompanyLabelClassName } from '../Utils';
 
 import useFormInput from '../Hooks/useFormInput';
 
-// fixme: eslint last comma in the object - change this setting
-
-// todo: test wai-aria
-
 // fixme: add focus
-
-// FIXME: Add ticks and crosses for valid and invalid inputs
-
-// fixme: enbale button when all fields validate
 
 function ContactForm() {
   const fullName = useFormInput();
@@ -26,6 +18,53 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
+
+  // const fullNameRef = useRef(null);
+  // const prefNameRef = useRef(null);
+  // const emailRef = useRef(null);
+  // const subjectRef = useRef(null);
+  // // todo: ref for radio button group !
+  // const companyNameRef = useRef(null);
+  // const companyUrlRef = useRef(null);
+
+  // const inputsToFocus = [
+  //   fullName,
+  //   prefName,
+  //   // email,
+  //   // subject,
+  //   // // todo: radio button group
+  //   // companyName,
+  //   // companyUrl,
+  //   // message,
+  // ];
+
+  // const inputRefs = useRef(inputsToFocus.map(() => React.createRef()));
+
+  // function handleKeyDown(e) {
+  //   // const
+  // }
+
+  const inputsToValidate = [
+    fullName,
+    prefName,
+    email,
+    subject,
+    companyName,
+    companyUrl,
+    // todo: textarea has to be together with these inputs!!!!
+    // message,
+  ];
+
+  // todo: change name, do i need rest operator here? fixme: better way?
+  function validateAllFields(checked, ...fields) {
+    if (checked === 'no') {
+      const filtered = fields.filter(
+        (field) => field !== companyName || field !== companyUrl
+      );
+      return filtered.every((field) => field.values.valid);
+    }
+    return fields.every((field) => field.values.valid);
+  }
 
   function handleRadioClick(e) {
     setChecked(e.target.value);
@@ -68,6 +107,8 @@ function ContactForm() {
             size="30"
             maxLength="100"
             required
+            // ref={fullNameRef}
+            // ref={inputsToFocus.current[index]}
             value={fullName.values.value}
             onChange={fullName.handleChange}
             onBlur={fullName.handleBlur}
@@ -96,6 +137,7 @@ function ContactForm() {
             size="30"
             maxLength="50"
             required
+            // ref={prefNameRef}
             value={prefName.values.value}
             onChange={prefName.handleChange}
             onBlur={prefName.handleBlur}
@@ -207,7 +249,8 @@ function ContactForm() {
             maxLength="100"
             required
             disabled={checked === 'no'}
-            value={companyName.values.value}
+            // value={companyName.values.value}
+            value={checked === 'yes' ? companyName.values.value : ''}
             onChange={companyName.handleChange}
             onBlur={companyName.handleBlur}
           />
@@ -233,7 +276,8 @@ function ContactForm() {
             size="30"
             required
             disabled={checked === 'no'}
-            value={companyUrl.values.value}
+            // value={companyUrl.values.value}
+            value={checked === 'yes' ? companyUrl.values.value : ''}
             onChange={companyUrl.handleChange}
             onBlur={companyUrl.handleBlur}
           />
@@ -276,9 +320,11 @@ function ContactForm() {
       </div>
 
       <div className="u-text-right">
-        {/* todo: when submitting make sure that disabled input validity doesnt matter */}
-
-        <button type="submit" className="o-btn" disabled={true}>
+        <button
+          type="submit"
+          className="o-btn"
+          disabled={!validateAllFields(checked, ...inputsToValidate)}
+        >
           Send
         </button>
       </div>

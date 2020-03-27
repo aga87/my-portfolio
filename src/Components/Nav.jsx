@@ -1,4 +1,4 @@
-// fixme: add tabindex=-1 to links?
+// fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
 
 import React, { useState, useRef, useEffect } from 'react';
 

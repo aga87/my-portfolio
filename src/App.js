@@ -15,6 +15,10 @@ import './App.scss';
 
 // todo: scroll
 
+// todo: test wai-aria
+
+// fixme: eslint last comma in the object, () around single arg - change this setting Air n B ??
+
 function App() {
   return (
     <div className="App">
