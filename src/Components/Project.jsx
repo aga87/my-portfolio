@@ -20,12 +20,20 @@ function Project(props) {
     }
   }
 
-  const tagListItems = tags.map((tag) => {
+  // fixme: what to use as key instead of index?
+  const tagListItems = tags.map((tag, index) => {
     const className = getClassName(tag.category.toLocaleLowerCase());
-    return <li className={`c-project-tags__item ${className}`}>{tag.tag}</li>;
+    return (
+      <li key={index} className={`c-project-tags__item ${className}`}>
+        {tag.tag}
+      </li>
+    );
   });
+  // fixme: what to use as key instead of index?
 
-  const projectLinkListItems = links.map((link) => <li>{link}</li>);
+  const projectLinkListItems = links.map((link, index) => (
+    <li key={index}>{link}</li>
+  ));
 
   return (
     <div className="c-project">
@@ -39,37 +47,39 @@ function Project(props) {
         />
 
         <table className="c-project-info">
-          <tr>
-            <th className="c-project-info__heading">Completion date:</th>
-            <td className="c-project-info__text">{date}</td>
-          </tr>
-          <tr>
-            <th className="c-project-info__heading">Project description:</th>
-            <td className="c-project-info__text c-project-info__text--justify">
-              {children}
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th className="c-project-info__heading">Completion date:</th>
+              <td className="c-project-info__text">{date}</td>
+            </tr>
+            <tr>
+              <th className="c-project-info__heading">Project description:</th>
+              <td className="c-project-info__text c-project-info__text--justify">
+                {children}
+              </td>
+            </tr>
 
-          <tr>
-            <th className="c-project-info__heading">Tags:</th>
-            <td className="c-project-info__text">
-              {/* {tags} */}
-              {/* fixme: classname */}
-              <ul className="c-project-tags s1">{tagListItems}</ul>
-            </td>
-          </tr>
+            <tr>
+              <th className="c-project-info__heading">Tags:</th>
+              <td className="c-project-info__text">
+                {/* {tags} */}
+                {/* fixme: classname */}
+                <ul className="c-project-tags s1">{tagListItems}</ul>
+              </td>
+            </tr>
 
-          <tr>
-            <th rowSpan="2" className="c-project-info__heading">
-              Code:
-            </th>
-            <td className="c-project-info__text">
-              {/* fixme: classname? */}
-              <ul className="c-project-info__link-list">
-                {projectLinkListItems}
-              </ul>
-            </td>
-          </tr>
+            <tr>
+              <th rowSpan="2" className="c-project-info__heading">
+                Code:
+              </th>
+              <td className="c-project-info__text">
+                {/* fixme: classname? */}
+                <ul className="c-project-info__link-list">
+                  {projectLinkListItems}
+                </ul>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

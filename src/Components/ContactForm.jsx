@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { validateTextarea, getCompanyLabelClassName } from '../Utils';
 
 import useFormInput from '../Hooks/useFormInput';

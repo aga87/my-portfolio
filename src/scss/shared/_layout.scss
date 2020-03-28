@@ -20,10 +20,9 @@
   }
 }
 
+// fixme: get rid of margins between sections (react scroll..) replace with padding...
+
 .l-section {
-  display: block;
-  // fixme: ? space for fixed nav
-  padding-top: 60px;
   margin-bottom: $b-l-h * 4rem;
 }
 

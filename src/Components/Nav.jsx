@@ -1,6 +1,7 @@
 // fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
 
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-scroll';
 
 import NavBtn from './NavBtn';
 
@@ -176,7 +177,7 @@ function Nav(props) {
 
   const navListItems = navLinks.map((navLink, index) => (
     <li key={navLink} className="l-nav-list__item" role="none">
-      <a
+      {/* <a
         ref={navLinkRefs.current[index]}
         href={`#${navLink}`}
         className="c-nav__link"
@@ -188,7 +189,27 @@ function Nav(props) {
         <span className={selected === navLink ? 'h-arrow show' : 'h-arrow'} />
 
         {navLink.toUpperCase()}
-      </a>
+      </a> */}
+
+      <Link
+        // href={`#${navLink}`}
+        activeClass="active"
+        to={navLink}
+        spy
+        smooth
+        offset={-60}
+        duration={500}
+        ref={navLinkRefs.current[index]}
+        className="c-nav__link"
+        role="menuitem"
+        data-key={navLink}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <span className={selected === navLink ? 'h-arrow show' : 'h-arrow'} />
+
+        {navLink.toUpperCase()}
+      </Link>
     </li>
   ));
 

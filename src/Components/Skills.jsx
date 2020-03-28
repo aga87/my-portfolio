@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 // import logoHTML5 from '../img/html5.png';
 import LogoHTML5 from './LogoHTML5';
 import LogoCSS3 from './LogoCSS3';
@@ -132,10 +133,17 @@ function Skills() {
         {/* <!-- fixme: download from linkedin? --> */}
         <p className="t3 u-text-center">
           Please{' '}
-          <a className="o-link" href="#contact">
+          <Link
+            to="contact"
+            spy
+            smooth
+            offset={-60}
+            duration={500}
+            className="o-link"
+          >
             {' '}
-            contact me
-          </a>{' '}
+            contact me &#8595;
+          </Link>{' '}
           if you would like to see my <b>full CV</b>.
         </p>
       </section>

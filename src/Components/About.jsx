@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
@@ -41,19 +42,41 @@ function About() {
               I'm looking forward to be a part of the diverse community of web
               developers. <b>If you are a potential employer</b>, please see the
               results of my work in the{' '}
-              <a className="o-link" href="#projects">
-                projects
-              </a>{' '}
+              <Link
+                // activeClass="active"
+                to="projects"
+                spy
+                smooth
+                offset={-60}
+                duration={500}
+                className="o-link"
+              >
+                projects &#8593;
+              </Link>{' '}
               section and
-              <a className="o-link" href="#skills">
+              <Link
+                to="skills"
+                spy
+                smooth
+                offset={-60}
+                duration={500}
+                className="o-link"
+              >
                 {' '}
-                skills
-              </a>{' '}
+                skills &#8593;
+              </Link>{' '}
               I gained alongside; and do not hesitate to{' '}
-              <a className="o-link" href="#contact">
+              <Link
+                to="contact"
+                spy
+                smooth
+                offset={-60}
+                duration={500}
+                className="o-link"
+              >
                 {' '}
-                contact me
-              </a>{' '}
+                contact me &#8595;
+              </Link>{' '}
               if you are interested in working with me.
             </p>
           </div>

@@ -19,6 +19,12 @@
     &:active {
       outline: none;
     }
+
+    // todo: test
+    &.active {
+      // color: $color-js;
+      border-bottom: 2px solid white;
+    }
   }
 }
 
