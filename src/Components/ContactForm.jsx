@@ -3,7 +3,7 @@ import { validateTextarea, getCompanyLabelClassName } from '../Utils';
 
 import useFormInput from '../Hooks/useFormInput';
 
-// fixme: add focus
+// todo: Submit the form
 
 function ContactForm() {
   const fullName = useFormInput();
@@ -18,53 +18,6 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
-
-  // const fullNameRef = useRef(null);
-  // const prefNameRef = useRef(null);
-  // const emailRef = useRef(null);
-  // const subjectRef = useRef(null);
-  // // todo: ref for radio button group !
-  // const companyNameRef = useRef(null);
-  // const companyUrlRef = useRef(null);
-
-  // const inputsToFocus = [
-  //   fullName,
-  //   prefName,
-  //   // email,
-  //   // subject,
-  //   // // todo: radio button group
-  //   // companyName,
-  //   // companyUrl,
-  //   // message,
-  // ];
-
-  // const inputRefs = useRef(inputsToFocus.map(() => React.createRef()));
-
-  // function handleKeyDown(e) {
-  //   // const
-  // }
-
-  const inputsToValidate = [
-    fullName,
-    prefName,
-    email,
-    subject,
-    companyName,
-    companyUrl,
-    // todo: textarea has to be together with these inputs!!!!
-    // message,
-  ];
-
-  // todo: change name, do i need rest operator here? fixme: better way?
-  function validateAllFields(checked, ...fields) {
-    if (checked === 'no') {
-      const filtered = fields.filter(
-        (field) => field !== companyName || field !== companyUrl
-      );
-      return filtered.every((field) => field.values.valid);
-    }
-    return fields.every((field) => field.values.valid);
-  }
 
   function handleRadioClick(e) {
     setChecked(e.target.value);
@@ -87,6 +40,31 @@ function ContactForm() {
     });
   }
 
+  const inputsToValidate = [
+    fullName,
+    prefName,
+    email,
+    subject,
+    companyName,
+    companyUrl,
+  ];
+
+  function validateAllFields(employer, inputs, textarea) {
+    const textareaIsValid = textarea.valid;
+    if (employer === 'no') {
+      const inputsNonEmployer = inputs.filter(
+        // fixme: can't move this function to Utils because it depends on companyName and companyUrl
+        (input) => input !== companyName && input !== companyUrl
+      );
+      const inputsAreValid = inputsNonEmployer.every(
+        (input) => input.values.valid
+      );
+      return inputsAreValid && textareaIsValid;
+    }
+    const inputsAreValid = inputs.every((input) => input.values.valid);
+    return inputsAreValid && textareaIsValid;
+  }
+
   return (
     <form
       action="mailto:aga.labonarska@outlook.com"
@@ -107,8 +85,6 @@ function ContactForm() {
             size="30"
             maxLength="100"
             required
-            // ref={fullNameRef}
-            // ref={inputsToFocus.current[index]}
             value={fullName.values.value}
             onChange={fullName.handleChange}
             onBlur={fullName.handleBlur}
@@ -137,7 +113,6 @@ function ContactForm() {
             size="30"
             maxLength="50"
             required
-            // ref={prefNameRef}
             value={prefName.values.value}
             onChange={prefName.handleChange}
             onBlur={prefName.handleBlur}
@@ -209,33 +184,36 @@ function ContactForm() {
           </label>
         </div>
 
-        <div
-          className="l-contact-form-grid__item"
-          role="radiogroup"
-          aria-labelledby="employer-group"
-        >
+        <div className="l-contact-form-grid__item">
           <p id="employer-group">
             Are you a potential employer (or writing on behalf of a company)?
           </p>
-          <input
-            type="radio"
-            name="employer"
-            id="employer-yes"
-            value="yes"
-            defaultChecked
-            required
-            onClick={handleRadioClick}
-          />{' '}
-          <label htmlFor="employer-yes">Yes</label>{' '}
-          <input
-            type="radio"
-            name="employer"
-            id="employer-no"
-            value="no"
-            required
-            onClick={handleRadioClick}
-          />{' '}
-          <label htmlFor="employer-no">No</label>
+          {/* todo: test lebbelled-by */}
+          <div role="radiogroup" aria-labelledby="employer-group" tabIndex="0">
+            <input
+              type="radio"
+              name="employer"
+              id="employer-yes"
+              value="yes"
+              defaultChecked
+              required
+              aria-checked={checked === 'yes'}
+              onClick={handleRadioClick}
+            />{' '}
+            <label htmlFor="employer-yes">Yes</label>{' '}
+            <input
+              type="radio"
+              name="employer"
+              id="employer-no"
+              value="no"
+              required
+              aria-checked={checked === 'no'}
+              // fixme: keyboard support for radiogroup works by default ? browser-compatible?
+              // tabIndex="-1"
+              onClick={handleRadioClick}
+            />{' '}
+            <label htmlFor="employer-no">No</label>
+          </div>
         </div>
 
         <div>
@@ -276,7 +254,6 @@ function ContactForm() {
             size="30"
             required
             disabled={checked === 'no'}
-            // value={companyUrl.values.value}
             value={checked === 'yes' ? companyUrl.values.value : ''}
             onChange={companyUrl.handleChange}
             onBlur={companyUrl.handleBlur}
@@ -323,7 +300,7 @@ function ContactForm() {
         <button
           type="submit"
           className="o-btn"
-          disabled={!validateAllFields(checked, ...inputsToValidate)}
+          disabled={!validateAllFields(checked, inputsToValidate, message)}
         >
           Send
         </button>

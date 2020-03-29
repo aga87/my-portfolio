@@ -56,6 +56,7 @@ export function validateTextarea(textarea) {
   return '';
 }
 
+// fixme: move from utils
 export function getCompanyLabelClassName(enabled, errorMsg) {
   if (enabled === 'yes') {
     if (errorMsg !== '') return 'c-contact-form__error-label s1 show';
