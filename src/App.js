@@ -21,6 +21,8 @@ import './App.scss';
 
 // fixme: ruler inside section?
 
+// fixme: touch doesnt work!!!!!!
+
 function App() {
   return (
     <div className="App">

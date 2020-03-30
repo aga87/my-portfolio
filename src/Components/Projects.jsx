@@ -4,8 +4,10 @@ import Project from './Project';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
 
 import astromanMockup from '../img/smartmockups_astroman.png';
+import drumkitMockup from '../img/smartmockups_drumkit.png';
+import portfolioMockup from '../img/smartmockups_portfolio.png';
 
-// fixme: image size
+// fixme: image sizes ! white or black mockup frames?
 // todo: grid styles
 
 function Projects() {
@@ -65,6 +67,59 @@ function Projects() {
                 I use Redux to manage the game&apos;s state, including the UI
                 and audio.
               </p>
+            </Project>
+          </li>
+
+          <li className="c-project-list__item">
+            <Project
+              name="Drum Kit (React)"
+              imgSrc={drumkitMockup}
+              // fixme: alt?
+              altName="the drumkit app"
+              date="March 2020"
+              tags={[
+                { tag: 'HTML audio', category: 'html' },
+                { tag: 'React', category: 'react' },
+                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'SCSS', category: 'CSS' },
+                { tag: 'CSS Transitions', category: 'CSS' },
+                { tag: 'Responsive', category: 'CSS' },
+              ]}
+              links={[
+                <ProjectLinkGitHub
+                  name="See the Drum Kit (React) on GitHub"
+                  href="www.google.com"
+                />,
+              ]}
+            >
+              <p>
+                A small Drum Kit app built with Create React App, designated for
+                keybaord use and accessible.
+              </p>
+            </Project>
+          </li>
+
+          <li className="c-project-list__item">
+            <Project
+              name="My Portfolio Website"
+              imgSrc={portfolioMockup}
+              // fixme: alt?
+              altName="my portfolio website"
+              date="March 2020"
+              tags={[
+                { tag: 'React', category: 'react' },
+                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'SCSS', category: 'CSS' },
+                { tag: 'Responsive', category: 'CSS' },
+              ]}
+              links={[
+                <ProjectLinkGitHub
+                  name="See my portfolio (React) on GitHub"
+                  href="www.google.com"
+                />,
+              ]}
+            >
+              <p>The content is self-explanatory....</p>
             </Project>
           </li>
         </ol>
