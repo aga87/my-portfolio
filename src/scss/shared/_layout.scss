@@ -31,11 +31,12 @@
 
 // fixme: todo: fallback for ie
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 820px) {
   .l-skills-grid {
     // fixme:
     grid-template-columns: 1fr 1fr;
     grid-template-columns: auto auto;
+    // grid-template-columns: 400px 400px;
 
     // fixme:
 

@@ -5,6 +5,11 @@
 
   &__item {
     display: block;
+    margin-bottom: $b-l-h * 1rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
 
     &:before {
       content: '0' counter(item) '. ';
