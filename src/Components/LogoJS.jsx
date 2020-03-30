@@ -7,7 +7,7 @@ function LogoJS(props) {
     <img
       className={className}
       src={logoJS}
-      alt="Unofficial JavaScript logo"
+      alt=""
       title="Chris Williams [Public domain], via Wikimedia Commons"
     />
   );

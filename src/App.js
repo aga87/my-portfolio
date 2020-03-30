@@ -19,6 +19,8 @@ import './App.scss';
 
 // fixme: eslint last comma in the object, () around single arg - change this setting Air n B ??
 
+// fixme: ruler inside section?
+
 function App() {
   return (
     <div className="App">

@@ -8,7 +8,7 @@ function LogoHTML5(props) {
     <img
       className={className}
       src={logoHTML5}
-      alt="HTML5 logo"
+      alt=""
       title="W3C [CC BY 3.0 (https://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons / Cropped Original"
     />
   );

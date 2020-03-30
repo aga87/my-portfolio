@@ -12,18 +12,24 @@
     text-decoration: none;
     color: $white;
 
+    &:before {
+      content: '\27A7';
+      display: none;
+    }
+
+    &.active {
+      // color: $color-react;
+      &:before {
+        display: inline-block;
+      }
+    }
+
     &:hover {
       font-size: 120%;
     }
 
     &:active {
       outline: none;
-    }
-
-    // todo: test
-    &.active {
-      // color: $color-js;
-      border-bottom: 2px solid white;
     }
   }
 }

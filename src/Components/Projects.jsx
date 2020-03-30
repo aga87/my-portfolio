@@ -11,7 +11,7 @@ import astromanMockup from '../img/smartmockups_astroman.png';
 function Projects() {
   return (
     <div className="l-wrapper">
-      <section className="c-section l-section" id="projects">
+      <section className="c-section" id="projects">
         <h2 className="c-section__heading t2">PROJECTS:</h2>
         {/* fixme: classnames */}
         <ol className="c-project-list">

@@ -6,8 +6,12 @@
   text-align: right !important;
 }
 
-.u-push {
-  margin-bottom: 1rem * $b-l-h !important;
+// .u-push {
+//   margin-bottom: 1rem * $b-l-h !important;
+// }
+
+.u-pad {
+  padding-bottom: $b-l-h * 1rem !important;
 }
 
 .u-push-dbl {

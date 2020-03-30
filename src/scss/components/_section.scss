@@ -1,5 +1,7 @@
 .c-section {
   display: block;
+  padding-bottom: $b-l-h * 4rem;
+  padding-top: $b-l-h * 1rem;
 
   &__heading {
     margin-bottom: $b-l-h * 2rem;

@@ -9,7 +9,6 @@ import { getPreviousIndex, getNextIndex } from '../Utils';
 
 function Nav(props) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [selected, setSelected] = useState('home');
   const [focused, setFocused] = useState('');
 
   const { navLinks } = props;
@@ -46,8 +45,7 @@ function Nav(props) {
     }
   }
 
-  function handleClick(e) {
-    setSelected(e.target.getAttribute('data-key'));
+  function handleClick() {
     setIsExpanded(false);
   }
 
@@ -177,22 +175,7 @@ function Nav(props) {
 
   const navListItems = navLinks.map((navLink, index) => (
     <li key={navLink} className="l-nav-list__item" role="none">
-      {/* <a
-        ref={navLinkRefs.current[index]}
-        href={`#${navLink}`}
-        className="c-nav__link"
-        role="menuitem"
-        data-key={navLink}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
-      >
-        <span className={selected === navLink ? 'h-arrow show' : 'h-arrow'} />
-
-        {navLink.toUpperCase()}
-      </a> */}
-
       <Link
-        // href={`#${navLink}`}
         activeClass="active"
         to={navLink}
         spy
@@ -206,8 +189,6 @@ function Nav(props) {
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
-        <span className={selected === navLink ? 'h-arrow show' : 'h-arrow'} />
-
         {navLink.toUpperCase()}
       </Link>
     </li>

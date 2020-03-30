@@ -9,7 +9,7 @@ function LogoCSS3(props) {
     <img
       className={className}
       src={logoCSS3}
-      alt="CSS3 logo"
+      alt=""
       title="Rudloff [CC BY 3.0 (https://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons / Cropped original"
     />
   );

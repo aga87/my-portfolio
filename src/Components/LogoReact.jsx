@@ -7,7 +7,7 @@ function LogoReact(props) {
     <img
       className={className}
       src={logoReact}
-      alt="React logo"
+      alt=""
       title="Facebook [Public domain], via Wikimedia Commons"
     />
   );

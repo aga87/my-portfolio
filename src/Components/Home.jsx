@@ -19,23 +19,31 @@ function Home() {
             seeking full-time job opportunities in&nbsp;<b>Amsterdam</b>.
           </p>
 
-          {/* fixme: WAI ARIA - list with skills just hide the names and treat images as decorative!!! */}
+          {/* fixme: classnames for the list */}
 
-          {/* fixme: WAI ARIA - list with skills just hide the names and treat images as decorative!!! */}
           <ul className="l-home-logo-list">
             <li className="l-home-logo-list__item">
+              {' '}
+              <span className="h-offscreen">HTML5</span>
               <LogoHTML5 className="o-home-logo" />
             </li>
             <li className="l-home-logo-list__item">
+              <span className="h-offscreen">CSS3</span>
               <LogoCSS3 className="o-home-logo" />
             </li>
             <li className="l-home-logo-list__item">
+              <span className="h-offscreen">JavaScript</span>
+
               <LogoJS className="o-home-logo" />
             </li>
             <li className="l-home-logo-list__item">
+              <span className="h-offscreen">Redux</span>
+
               <LogoRedux className="o-home-logo" />
             </li>
             <li className="l-home-logo-list__item">
+              <span className="h-offscreen">React</span>
+
               <LogoReact className="o-home-logo o-home-logo--spin" />
             </li>
           </ul>

@@ -6,7 +6,7 @@ import agaPic from '../img/aga-profile-pic-300px.jpg';
 function About() {
   return (
     <div className="l-wrapper">
-      <section className="c-section l-section" id="about">
+      <section className="c-section" id="about">
         <h2 className="c-section__heading t2">ABOUT:</h2>
 
         <article className="c-about-article">

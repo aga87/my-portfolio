@@ -7,7 +7,7 @@ function LogoRedux(props) {
     <img
       className={className}
       src={logoRedux}
-      alt="Redux logo"
+      alt=""
       title="AAMINE1965 [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]"
     />
   );

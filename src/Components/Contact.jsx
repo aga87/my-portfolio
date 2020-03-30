@@ -6,7 +6,7 @@ import linkedinImg from '../img/linkedin.svg.png';
 function Contact() {
   return (
     <div className="l-wrapper">
-      <section className="c-section l-section u-push" id="contact">
+      <section className="c-section u-pad" id="contact">
         <h2 className="c-section__heading t2">CONTACT:</h2>
         <p className="c-section__text">
           I&apos;d love to hear about exciting job opportunities in{' '}
