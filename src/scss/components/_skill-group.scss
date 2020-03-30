@@ -1,15 +1,11 @@
 .c-skill-group {
-  display: block;
-  // fixme: prefixes - move to grid
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  // todo: test
-  padding-left: $b-l-h * 1.5rem;
-  padding-top: $b-l-h * 0.5rem;
-  padding-bottom: $b-l-h * 0.5rem;
-  padding-right: $b-l-h * 0.5rem;
+  padding: ($b-l-h * 0.5rem) ($b-l-h * 0.5rem) ($b-l-h * 0.5rem)
+    ($b-l-h * 1.5rem);
   // border: 4px dashed $grey;
-  border: 4px solid $grey;
-
+  border: 3px solid $grey;
   border-radius: 5px;
 
   &__content {

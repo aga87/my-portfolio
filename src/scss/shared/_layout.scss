@@ -23,6 +23,7 @@
 // fixme: here?
 
 .l-skills-grid {
+  display: -ms-grid;
   display: grid;
   gap: $b-l-h * 1rem;
   margin-bottom: $b-l-h * 2rem;
@@ -32,11 +33,14 @@
 
 @media only screen and (min-width: 800px) {
   .l-skills-grid {
-    grid-template-columns: 1fr 1fr;
     // fixme:
-    grid-template-columns: 390px 420px;
-    // grid-template-columns: 400px 400px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+
+    // fixme:
+
     grid-template-areas: 'group1 group2' 'group3 group2' 'group4 .' 'group5 group5';
+
     justify-content: center;
 
     &__item-group1 {

@@ -84,20 +84,17 @@ function Skills() {
 
           <div className="c-skill-group u-border-css l-skills-grid__item-group3">
             <div className="c-skill-group__content">
-              <h3 className="c-skill-group__heading t-body">Other skills:</h3>
+              <h3 className="c-skill-group__heading t-body">Soft skills:</h3>
               <ul>
                 <li>Creative problem-solving</li>
-                {/* <!-- <li>Critical thinking ??</li> --> */}
                 <li>Abstract thinking</li>
                 <li>Self-management</li>
                 <li>Collaboration</li>
                 <li>Research</li>
                 <li>Resourcefulness</li>
                 <li>Self-improvement</li>
-                <li>Teaching? Presentation?</li>
                 <li>Attention to detail</li>
-                {/* <!-- <li>Project management ?</li> --> */}
-                {/* <!-- <li>one more?</li> --> */}
+                <li>Teaching? Presentation?</li>
               </ul>
             </div>
           </div>
