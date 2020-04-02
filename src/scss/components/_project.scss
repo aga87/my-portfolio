@@ -6,12 +6,13 @@
   }
 
   &__img {
-    // fixme: responsive -  sizes
+    width: 100%;
     max-width: 450px;
     height: auto;
   }
 }
 
+// todo: fallbacks
 @media only screen and (min-width: 1200px) {
   .l-project-grid {
     display: grid;

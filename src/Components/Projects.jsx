@@ -6,6 +6,7 @@ import ProjectLinkGitHub from './ProjectLinkGitHub';
 import astromanMockup from '../img/smartmockups_astroman.png';
 import drumkitMockup from '../img/smartmockups_drumkit.png';
 import portfolioMockup from '../img/smartmockups_portfolio.png';
+import galleryMockup from '../img/smartmockups_gallery.png';
 
 // fixme: image sizes ! white or black mockup frames?
 // todo: grid styles
@@ -119,7 +120,40 @@ function Projects() {
                 />,
               ]}
             >
-              <p>The content is self-explanatory....</p>
+              <p>
+                The content is self-explanatory.... use react hooks - controlled
+                components, form validation. React-scroll.
+              </p>
+            </Project>
+          </li>
+
+          <li className="c-project-list__item">
+            <Project
+              name="Image Gallery - Bikes"
+              imgSrc={galleryMockup}
+              // fixme: alt?
+              altName="the image gallery"
+              date="April 2020"
+              tags={[
+                { tag: 'ES5', category: 'js' },
+                { tag: 'vanilla JavaScript', category: 'js' },
+                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'SCSS', category: 'CSS' },
+                { tag: 'Responsive', category: 'CSS' },
+                { tag: 'CSS Animations', category: 'CSS' },
+                { tag: 'Browser-compatibility', category: 'other' },
+              ]}
+              links={[
+                <ProjectLinkGitHub
+                  name="See the image gallery on GitHub"
+                  href="www.google.com"
+                />,
+              ]}
+            >
+              <p>
+                Image gallery - press next or previous button or choose a
+                thumbnail image to display a slide...... bla bla bla.
+              </p>
             </Project>
           </li>
         </ol>

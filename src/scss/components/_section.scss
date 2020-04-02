@@ -1,10 +1,9 @@
 .c-section {
   display: block;
-  padding-bottom: $b-l-h * 4rem;
-  padding-top: $b-l-h * 1rem;
+  padding: ($b-l-h * 2rem) 0 ($b-l-h * 4rem) 0;
 
   &__heading {
-    margin-bottom: $b-l-h * 2rem;
+    padding-bottom: $b-l-h * 2rem;
     text-align: center;
   }
 
