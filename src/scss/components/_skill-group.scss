@@ -1,18 +1,10 @@
 .c-skill-group {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  padding: ($b-l-h * 0.5rem) ($b-l-h * 0.5rem) ($b-l-h * 0.5rem)
-    ($b-l-h * 1.5rem);
-  // border: 4px dashed $grey;
-  border: 4px solid $grey;
-  border-radius: 5px;
-
-  // &__content {
-  //   margin: auto 0;
-  // }
+  display: block;
+  padding-left: $b-l-h * 1rem;
 
   &__heading {
+    display: inline-block;
+    border-bottom: 2px solid $grey;
     margin-bottom: $b-l-h * 0.5rem;
   }
 

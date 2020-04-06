@@ -23,6 +23,8 @@ import './App.scss';
 
 // fixme: touch doesnt work!!!!!!
 
+// fixme: add favicons
+
 function App() {
   return (
     <div className="App">

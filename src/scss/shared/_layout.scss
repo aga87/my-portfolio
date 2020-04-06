@@ -25,24 +25,21 @@
 .l-skills-grid {
   display: -ms-grid;
   display: grid;
-  gap: $b-l-h * 1rem;
+  gap: ($b-l-h * 1rem) 0;
   margin-bottom: $b-l-h * 2rem;
 }
 
 // fixme: todo: fallback for ie
 
-@media only screen and (min-width: 820px) {
+@media only screen and (min-width: 800px) {
   .l-skills-grid {
     // fixme:
     grid-template-columns: 1fr 1fr;
-    grid-template-columns: auto auto;
-    grid-template-columns: 410px 410px;
-
-    // fixme:
-
-    grid-template-areas: 'group1 group2' 'group3 group2' 'group4 .' 'group5 group5';
-
-    justify-content: center;
+    max-width: 820px;
+    margin-right: auto;
+    margin-left: auto;
+    // fixme: fallback
+    grid-template-areas: 'group1 group2' 'group3 group2' 'group4 group2' 'group5 group5';
 
     &__item-group1 {
       grid-area: group1;

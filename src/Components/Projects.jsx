@@ -11,6 +11,8 @@ import galleryMockup from '../img/smartmockups_gallery.png';
 // fixme: image sizes ! white or black mockup frames?
 // todo: grid styles
 
+// fixme: completion dates!!!!!!!!
+
 function Projects() {
   return (
     <div className="l-wrapper">
@@ -25,14 +27,15 @@ function Projects() {
               altName="the Astroman game"
               date="February 2020"
               tags={[
-                { tag: 'CSS Grid', category: 'CSS' },
-                { tag: 'Canvas API', category: 'other' },
-                { tag: 'SVG', category: 'other' },
-                { tag: 'Redux architecture', category: 'Redux' },
+                { tag: 'SCSS', category: 'CSS' },
+                { tag: 'BEM + Namespaces', category: 'CSS' },
+                { tag: 'Responsive, mobile-first', category: 'CSS' },
+                { tag: 'Canvas API', category: 'js' },
                 { tag: 'Functional programming', category: 'JS' },
                 { tag: 'ES6', category: 'JS' },
-                { tag: 'SCSS', category: 'CSS' },
-                { tag: 'Responsive', category: 'CSS' },
+                { tag: 'Redux', category: 'Redux' },
+                { tag: 'SVG', category: 'other' },
+                { tag: 'Webpack + Babel', category: 'other' },
               ]}
               links={[
                 <ProjectLinkGitHub
@@ -40,7 +43,7 @@ function Projects() {
                   href="www.google.com"
                 />,
                 <ProjectLinkGitHub
-                  name="See Astroman (Redux, React) on GitHub"
+                  name="See Astroman (React-Redux) on GitHub"
                   href="www.google.com"
                 />,
               ]}
@@ -58,10 +61,7 @@ function Projects() {
                 The game consists of unlimited number of rounds and ends when
                 one of the players runs out of oxygen. Player with higher score
                 wins. If it&apos;s a tie, the player with lives/ oxygen left
-                wins.
-              </p>
-              <p>
-                Players can restart, go back to or quit the game from the
+                wins. Players can restart, go back to or quit the game from the
                 Options modal.
               </p>
               <p>
@@ -73,18 +73,19 @@ function Projects() {
 
           <li className="c-project-list__item">
             <Project
-              name="Drum Kit (React)"
+              name="Drum Kit"
               imgSrc={drumkitMockup}
               // fixme: alt?
-              altName="the drumkit app"
+              altName="the drum kit app"
               date="March 2020"
               tags={[
-                { tag: 'HTML audio', category: 'html' },
-                { tag: 'React', category: 'react' },
-                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'WAI-ARIA', category: 'html' },
                 { tag: 'SCSS', category: 'CSS' },
-                { tag: 'CSS Transitions', category: 'CSS' },
-                { tag: 'Responsive', category: 'CSS' },
+                { tag: 'BEM + Namespaces', category: 'CSS' },
+                { tag: 'Responsive, mobile-first', category: 'CSS' },
+                { tag: 'Browser-compatibility', category: 'css' },
+                { tag: 'Create React App', category: 'react' },
+                { tag: 'JSX', category: 'react' },
               ]}
               links={[
                 <ProjectLinkGitHub
@@ -94,8 +95,9 @@ function Projects() {
               ]}
             >
               <p>
-                A small Drum Kit app built with Create React App, designated for
-                keybaord use and accessible.
+                Press a key to play a corresponding drum kit sound. A small app
+                built with React, designated primarily for keyboard use and
+                fully accessible.
               </p>
             </Project>
           </li>
@@ -104,14 +106,20 @@ function Projects() {
             <Project
               name="My Portfolio Website"
               imgSrc={portfolioMockup}
-              // fixme: alt?
               altName="my portfolio website"
               date="March 2020"
               tags={[
-                { tag: 'React', category: 'react' },
-                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'WAI-ARIA', category: 'html' },
                 { tag: 'SCSS', category: 'CSS' },
-                { tag: 'Responsive', category: 'CSS' },
+                { tag: 'BEM + Namespaces', category: 'CSS' },
+                { tag: 'Responsive, mobile-first', category: 'CSS' },
+                { tag: 'CSS Browser-compatibility', category: 'css' },
+                { tag: 'Modular typography', category: 'CSS' },
+                { tag: 'Constraint Validation API', category: 'js' },
+                { tag: 'JSX', category: 'react' },
+                { tag: 'Create React App', category: 'react' },
+                { tag: 'react-scroll', category: 'react' },
+                { tag: 'React Hooks', category: 'react' },
               ]}
               links={[
                 <ProjectLinkGitHub
@@ -120,9 +128,15 @@ function Projects() {
                 />,
               ]}
             >
+              {/* fixme:  */}
+              <p>You are here &#9786;. </p>
               <p>
-                The content is self-explanatory.... use react hooks - controlled
-                components, form validation. React-scroll.
+                I use React controlled components together with the Constraint
+                Validation API to implement and validate the contact form. I use
+                React Hooks to reuse stateful logic between input components;
+                and to manage focus in the composite navigation widget. The
+                smooth scrolling and scroll spy is implemented with the
+                react-scroll module.
               </p>
             </Project>
           </li>
@@ -135,13 +149,15 @@ function Projects() {
               altName="the image gallery"
               date="April 2020"
               tags={[
-                { tag: 'ES5', category: 'js' },
-                { tag: 'vanilla JavaScript', category: 'js' },
-                { tag: 'WAI-ARIA', category: 'other' },
+                { tag: 'HTML5', category: 'html' },
+                { tag: 'WAI-ARIA', category: 'html' },
                 { tag: 'SCSS', category: 'CSS' },
-                { tag: 'Responsive', category: 'CSS' },
-                { tag: 'CSS Animations', category: 'CSS' },
-                { tag: 'Browser-compatibility', category: 'other' },
+                { tag: 'BEM + Namespaces', category: 'CSS' },
+                { tag: 'Responsive, mobile-first', category: 'CSS' },
+                { tag: 'Browser-compatibility', category: 'css' },
+                { tag: 'ES5', category: 'js' },
+                { tag: 'Vanilla JS', category: 'js' },
+                { tag: 'DOM API', category: 'js' },
               ]}
               links={[
                 <ProjectLinkGitHub
@@ -151,8 +167,16 @@ function Projects() {
               ]}
             >
               <p>
-                Image gallery - press next or previous button or choose a
-                thumbnail image to display a slide...... bla bla bla.
+                Press a previous or next button to show previous/ next slide or
+                choose a slide from a thumbnail gallery.
+              </p>
+              <p>
+                I use the WAI-ARIA tabs design pattern and implement keyboard
+                support to make the gallery accessible to the screen readers.
+              </p>
+              <p>
+                I use progressive enhancement to support all major browsers,
+                including the IE.
               </p>
             </Project>
           </li>
