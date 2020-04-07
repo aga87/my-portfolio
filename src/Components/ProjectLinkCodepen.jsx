@@ -1,7 +1,7 @@
 import React from 'react';
-import gitHubLogo from '../img/GitHub-Mark-32px.png';
+import codepenLogo from '../img/codepen-50px.png';
 
-function ProjectLinkGitHub(props) {
+function ProjectLinkCodepen(props) {
   const { name, href } = props;
 
   return (
@@ -9,12 +9,12 @@ function ProjectLinkGitHub(props) {
       {name} &#8599;
       <img
         className="o-link__img"
-        src={gitHubLogo}
+        src={codepenLogo}
         alt=""
-        title="https://github.com/logos"
+        title="https://blog.codepen.io/documentation/brand-assets/logos/"
       />
     </a>
   );
 }
 
-export default ProjectLinkGitHub;
+export default ProjectLinkCodepen;

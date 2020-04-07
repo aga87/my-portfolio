@@ -2,13 +2,13 @@ import React from 'react';
 
 import Project from './Project';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
+import ProjectLinkCodepen from './ProjectLinkCodepen';
 
-import astromanMockup from '../img/smartmockups_astroman.png';
-import drumkitMockup from '../img/smartmockups_drumkit.png';
-import portfolioMockup from '../img/smartmockups_portfolio.png';
-import galleryMockup from '../img/smartmockups_gallery.png';
+import astromanMockup from '../img/smartmockups-astroman-450.png';
+import drumkitMockup from '../img/smartmockups-drumkit-450.png';
+import portfolioMockup from '../img/smartmockups-portfolio-450.png';
+import galleryMockup from '../img/smartmockups-gallery-450.png';
 
-// fixme: image sizes ! white or black mockup frames?
 // todo: grid styles
 
 // fixme: completion dates!!!!!!!!
@@ -18,7 +18,6 @@ function Projects() {
     <div className="l-wrapper">
       <section className="c-section" id="projects">
         <h2 className="c-section__heading t2">PROJECTS:</h2>
-        {/* fixme: classnames */}
         <ol className="c-project-list">
           <li className="c-project-list__item">
             <Project
@@ -162,7 +161,11 @@ function Projects() {
               links={[
                 <ProjectLinkGitHub
                   name="See the image gallery on GitHub"
-                  href="www.google.com"
+                  href="https://github.com/aga87/gallery"
+                />,
+                <ProjectLinkCodepen
+                  name="See the image gallery on Codepen"
+                  href="https://codepen.io/aga87/project/editor/ff6d38996f2bc7fee47490682e976e23#0"
                 />,
               ]}
             >
@@ -175,8 +178,8 @@ function Projects() {
                 support to make the gallery accessible to the screen readers.
               </p>
               <p>
-                I use progressive enhancement to support all major browsers,
-                including the IE.
+                I use progressive enhancement to support all major modern
+                browsers, including the IE11.
               </p>
             </Project>
           </li>
