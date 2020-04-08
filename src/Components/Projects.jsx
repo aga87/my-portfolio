@@ -3,6 +3,7 @@ import React from 'react';
 import Project from './Project';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
 import ProjectLinkCodepen from './ProjectLinkCodepen';
+import ProjectLinkSandbox from './ProjectLinkSandbox';
 
 import astromanMockup from '../img/smartmockups-astroman-450.png';
 import drumkitMockup from '../img/smartmockups-drumkit-450.png';
@@ -88,8 +89,13 @@ function Projects() {
               ]}
               links={[
                 <ProjectLinkGitHub
-                  name="See the Drum Kit (React) on GitHub"
-                  href="www.google.com"
+                  name="See the Drum Kit (React) code on GitHub"
+                  // todo: set repository to public
+                  href="https://github.com/aga87/drumkit-react"
+                />,
+                <ProjectLinkSandbox
+                  name="See the Drum Kit (React) live on CodeSandbox"
+                  href="https://codesandbox.io/s/drum-kit-create-react-app-1qx16"
                 />,
               ]}
             >
