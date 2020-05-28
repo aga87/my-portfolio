@@ -39,12 +39,12 @@ function Projects() {
               ]}
               links={[
                 <ProjectLinkGitHub
-                  name="See Astroman (Redux) on GitHub"
-                  href="www.google.com"
+                  name="See Astroman (React-Redux) code on GitHub"
+                  href="https://github.com/aga87/astro-react-redux"
                 />,
-                <ProjectLinkGitHub
-                  name="See Astroman (React-Redux) on GitHub"
-                  href="www.google.com"
+                <ProjectLinkSandbox
+                  name="See Astroman (React-Redux) live on CodeSandbox"
+                  href="https://codesandbox.io/s/astroman-game-react-redux-fiz3b"
                 />,
               ]}
             >
@@ -169,6 +169,7 @@ function Projects() {
                   name="See the image gallery on GitHub"
                   href="https://github.com/aga87/gallery"
                 />,
+                // todo: set to public
                 <ProjectLinkCodepen
                   name="See the image gallery on Codepen"
                   href="https://codepen.io/aga87/project/editor/ff6d38996f2bc7fee47490682e976e23#0"

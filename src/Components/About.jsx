@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
 function About() {
@@ -32,16 +31,17 @@ function About() {
               {/* <!-- fixme: - text -->
             <!-- fixme: - text - LEARNING DUTCH, do crafts projects--> */}
               In my free time, I like to read science-fiction, do yoga,
-              rollerblading ride the bike, play poker and visit new places. I'm
-              also interested in combination of DIY and technology to create
-              sustainable and low-maintenance methods of growing food in cities.
+              rollerblading ride the bike, play poker and visit new places.
+              I&apos;m also interested in combination of DIY and technology to
+              create sustainable and low-maintenance methods of growing food in
+              cities.
             </p>
             <p>
               I&apos;m currently looking for a new challenging role to utilise
               and further my skills. I enjoy the creative power of coding and
-              I'm looking forward to be a part of the diverse community of web
-              developers. <b>If you are a potential employer</b>, please see the
-              results of my work in the{' '}
+              I&apos;m looking forward to be a part of the diverse community of
+              web developers. <b>If you are a potential employer</b>, please see
+              the results of my work in the{' '}
               <Link
                 // activeClass="active"
                 to="projects"

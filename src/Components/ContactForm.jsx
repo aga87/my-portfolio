@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { validateTextarea, getCompanyLabelClassName } from '../Utils';
-
 import useFormInput from '../Hooks/useFormInput';
 
 // todo: Submit the form
@@ -65,10 +64,33 @@ function ContactForm() {
     return inputsAreValid && textareaIsValid;
   }
 
+  // function handleSubmit(e) {
+  //   // e.preventDefault();
+  //   // fetch('../src/form-to-email.php', {
+  //   //   method: 'post',
+  //   // })
+  //   //   .then(function (response) {
+  //   //     return response.json();
+  //   //   })
+  //   //   .then(function (data) {
+  //   //     //Success code goes here
+  //   //     alert('form submited');
+  //   //   })
+  //   //   .catch(function (err) {
+  //   //     //Failure
+  //   //     alert('Error');
+  //   //   });
+  // }
+
   return (
     <form
-      action="mailto:aga.labonarska@outlook.com"
-      encType="text/plain"
+      // action="mailto:aga.labonarska@outlook.com"
+      action="../src/form-to-email.php"
+      // action=""
+      // encType="text/plain"
+      encType="multipart/form-data"
+      // fixme:
+      // onSubmit={handleSubmit}
       method="post"
       id="jsForm"
       className="c-contact-form"
@@ -299,6 +321,7 @@ function ContactForm() {
       <div className="u-text-right">
         <button
           type="submit"
+          name="submit"
           className="o-btn"
           disabled={!validateAllFields(checked, inputsToValidate, message)}
         >

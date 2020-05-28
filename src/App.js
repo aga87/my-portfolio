@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Ruler from './Components/Ruler';
@@ -9,21 +8,22 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
+// fixme: import to index.js...
 import './App.scss';
 
-// todo: change browserlist settings or add prefixes myself?
-
-// todo: scroll
+// todo: css prefixes?
 
 // todo: test wai-aria
 
-// fixme: eslint last comma in the object, () around single arg - change this setting Air n B ??
+// fixme: eslint () around single arg - change this setting Air n B ??
 
 // fixme: ruler inside section?
 
 // fixme: touch doesnt work!!!!!!
 
 // fixme: add favicons
+
+// todo: react icons should be behind other objects
 
 function App() {
   return (
