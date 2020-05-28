@@ -64,6 +64,7 @@ function ContactForm() {
     return inputsAreValid && textareaIsValid;
   }
 
+  // fixme:
   // function handleSubmit(e) {
   //   // e.preventDefault();
   //   // fetch('../src/form-to-email.php', {
