@@ -30,11 +30,11 @@ function About() {
             <p className="c-about-article__text">
               {/* <!-- fixme: - text -->
             <!-- fixme: - text - LEARNING DUTCH, do crafts projects--> */}
-              In my free time, I like to read science-fiction, do yoga,
-              rollerblading ride the bike, play poker and visit new places.
-              I&apos;m also interested in combination of DIY and technology to
-              create sustainable and low-maintenance methods of growing food in
-              cities.
+              In my free time, I enjoy reading science-fiction, yoga,
+              rollerskating, cycling, poker, drumming, crafts projects and
+              visiting new places. I&apos;m also interested in combination of
+              DIY and technology to create sustainable and low-maintenance
+              methods of growing food in cities.
             </p>
             <p>
               I&apos;m currently looking for a new challenging role to utilise

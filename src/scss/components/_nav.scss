@@ -13,12 +13,22 @@
     color: $white;
 
     &:before {
-      content: '\27A7';
+      // content: '\27A7';
+      content: '\2607';
+      content: '\2608';
+      content: '\2609';
+      content: '\2752';
+      // content: '\276F';
+
+      // fixme: add modifiers to classnames then change colors for each link
       display: none;
+      color: $color-react;
     }
 
     &.active {
       // color: $color-react;
+      font-weight: bold;
+
       &:before {
         display: inline-block;
       }
