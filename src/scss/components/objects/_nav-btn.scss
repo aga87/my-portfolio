@@ -6,6 +6,10 @@
   background: transparent;
   padding-top: 6px;
 
+  &:focus {
+    outline: 2px solid $color-react;
+  }
+
   &__bar {
     display: block;
     height: 5px;
@@ -16,6 +20,7 @@
     margin-bottom: 6px;
 
     &:first-of-type.is-expanded {
+      -moz-transform: rotate(-45deg) translate(-9px, 6px);
       -webkit-transform: rotate(-45deg) translate(-9px, 6px);
       transform: rotate(-45deg) translate(-9px, 6px);
     }
@@ -23,6 +28,7 @@
       opacity: 0;
     }
     &:last-of-type.is-expanded {
+      -moz-transform: rotate(-45deg) translate(-9px, 6px);
       -webkit-transform: rotate(45deg) translate(-8px, -8px);
       transform: rotate(45deg) translate(-8px, -8px);
     }

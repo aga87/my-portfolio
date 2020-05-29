@@ -14,4 +14,6 @@
 
 .o-home-logo--spin {
   animation: spin infinite 20s linear;
+  position: relative;
+  z-index: -1;
 }

@@ -13,4 +13,11 @@
     color: #b6bbbb;
     border-color: #b6bbbb;
   }
+
+  &:focus {
+    border-color: $color-react;
+    -webkit-box-shadow: 0 0 8px $color-react;
+    box-shadow: 0 0 8px $color-react;
+    outline: none;
+  }
 }

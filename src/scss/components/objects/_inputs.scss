@@ -1,14 +1,11 @@
 @mixin input {
-  // display: block;
+  display: block;
   font-size: inherit;
   line-height: inherit;
   font-family: inherit;
   padding: 0 0.5em;
-  // padding: 0 $b-l-h / 4;
   border: 2px solid #b6bbbb;
   border-radius: 5px;
-  // width: 100%;
-  // max-width: 400px;
 
   &:focus {
     border-color: $color-react;

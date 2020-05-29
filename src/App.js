@@ -8,12 +8,10 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
-// todo: css prefixes?
 // todo: test wai-aria
-// fixme: eslint () around single arg - change this setting AirnB ??
 // fixme: ruler inside section?
 // fixme: touch doesnt work?
-// todo: react icons should be behind other objects
+// fixme: nav keyboard focus
 
 function App() {
   return (

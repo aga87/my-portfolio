@@ -17,7 +17,6 @@
     display: none;
     padding-left: 0.5em;
     color: $color-html;
-    // font-weight: bold;
     background: $white;
     border: 2px solid $color-html;
     border-top: none;
@@ -34,14 +33,18 @@
 }
 
 .l-contact-form-grid {
+  display: -ms-grid;
   display: grid;
+  grid-gap: ($b-l-h * 0.5rem);
   gap: ($b-l-h * 0.5rem);
   margin-bottom: $b-l-h * 0.5rem;
 }
 
 @media only screen and (min-width: 800px) {
   .l-contact-form-grid {
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-gap: ($b-l-h * 0.5rem) ($b-l-h * 1rem);
     gap: ($b-l-h * 0.5rem) ($b-l-h * 1rem);
 
     &__item {

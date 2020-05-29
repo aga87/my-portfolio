@@ -1,18 +1,14 @@
-// fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-scroll';
-
 import NavBtn from './NavBtn';
-
 import { getPreviousIndex, getNextIndex } from '../Utils';
+
+// fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
 
 function Nav(props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');
-
   const { navLinks } = props;
-
   const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
   const navBtnRef = useRef(null);
 
@@ -32,7 +28,6 @@ function Nav(props) {
         setIsExpanded(true);
         setFocused(0);
         break;
-
       case 'Up': // IE/Edge specific value
       case 'ArrowUp': {
         e.preventDefault();
@@ -77,7 +72,6 @@ function Nav(props) {
         setFocused(previousIndex);
         break;
       }
-
       case 'Down': // IE/Edge specific value
       case 'ArrowDown':
       case 'Right': // IE/Edge specific value
@@ -89,12 +83,10 @@ function Nav(props) {
         setFocused(nextIndex);
         break;
       }
-
       case 'Home':
         e.preventDefault();
         setFocused(0);
         break;
-
       case 'End': {
         e.preventDefault();
         const lastIndex = navLinks.length - 1;
@@ -105,7 +97,6 @@ function Nav(props) {
       case /^[a-zA-Z]*$/.test(key) && key: {
         // Transforming to lower case for comparison with nav links
         const letter = key.toLowerCase();
-
         // Making sure that nav links are also in lower case
         const navLinksLowerCase = navLinks.map((navLink) =>
           navLink.toLowerCase()
@@ -131,7 +122,6 @@ function Nav(props) {
 
         // If more than one link start with the typed letter -
         // focus the next link (relative to currently focused):
-
         // Get the index of the currently focused link
         const nowFocused = e.target.getAttribute('data-key');
         const currentIndex = navLinks.indexOf(nowFocused);
@@ -171,6 +161,8 @@ function Nav(props) {
     }
   }, [focused, navLinks]);
 
+  //fixme:  https://stackoverflow.com/questions/54940399/how-target-dom-with-react-useref-in-map
+
   const className = isExpanded ? 'is-expanded' : '';
 
   const navListItems = navLinks.map((navLink, index) => (
@@ -183,7 +175,7 @@ function Nav(props) {
         offset={-60}
         duration={500}
         ref={navLinkRefs.current[index]}
-        className="c-nav__link"
+        className={`c-nav__link c-nav__link--${navLink}`}
         role="menuitem"
         data-key={navLink}
         onClick={handleClick}

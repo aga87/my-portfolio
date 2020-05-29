@@ -48,19 +48,36 @@ function Skills() {
               <li>Responsive design, mobile-first</li>
               <li>
                 Modular CSS - <br />
-                <abbr title="Block, Element, Modifier">BEM</abbr> Methodology +
-                Namespaces
+                <abbr
+                  title="Block, Element, Modifier"
+                  className="c-skill-group__abbr"
+                >
+                  BEM
+                </abbr>{' '}
+                Methodology + Namespaces
               </li>
               <li>CSS Pre-Processor: Sass/ SCSS</li>
               <li>Modular code architecture</li>
               <li>Functional programming</li>
               <li>State Management</li>
               <li>
-                <abbr title="Document Object Model">DOM</abbr> API
+                <abbr
+                  title="Document Object Model"
+                  className="c-skill-group__abbr"
+                >
+                  DOM
+                </abbr>{' '}
+                API
                 {/* <!-- <abbr title="Browser Object Model">BOM</abbr> API --> */}
               </li>
               <li>
-                <abbr title="Object-oriented programming">OOP</abbr> basics
+                <abbr
+                  title="Object-oriented programming"
+                  className="c-skill-group__abbr"
+                >
+                  OOP
+                </abbr>{' '}
+                basics
               </li>
               <li>Canvas API</li>
               <li>SVG basics</li>

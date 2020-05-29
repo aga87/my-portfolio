@@ -8,6 +8,12 @@
     margin-bottom: $b-l-h * 0.5rem;
   }
 
+  &__abbr {
+    display: inline-bock;
+    text-decoration: none;
+    border-bottom: 2px solid $color-js;
+  }
+
   &__skill-img {
     width: auto;
     height: 1em;
@@ -15,15 +21,23 @@
 
     &--spin {
       animation: spin infinite 20s linear;
+      position: relative;
+      z-index: -1;
     }
   }
 }
 
 @keyframes spin {
   from {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
