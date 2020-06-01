@@ -9,6 +9,7 @@ function LogoJS(props) {
       src={logoJS}
       alt=""
       title="Chris Williams [Public domain], via Wikimedia Commons"
+      aria-hidden="true"
     />
   );
 }

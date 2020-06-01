@@ -20,7 +20,6 @@ function Project(props) {
     }
   }
 
-  // fixme: what to use as key instead of index?
   const tagListItems = tags.map((tag, index) => {
     const className = getClassName(tag.category.toLocaleLowerCase());
     return (
@@ -29,7 +28,6 @@ function Project(props) {
       </li>
     );
   });
-  // fixme: what to use as key instead of index?
 
   const projectLinkListItems = links.map((link, index) => (
     <li key={index}>{link}</li>
@@ -46,7 +44,7 @@ function Project(props) {
           alt={`Screenshot of ${altName} on MacBook and iPhone 8`}
         />
 
-        <table className="c-project-info">
+        <table className="c-project-info" role="presentation">
           <tbody>
             <tr>
               <th className="c-project-info__heading">Completion date:</th>
@@ -62,9 +60,9 @@ function Project(props) {
             <tr>
               <th className="c-project-info__heading">Tags:</th>
               <td className="c-project-info__text">
-                {/* {tags} */}
-                {/* fixme: classname */}
-                <ul className="c-project-tags s1">{tagListItems}</ul>
+                <ul className="c-project-tags s1" role="presentation">
+                  {tagListItems}
+                </ul>
               </td>
             </tr>
 
@@ -73,7 +71,6 @@ function Project(props) {
                 Code:
               </th>
               <td className="c-project-info__text">
-                {/* fixme: classname? */}
                 <ul className="c-project-info__link-list">
                   {projectLinkListItems}
                 </ul>

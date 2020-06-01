@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateTextarea, getCompanyLabelClassName } from '../Utils';
+import { validateTextarea } from '../Utils';
 import useFormInput from '../Hooks/useFormInput';
 
 function ContactForm() {
@@ -24,11 +24,9 @@ function ContactForm() {
     const maxLength = e.target.getAttribute('maxLength');
     const { value } = e.target;
     const { valid } = e.target.validity;
-
     const errorMsg = validateTextarea(e.target);
-
     const infoMsg = `${errorMsg} 
-    You have ${maxLength - value.length} of ${maxLength} characters left.`;
+    You have ${maxLength - value.length} characters left.`;
 
     setMessage({
       value,
@@ -50,7 +48,6 @@ function ContactForm() {
     const textareaIsValid = textarea.valid;
     if (employer === 'no') {
       const inputsNonEmployer = inputs.filter(
-        // fixme: can't move this function to Utils because it depends on companyName and companyUrl
         (input) => input !== companyName && input !== companyUrl
       );
       const inputsAreValid = inputsNonEmployer.every(
@@ -62,13 +59,20 @@ function ContactForm() {
     return inputsAreValid && textareaIsValid;
   }
 
+  function getCompanyLabelClassName(enabled, errorMsg) {
+    if (enabled === 'yes') {
+      if (errorMsg !== '') return 'c-contact-form__error-label s1 show';
+      return 'c-contact-form__error-label s1';
+    }
+    return 'c-contact-form__error-label s1';
+  }
+
   return (
     <form
       // fixme: netlify
       // action="mailto:aga.labonarska@outlook.com"
       encType="text/plain"
       method="post"
-      // fixme: necessary?
       id="jsForm"
       name="portfolio-form"
       className="c-contact-form"
@@ -96,8 +100,7 @@ function ContactForm() {
                 : 'c-contact-form__error-label s1 show'
             }
             htmlFor="full-name"
-            // 'assertive' because this field will validate on blur
-            aria-live="assertive"
+            role="alert"
           >
             {fullName.values.errorMsg}
           </label>
@@ -124,7 +127,7 @@ function ContactForm() {
                 : 'c-contact-form__error-label s1 show'
             }
             htmlFor="pref-name"
-            aria-live="assertive"
+            role="alert"
           >
             {prefName.values.errorMsg}
           </label>
@@ -150,7 +153,7 @@ function ContactForm() {
                 : 'c-contact-form__error-label s1 show'
             }
             htmlFor="email"
-            aria-live="assertive"
+            role="alert"
           >
             {email.values.errorMsg}
           </label>
@@ -178,7 +181,7 @@ function ContactForm() {
                 : 'c-contact-form__error-label s1 show'
             }
             htmlFor="subject"
-            aria-live="assertive"
+            role="alert"
           >
             {subject.values.errorMsg}
           </label>
@@ -188,7 +191,6 @@ function ContactForm() {
           <p id="employer-group">
             Are you a potential employer (or writing on behalf of a company)?
           </p>
-          {/* todo: test lebbelled-by */}
           <div role="radiogroup" aria-labelledby="employer-group" tabIndex="0">
             <input
               type="radio"
@@ -208,8 +210,6 @@ function ContactForm() {
               value="no"
               required
               aria-checked={checked === 'no'}
-              // fixme: keyboard support for radiogroup works by default ? browser-compatible?
-              // tabIndex="-1"
               onClick={handleRadioClick}
             />{' '}
             <label htmlFor="employer-no">No</label>
@@ -227,7 +227,6 @@ function ContactForm() {
             maxLength="100"
             required
             disabled={checked === 'no'}
-            // value={companyName.values.value}
             value={checked === 'yes' ? companyName.values.value : ''}
             onChange={companyName.handleChange}
             onBlur={companyName.handleBlur}
@@ -238,7 +237,7 @@ function ContactForm() {
               companyName.values.errorMsg
             )}
             htmlFor="company-name"
-            aria-live="assertive"
+            role="alert"
           >
             {checked === 'yes' ? companyName.values.errorMsg : ''}
           </label>
@@ -264,14 +263,14 @@ function ContactForm() {
               companyUrl.values.errorMsg
             )}
             htmlFor="company-url"
-            aria-live="assertive"
+            role="alert"
           >
             {checked === 'yes' ? companyUrl.values.errorMsg : ''}
           </label>
         </div>
 
         <div className="l-contact-form-grid__item">
-          <label htmlFor="message">Your message:</label>
+          <label htmlFor="message">Your message: </label>
           <textarea
             className="o-textarea c-contact-form__input"
             name="message"

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-scroll';
-// import logoHTML5 from '../img/html5.png';
 import LogoHTML5 from './LogoHTML5';
 import LogoCSS3 from './LogoCSS3';
 import LogoJS from './LogoJS';
@@ -57,19 +56,8 @@ function Skills() {
                 Methodology + Namespaces
               </li>
               <li>CSS Pre-Processor: Sass/ SCSS</li>
-              <li>Modular code architecture</li>
               <li>Functional programming</li>
               <li>State Management</li>
-              <li>
-                <abbr
-                  title="Document Object Model"
-                  className="c-skill-group__abbr"
-                >
-                  DOM
-                </abbr>{' '}
-                API
-                {/* <!-- <abbr title="Browser Object Model">BOM</abbr> API --> */}
-              </li>
               <li>
                 <abbr
                   title="Object-oriented programming"
@@ -78,6 +66,25 @@ function Skills() {
                   OOP
                 </abbr>{' '}
                 basics
+              </li>
+              <li>
+                <abbr
+                  title="Document Object Model"
+                  className="c-skill-group__abbr"
+                >
+                  DOM
+                </abbr>{' '}
+                API
+                {/* <!--  --> */}
+              </li>
+              <li>
+                <abbr
+                  title="Browser Object Model"
+                  className="c-skill-group__abbr"
+                >
+                  BOM
+                </abbr>{' '}
+                API
               </li>
               <li>Canvas API</li>
               <li>SVG basics</li>
@@ -91,10 +98,7 @@ function Skills() {
                 <br /> React DevTools,
                 <br /> NVDA screen reader
               </li>
-              {/* fixme: */}
-              <li>
-                Code readability <br /> (JSDoc comments, ESLint Airbnb)
-              </li>
+              <li>Code readability</li>
             </ul>
           </div>
 
@@ -131,18 +135,17 @@ function Skills() {
             </h3>
             <ul>
               <li>
-                <time>2013</time> - Master of Research in Human Geography with
-                Distinction, University of Glasgow.
+                <time>2013</time> - Master of Research in Human Geography with{' '}
+                <b>Distinction</b>, University of Glasgow.
               </li>
               <li>
                 <time>2012</time> - Master of Arts in Geography with Honours of
-                the First Class, University of Glasgow.
+                the <b>First Class</b>, University of Glasgow.
               </li>
             </ul>
           </div>
         </div>
 
-        {/* <!-- fixme: download from linkedin? --> */}
         <p className="t3 u-text-center">
           Please{' '}
           <Link
@@ -154,7 +157,7 @@ function Skills() {
             className="o-link"
           >
             {' '}
-            contact me &#8595;
+            contact me <span aria-hidden="true">&#8595;</span>
           </Link>{' '}
           if you would like to see my <b>full CV</b>.
         </p>

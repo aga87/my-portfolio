@@ -6,12 +6,13 @@ function ProjectLinkSandbox(props) {
 
   return (
     <a className="o-link" href={href} target="_blank" rel="noopener noreferrer">
-      {name} &#8599;
+      {name} <span aria-hidden="true">&#8599;</span>
       <img
         className="o-link__img"
         src={sandboxLogo}
         alt=""
         title="https://blog.codepen.io/documentation/brand-assets/logos/"
+        aria-hidden="true"
       />
     </a>
   );

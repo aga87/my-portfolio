@@ -1,5 +1,8 @@
-// todo: jsDoc comments?
-
+/**
+ * Get the next index in a list
+ * @param {Number} currentIndex in a list
+ * @param {Obj} list - an array or NodeList
+ */
 export function getNextIndex(currentIndex, list) {
   if (currentIndex < list.length - 1) {
     return currentIndex + 1;
@@ -7,6 +10,11 @@ export function getNextIndex(currentIndex, list) {
   return 0;
 }
 
+/**
+ * Get the previous index in a list
+ * @param {Number} currentIndex in a list
+ * @param {Obj} list - an array or NodeList
+ */
 export function getPreviousIndex(currentIndex, list) {
   if (currentIndex > 0) {
     return currentIndex - 1;
@@ -14,9 +22,14 @@ export function getPreviousIndex(currentIndex, list) {
   return list.length - 1;
 }
 
+/**
+ * Validates a form field using Constraint Validation API
+ * @param {HTML Element} field to validate
+ * @returns a custom error message
+ */
+
 export function validateField(field) {
   const { valid } = field.validity;
-
   if (!valid) {
     const inputType = field.getAttribute('type');
     const { valueMissing, typeMismatch, tooLong } = field.validity;
@@ -42,10 +55,14 @@ export function validateField(field) {
   }
   return '';
 }
+/**
+ * Validates a form field using Constraint Validation API
+ * @param {HTML Textarea Element} textarea to validate
+ * @returns a custom error message
+ */
 
 export function validateTextarea(textarea) {
   const { valid } = textarea.validity;
-
   if (!valid) {
     const { valueMissing, tooShort } = textarea.validity;
     if (valueMissing || tooShort) {
@@ -54,13 +71,4 @@ export function validateTextarea(textarea) {
     return 'The value you entered for this field is invalid.';
   }
   return '';
-}
-
-// fixme: move from utils
-export function getCompanyLabelClassName(enabled, errorMsg) {
-  if (enabled === 'yes') {
-    if (errorMsg !== '') return 'c-contact-form__error-label s1 show';
-    return 'c-contact-form__error-label s1';
-  }
-  return 'c-contact-form__error-label s1';
 }

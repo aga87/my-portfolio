@@ -1,18 +1,12 @@
 import React from 'react';
-
 import Project from './Project';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
 import ProjectLinkCodepen from './ProjectLinkCodepen';
 import ProjectLinkSandbox from './ProjectLinkSandbox';
-
 import astromanMockup from '../img/smartmockups-astroman-450.png';
 import drumkitMockup from '../img/smartmockups-drumkit-450.png';
 import portfolioMockup from '../img/smartmockups-portfolio-450.png';
 import galleryMockup from '../img/smartmockups-gallery-450.png';
-
-// todo: grid styles
-
-// fixme: completion dates!!!!!!!!
 
 function Projects() {
   return (
@@ -27,15 +21,15 @@ function Projects() {
               altName="the Astroman game"
               date="February 2020"
               tags={[
+                { tag: 'Create React App', category: 'React' },
+                { tag: 'JSX', category: 'react' },
+                { tag: 'Redux', category: 'Redux' },
+                { tag: 'Functional programming', category: 'JS' },
+                { tag: 'ES6', category: 'JS' },
+                { tag: 'Canvas API', category: 'js' },
                 { tag: 'SCSS', category: 'CSS' },
                 { tag: 'BEM + Namespaces', category: 'CSS' },
                 { tag: 'Responsive, mobile-first', category: 'CSS' },
-                { tag: 'Canvas API', category: 'js' },
-                { tag: 'Functional programming', category: 'JS' },
-                { tag: 'ES6', category: 'JS' },
-                { tag: 'Redux', category: 'Redux' },
-                { tag: 'SVG', category: 'other' },
-                { tag: 'Webpack + Babel', category: 'other' },
               ]}
               links={[
                 <ProjectLinkGitHub
@@ -65,8 +59,8 @@ function Projects() {
                 Options modal.
               </p>
               <p>
-                I use Redux to manage the game&apos;s state, including the UI
-                and audio.
+                I use React and Redux to manage the game&apos;s state, including
+                the UI and audio.
               </p>
             </Project>
           </li>
@@ -75,22 +69,20 @@ function Projects() {
             <Project
               name="Drum Kit"
               imgSrc={drumkitMockup}
-              // fixme: alt?
               altName="the drum kit app"
               date="March 2020"
               tags={[
                 { tag: 'WAI-ARIA', category: 'html' },
+                { tag: 'Create React App', category: 'react' },
+                { tag: 'JSX', category: 'react' },
                 { tag: 'SCSS', category: 'CSS' },
                 { tag: 'BEM + Namespaces', category: 'CSS' },
                 { tag: 'Responsive, mobile-first', category: 'CSS' },
                 { tag: 'Browser-compatibility', category: 'css' },
-                { tag: 'Create React App', category: 'react' },
-                { tag: 'JSX', category: 'react' },
               ]}
               links={[
                 <ProjectLinkGitHub
                   name="See the Drum Kit (React) code on GitHub"
-                  // todo: set repository to public
                   href="https://github.com/aga87/drumkit-react"
                 />,
                 <ProjectLinkSandbox
@@ -112,28 +104,27 @@ function Projects() {
               name="My Portfolio Website"
               imgSrc={portfolioMockup}
               altName="my portfolio website"
-              date="March 2020"
+              date="June 2020"
               tags={[
+                { tag: 'Create React App', category: 'react' },
+                { tag: 'JSX', category: 'react' },
+                { tag: 'React Hooks', category: 'react' },
+                { tag: 'react-scroll', category: 'react' },
                 { tag: 'WAI-ARIA', category: 'html' },
                 { tag: 'SCSS', category: 'CSS' },
                 { tag: 'BEM + Namespaces', category: 'CSS' },
                 { tag: 'Responsive, mobile-first', category: 'CSS' },
                 { tag: 'CSS Browser-compatibility', category: 'css' },
-                { tag: 'Modular typography', category: 'CSS' },
+                { tag: 'ES6', category: 'js' },
                 { tag: 'Constraint Validation API', category: 'js' },
-                { tag: 'JSX', category: 'react' },
-                { tag: 'Create React App', category: 'react' },
-                { tag: 'react-scroll', category: 'react' },
-                { tag: 'React Hooks', category: 'react' },
               ]}
               links={[
                 <ProjectLinkGitHub
-                  name="See my portfolio (React) on GitHub"
+                  name="See my portfolio (React) code on GitHub"
                   href="www.google.com"
                 />,
               ]}
             >
-              {/* fixme:  */}
               <p>You are here &#9786;. </p>
               <p>
                 I use React controlled components together with the Constraint
@@ -150,7 +141,6 @@ function Projects() {
             <Project
               name="Image Gallery - Bikes"
               imgSrc={galleryMockup}
-              // fixme: alt?
               altName="the image gallery"
               date="April 2020"
               tags={[
@@ -166,12 +156,11 @@ function Projects() {
               ]}
               links={[
                 <ProjectLinkGitHub
-                  name="See the image gallery on GitHub"
+                  name="See the image gallery code on GitHub"
                   href="https://github.com/aga87/gallery"
                 />,
-                // todo: set to public
                 <ProjectLinkCodepen
-                  name="See the image gallery on Codepen"
+                  name="See the image gallery live on Codepen"
                   href="https://codepen.io/aga87/project/editor/ff6d38996f2bc7fee47490682e976e23#0"
                 />,
               ]}

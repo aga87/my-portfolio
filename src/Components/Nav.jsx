@@ -159,7 +159,7 @@ function Nav(props) {
     } else if (typeof focused === 'number') {
       navLinkRefs.current[focused].current.focus();
     }
-  }, [focused, navLinks]);
+  }, [focused]);
 
   //fixme:  https://stackoverflow.com/questions/54940399/how-target-dom-with-react-useref-in-map
 
@@ -181,7 +181,18 @@ function Nav(props) {
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
+        {/* <a
+        activeClass="active"
+        href={`#${navLink}`}
+        ref={navLinkRefs.current[index]}
+        className={`c-nav__link c-nav__link--${navLink}`}
+        role="menuitem"
+        data-key={navLink}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      > */}
         {navLink.toUpperCase()}
+        {/* </a> */}
       </Link>
     </li>
   ));

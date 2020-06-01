@@ -9,13 +9,14 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
 // todo: test wai-aria
-// fixme: ruler inside section?
 // fixme: touch doesnt work?
 // fixme: nav keyboard focus
+// fixme: proofread
+// fixme: contact form
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Nav navLinks={['home', 'projects', 'skills', 'about', 'contact']} />
       <Home />
       <Ruler />

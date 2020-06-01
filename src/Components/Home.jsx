@@ -1,5 +1,4 @@
 import React from 'react';
-
 import LogoHTML5 from './LogoHTML5';
 import LogoCSS3 from './LogoCSS3';
 import LogoJS from './LogoJS';
@@ -15,13 +14,11 @@ function Home() {
             Agnieszka Łabonarska
           </h1>
           <p className="c-home__descr t3">
-            <b> Front-end developer</b> <br />
+            <b>Front-end developer</b> <br />
             seeking full-time job opportunities in&nbsp;<b>Amsterdam</b>.
           </p>
 
-          {/* fixme: classnames for the list */}
-
-          <ul className="l-home-logo-list">
+          <ul className="l-home-logo-list" aria-label="skills">
             <li className="l-home-logo-list__item">
               {' '}
               <span className="h-offscreen">HTML5</span>

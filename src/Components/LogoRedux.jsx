@@ -9,6 +9,7 @@ function LogoRedux(props) {
       src={logoRedux}
       alt=""
       title="AAMINE1965 [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]"
+      aria-hidden="true"
     />
   );
 }

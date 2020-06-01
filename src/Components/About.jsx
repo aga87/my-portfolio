@@ -15,25 +15,25 @@ function About() {
             <img
               className="c-about-article__img l-about-article-float__img"
               src={agaPic}
-              // fixme: sizes attribute !!!
-              alt="Portrait of Aga Łabonarska against a floral wall hanging"
+              alt="Portrait of Aga against a floral wall hanging"
               title="Hi, I'm Aga"
             />
             <p className="c-about-article__text">
               <b>I&apos;m Aga.</b> In 2017 I started out on a journey to become
               a <b>self&#x2011;thought front&#x2011;end developer</b> and this
-              website is the result. I would like to live in a world where
-              everyone has an equal access to knowledge and so I am passionate
-              about the educational and empowering role
-              of&nbsp;the&nbsp;Internet, and a big fan of open-source.
+              website/portfolio is the result/ and here I present the results of
+              my work. I would like to live in a world where everyone has an
+              equal access to knowledge and so I am passionate about the
+              educational and empowering role of&nbsp;the&nbsp;Internet, and a
+              big fan of open-source.
             </p>
             <p className="c-about-article__text">
               {/* <!-- fixme: - text -->
-            <!-- fixme: - text - LEARNING DUTCH, do crafts projects--> */}
-              In my free time, I enjoy reading science-fiction, yoga,
-              rollerskating, cycling, poker, drumming, crafts projects and
-              visiting new places. I&apos;m also interested in combination of
-              DIY and technology to create sustainable and low-maintenance
+               */}
+              In my free time, I enjoy reading science-fiction, (sports?) -
+              yoga, inline skating, cycling, poker, drumming, crafts projects
+              and visiting new places. I&apos;m also interested in ((combination
+              of DIY and technology to create)) sustainable and low-maintenance
               methods of growing food in cities.
             </p>
             <p>

@@ -9,6 +9,7 @@ function LogoReact(props) {
       src={logoReact}
       alt=""
       title="Facebook [Public domain], via Wikimedia Commons"
+      aria-hidden="true"
     />
   );
 }
