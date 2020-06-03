@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { validateTextarea } from '../Utils';
 import useFormInput from '../Hooks/useFormInput';
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 function ContactForm() {
   const fullName = useFormInput();
   const prefName = useFormInput();
@@ -67,11 +73,25 @@ function ContactForm() {
     return 'c-contact-form__error-label s1';
   }
 
+  function handleSubmit(e) {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      // fixme: ...this.state
+      body: encode({ 'form-name': 'portfolio-form', fullName, prefName }),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
+
+    e.preventDefault();
+  }
+
   return (
     <form
-      // fixme: netlify
-      // action="mailto:aga.labonarska@outlook.com"
-      encType="text/plain"
+      data-netlify="true"
+      // fixme:
+      // encType="text/plain"
+      onSubmit={handleSubmit}
       method="post"
       id="jsForm"
       name="portfolio-form"

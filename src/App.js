@@ -8,16 +8,17 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
-// todo: test wai-aria
-// fixme: touch doesnt work?
+// todo: test wai-aria and proofread the About section
+// todo: test wai-aria on Nav
+
+// fixme: test on mobile
 // fixme: nav keyboard focus
-// fixme: proofread
-// fixme: contact form
+// fixme: contact form handle submission
 
 function App() {
   return (
     <div>
-      <Nav navLinks={['home', 'projects', 'skills', 'about', 'contact']} />
+      {/* <Nav navLinks={['home', 'projects', 'skills', 'about', 'contact']} />
       <Home />
       <Ruler />
       <Projects />
@@ -25,9 +26,9 @@ function App() {
       <Skills />
       <Ruler />
       <About />
-      <Ruler />
+      <Ruler /> */}
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
