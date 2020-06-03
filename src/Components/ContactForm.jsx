@@ -9,6 +9,9 @@ const encode = (data) => {
     .join('&');
 };
 
+// fixme: don't require company-url?
+// fixme: asterix next to required fields?
+
 function ContactForm() {
   const fullName = useFormInput();
   const prefName = useFormInput();
@@ -87,7 +90,6 @@ function ContactForm() {
         employer: checked,
         'company-name': companyName.values.value,
         'company-url': companyUrl.values.value,
-        // fixme: name clash
         message: message.value,
       }),
     })
@@ -95,6 +97,7 @@ function ContactForm() {
       .catch((error) => alert(error));
 
     e.preventDefault();
+    e.target.reset();
   }
 
   return (
@@ -106,7 +109,6 @@ function ContactForm() {
       className="c-contact-form"
       noValidate
     >
-      {/* todo: anti spam field */}
       {/* For Netlify form submissions */}
       <input type="hidden" name="form-name" value="portfolio-form" />
       <div className="l-contact-form-grid">
@@ -282,8 +284,6 @@ function ContactForm() {
             name="company-url"
             id="company-url"
             size="30"
-            // fixme: don't require?
-            // fixme: asterix next to required fields
             required
             disabled={checked === 'no'}
             value={checked === 'yes' ? companyUrl.values.value : ''}
