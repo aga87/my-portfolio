@@ -88,7 +88,7 @@ function ContactForm() {
         'company-name': companyName.values.value,
         'company-url': companyUrl.values.value,
         // fixme: name clash
-        // message: message,
+        message: message.value,
       }),
     })
       .then(() => alert('Success!'))
@@ -282,6 +282,8 @@ function ContactForm() {
             name="company-url"
             id="company-url"
             size="30"
+            // fixme: don't require?
+            // fixme: asterix next to required fields
             required
             disabled={checked === 'no'}
             value={checked === 'yes' ? companyUrl.values.value : ''}
