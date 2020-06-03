@@ -78,11 +78,17 @@ function ContactForm() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      // fixme: ...this.state
       body: encode({
         'form-name': 'portfolio-form',
         'full-name': fullName.values.value,
         'pref-name': prefName.values.value,
+        'e-mail': email.values.value,
+        subject: subject.values.value,
+        employer: checked,
+        'company-name': companyName.values.value,
+        'company-url': companyUrl.values.value,
+        // fixme: name clash
+        // message: message,
       }),
     })
       .then(() => alert('Success!'))
