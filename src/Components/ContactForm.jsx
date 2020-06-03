@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { validateTextarea } from '../Utils';
 import useFormInput from '../Hooks/useFormInput';
 
+// Netlify form submission
 const encode = (data) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -78,7 +79,11 @@ function ContactForm() {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       // fixme: ...this.state
-      body: encode({ 'form-name': 'portfolio-form', fullName, prefName }),
+      body: encode({
+        'form-name': 'portfolio-form',
+        fullName: fullName.values.value,
+        prefName: prefName.values.value,
+      }),
     })
       .then(() => alert('Success!'))
       .catch((error) => alert(error));
@@ -88,9 +93,6 @@ function ContactForm() {
 
   return (
     <form
-      // fixme:
-      // data-netlify="true"
-      // encType="text/plain"
       name="portfolio-form"
       method="post"
       onSubmit={handleSubmit}
@@ -98,7 +100,8 @@ function ContactForm() {
       className="c-contact-form"
       noValidate
     >
-      {/* fixme: netlify */}
+      {/* todo: anti spam field */}
+      {/* For Netlify form submissions */}
       <input type="hidden" name="form-name" value="portfolio-form" />
       <div className="l-contact-form-grid">
         <div>
