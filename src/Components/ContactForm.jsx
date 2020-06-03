@@ -11,8 +11,7 @@ const encode = (data) => {
 
 // fixme: don't require company-url?
 // fixme: asterix next to required fields?
-// fixme: reset form
-// fixme: thank you page
+// fixme: thank you page - modal like in astro game
 
 function ContactForm() {
   const initialValue = {
@@ -114,8 +113,8 @@ function ContactForm() {
       }),
     })
       .then(() => {
+        // fixme: customize message
         alert('Success!');
-        // fixme:
         resetForm();
       })
       .catch((error) => alert(error));
@@ -133,6 +132,7 @@ function ContactForm() {
       noValidate
     >
       {/* For Netlify form submissions */}
+      {/* fixme: aria hidden? */}
       <input type="hidden" name="form-name" value="portfolio-form" />
       <div className="l-contact-form-grid">
         <div>

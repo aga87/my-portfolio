@@ -13,7 +13,9 @@ import Footer from './Components/Footer';
 
 // fixme: test on mobile
 // fixme: nav keyboard focus
-// fixme: contact form handle submission
+// fixme: contact form custom modal
+
+// fixme: contact me on linkedin - open in new tab
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
       <Ruler />
       <About />
       <Ruler /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <Footer /> */}
     </div>
   );

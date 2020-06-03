@@ -2,16 +2,8 @@ import { useState } from 'react';
 import { validateField } from '../Utils';
 
 function useFormInput(initialValue) {
-  // const initialValue = {
-  //   value: '',
-  //   valid: false,
-  //   touched: false,
-  //   errorMsg: '',
-  // };
-
   const [values, setValues] = useState(initialValue);
 
-  //fixme:
   function resetField() {
     setValues(initialValue);
   }
@@ -37,7 +29,6 @@ function useFormInput(initialValue) {
     values,
     handleChange,
     handleBlur,
-    //fixme:
     resetField,
   };
 }
