@@ -81,8 +81,8 @@ function ContactForm() {
       // fixme: ...this.state
       body: encode({
         'form-name': 'portfolio-form',
-        fullName: fullName.values.value,
-        prefName: prefName.values.value,
+        fullNameData: fullName.values.value,
+        prefNameData: prefName.values.value,
       }),
     })
       .then(() => alert('Success!'))
