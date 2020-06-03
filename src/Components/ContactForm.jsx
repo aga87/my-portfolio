@@ -86,23 +86,15 @@ function ContactForm() {
     return 'c-contact-form__error-label s1';
   }
 
-  // fixme:
   function resetForm() {
     fullName.resetField();
     prefName.resetField();
     email.resetField();
-    // useFormInput(initialValue);
-    // prefName = useFormInput(initialValue);
-    // email = useFormInput(initialValue);
-    // subject = useFormInput(initialValue);
-    // const [checked, setChecked] = useState('yes');
-    // companyName = useFormInput(initialValue);
-    // companyUrl = useFormInput(initialValue);
-    // const [message, setMessage] = useState({
-    //   value: '',
-    //   valid: false,
-    //   infoMsg: '',
-    // });
+    subject.resetField();
+    setChecked('yes');
+    companyName.resetField();
+    companyUrl.resetField();
+    setMessage({ value: '', valid: false, infoMsg: '' });
   }
 
   function handleSubmit(e) {
