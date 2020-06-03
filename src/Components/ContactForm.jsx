@@ -11,15 +11,24 @@ const encode = (data) => {
 
 // fixme: don't require company-url?
 // fixme: asterix next to required fields?
+// fixme: reset form
+// fixme: thank you page
 
 function ContactForm() {
-  const fullName = useFormInput();
-  const prefName = useFormInput();
-  const email = useFormInput();
-  const subject = useFormInput();
+  const initialValue = {
+    value: '',
+    valid: false,
+    touched: false,
+    errorMsg: '',
+  };
+
+  const fullName = useFormInput(initialValue);
+  const prefName = useFormInput(initialValue);
+  const email = useFormInput(initialValue);
+  const subject = useFormInput(initialValue);
   const [checked, setChecked] = useState('yes');
-  const companyName = useFormInput();
-  const companyUrl = useFormInput();
+  const companyName = useFormInput(initialValue);
+  const companyUrl = useFormInput(initialValue);
   const [message, setMessage] = useState({
     value: '',
     valid: false,
@@ -77,6 +86,25 @@ function ContactForm() {
     return 'c-contact-form__error-label s1';
   }
 
+  // fixme:
+  function resetForm() {
+    fullName.resetField();
+    prefName.resetField();
+    email.resetField();
+    // useFormInput(initialValue);
+    // prefName = useFormInput(initialValue);
+    // email = useFormInput(initialValue);
+    // subject = useFormInput(initialValue);
+    // const [checked, setChecked] = useState('yes');
+    // companyName = useFormInput(initialValue);
+    // companyUrl = useFormInput(initialValue);
+    // const [message, setMessage] = useState({
+    //   value: '',
+    //   valid: false,
+    //   infoMsg: '',
+    // });
+  }
+
   function handleSubmit(e) {
     fetch('/', {
       method: 'POST',
@@ -93,11 +121,14 @@ function ContactForm() {
         message: message.value,
       }),
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        alert('Success!');
+        // fixme:
+        resetForm();
+      })
       .catch((error) => alert(error));
 
     e.preventDefault();
-    e.target.reset();
   }
 
   return (
