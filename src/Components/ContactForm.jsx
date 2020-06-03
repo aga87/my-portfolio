@@ -88,16 +88,18 @@ function ContactForm() {
 
   return (
     <form
-      data-netlify="true"
       // fixme:
+      // data-netlify="true"
       // encType="text/plain"
-      onSubmit={handleSubmit}
-      method="post"
-      id="jsForm"
       name="portfolio-form"
+      method="post"
+      onSubmit={handleSubmit}
+      id="jsForm"
       className="c-contact-form"
       noValidate
     >
+      {/* fixme: netlify */}
+      <input type="hidden" name="form-name" value="portfolio-form" />
       <div className="l-contact-form-grid">
         <div>
           <label htmlFor="full-name">Your full name:</label>
