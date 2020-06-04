@@ -118,7 +118,8 @@ function ContactForm() {
         // fixme: customize message
         // alert('Success!');
         setSuccessMsg(true);
-        resetForm();
+        // fixme: reset form on ok?
+        // resetForm();
       })
       .catch((error) => alert(error));
 
@@ -127,6 +128,7 @@ function ContactForm() {
 
   function handleSuccessBtnClick() {
     setSuccessMsg(false);
+    resetForm();
   }
 
   return (
