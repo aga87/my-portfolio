@@ -33,7 +33,6 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
-  // todo: test
   const [successMsg, setSuccessMsg] = useState(false);
 
   function handleRadioClick(e) {
@@ -115,11 +114,7 @@ function ContactForm() {
       }),
     })
       .then(() => {
-        // fixme: customize message
-        // alert('Success!');
         setSuccessMsg(true);
-        // fixme: reset form on ok?
-        // resetForm();
       })
       .catch((error) => alert(error));
 
@@ -133,7 +128,7 @@ function ContactForm() {
 
   return (
     <div>
-      {/* todo: test */}
+      {/* todo: style button */}
       <div
         className={
           successMsg

@@ -29,7 +29,7 @@ function App() {
       <Ruler />
       <About />
       <Ruler /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <Footer /> */}
     </div>
   );
