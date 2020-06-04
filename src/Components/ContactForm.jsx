@@ -33,6 +33,8 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
+  // todo: test
+  const [successMsg, setSuccessMsg] = useState(false);
 
   function handleRadioClick(e) {
     setChecked(e.target.value);
@@ -114,7 +116,8 @@ function ContactForm() {
     })
       .then(() => {
         // fixme: customize message
-        alert('Success!');
+        // alert('Success!');
+        setSuccessMsg(true);
         resetForm();
       })
       .catch((error) => alert(error));
@@ -122,245 +125,269 @@ function ContactForm() {
     e.preventDefault();
   }
 
+  function handleSuccessBtnClick() {
+    setSuccessMsg(false);
+  }
+
   return (
-    <form
-      name="portfolio-form"
-      method="post"
-      onSubmit={handleSubmit}
-      id="jsForm"
-      className="c-contact-form"
-      noValidate
-    >
-      {/* For Netlify form submissions */}
-      {/* fixme: aria hidden? */}
-      <input type="hidden" name="form-name" value="portfolio-form" />
-      <div className="l-contact-form-grid">
-        <div>
-          <label htmlFor="full-name">Your full name:</label>
-          <input
-            className="c-contact-form__input"
-            type="text"
-            name="full-name"
-            id="full-name"
-            size="30"
-            maxLength="100"
-            required
-            value={fullName.values.value}
-            onChange={fullName.handleChange}
-            onBlur={fullName.handleBlur}
-          />
-          <label
-            className={
-              fullName.values.errorMsg === ''
-                ? 'c-contact-form__error-label s1'
-                : 'c-contact-form__error-label s1 show'
-            }
-            htmlFor="full-name"
-            role="alert"
-          >
-            {fullName.values.errorMsg}
-          </label>
-        </div>
-
-        <div>
-          <label htmlFor="pref-name">What can I call you?</label>
-          <input
-            className="c-contact-form__input"
-            type="text"
-            name="pref-name"
-            id="pref-name"
-            size="30"
-            maxLength="50"
-            required
-            value={prefName.values.value}
-            onChange={prefName.handleChange}
-            onBlur={prefName.handleBlur}
-          />
-          <label
-            className={
-              prefName.values.errorMsg === ''
-                ? 'c-contact-form__error-label s1'
-                : 'c-contact-form__error-label s1 show'
-            }
-            htmlFor="pref-name"
-            role="alert"
-          >
-            {prefName.values.errorMsg}
-          </label>
-        </div>
-
-        <div>
-          <label htmlFor="email">Your email:</label>
-          <input
-            className="c-contact-form__input"
-            type="email"
-            name="e-mail"
-            id="email"
-            size="30"
-            required
-            value={email.values.value}
-            onChange={email.handleChange}
-            onBlur={email.handleBlur}
-          />
-          <label
-            className={
-              email.values.errorMsg === ''
-                ? 'c-contact-form__error-label s1'
-                : 'c-contact-form__error-label s1 show'
-            }
-            htmlFor="email"
-            role="alert"
-          >
-            {email.values.errorMsg}
-          </label>
-        </div>
-
-        <div>
-          <label htmlFor="subject">Subject:</label>
-          <input
-            className="c-contact-form__input"
-            type="text"
-            name="subject"
-            id="subject"
-            // maxlength of an email subject should be 78 characters - RFC 2822, section 2.1.1 recommendation
-            maxLength="78"
-            size="40"
-            required
-            value={subject.values.value}
-            onChange={subject.handleChange}
-            onBlur={subject.handleBlur}
-          />
-          <label
-            className={
-              subject.values.errorMsg === ''
-                ? 'c-contact-form__error-label s1'
-                : 'c-contact-form__error-label s1 show'
-            }
-            htmlFor="subject"
-            role="alert"
-          >
-            {subject.values.errorMsg}
-          </label>
-        </div>
-
-        <div className="l-contact-form-grid__item">
-          <p id="employer-group">
-            Are you a potential employer (or writing on behalf of a company)?
-          </p>
-          <div role="radiogroup" aria-labelledby="employer-group" tabIndex="0">
+    <div>
+      {/* todo: test */}
+      <div
+        className={
+          successMsg
+            ? 'c-success-modal c-success-modal--is-open'
+            : 'c-success-modal'
+        }
+      >
+        Your message has been sent.
+        <br /> I&apos;ll respond shortly.
+        <button type="button" onClick={handleSuccessBtnClick}>
+          OK
+        </button>
+      </div>
+      <form
+        name="portfolio-form"
+        method="post"
+        onSubmit={handleSubmit}
+        id="jsForm"
+        className="c-contact-form"
+        noValidate
+      >
+        {/* For Netlify form submissions */}
+        {/* fixme: aria hidden? */}
+        <input type="hidden" name="form-name" value="portfolio-form" />
+        <div className="l-contact-form-grid">
+          <div>
+            <label htmlFor="full-name">Your full name:</label>
             <input
-              type="radio"
-              name="employer"
-              id="employer-yes"
-              value="yes"
-              defaultChecked
+              className="c-contact-form__input"
+              type="text"
+              name="full-name"
+              id="full-name"
+              size="30"
+              maxLength="100"
               required
-              aria-checked={checked === 'yes'}
-              onClick={handleRadioClick}
-            />{' '}
-            <label htmlFor="employer-yes">Yes</label>{' '}
+              value={fullName.values.value}
+              onChange={fullName.handleChange}
+              onBlur={fullName.handleBlur}
+            />
+            <label
+              className={
+                fullName.values.errorMsg === ''
+                  ? 'c-contact-form__error-label s1'
+                  : 'c-contact-form__error-label s1 show'
+              }
+              htmlFor="full-name"
+              role="alert"
+            >
+              {fullName.values.errorMsg}
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="pref-name">What can I call you?</label>
             <input
-              type="radio"
-              name="employer"
-              id="employer-no"
-              value="no"
+              className="c-contact-form__input"
+              type="text"
+              name="pref-name"
+              id="pref-name"
+              size="30"
+              maxLength="50"
               required
-              aria-checked={checked === 'no'}
-              onClick={handleRadioClick}
-            />{' '}
-            <label htmlFor="employer-no">No</label>
+              value={prefName.values.value}
+              onChange={prefName.handleChange}
+              onBlur={prefName.handleBlur}
+            />
+            <label
+              className={
+                prefName.values.errorMsg === ''
+                  ? 'c-contact-form__error-label s1'
+                  : 'c-contact-form__error-label s1 show'
+              }
+              htmlFor="pref-name"
+              role="alert"
+            >
+              {prefName.values.errorMsg}
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="email">Your email:</label>
+            <input
+              className="c-contact-form__input"
+              type="email"
+              name="e-mail"
+              id="email"
+              size="30"
+              required
+              value={email.values.value}
+              onChange={email.handleChange}
+              onBlur={email.handleBlur}
+            />
+            <label
+              className={
+                email.values.errorMsg === ''
+                  ? 'c-contact-form__error-label s1'
+                  : 'c-contact-form__error-label s1 show'
+              }
+              htmlFor="email"
+              role="alert"
+            >
+              {email.values.errorMsg}
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="subject">Subject:</label>
+            <input
+              className="c-contact-form__input"
+              type="text"
+              name="subject"
+              id="subject"
+              // maxlength of an email subject should be 78 characters - RFC 2822, section 2.1.1 recommendation
+              maxLength="78"
+              size="40"
+              required
+              value={subject.values.value}
+              onChange={subject.handleChange}
+              onBlur={subject.handleBlur}
+            />
+            <label
+              className={
+                subject.values.errorMsg === ''
+                  ? 'c-contact-form__error-label s1'
+                  : 'c-contact-form__error-label s1 show'
+              }
+              htmlFor="subject"
+              role="alert"
+            >
+              {subject.values.errorMsg}
+            </label>
+          </div>
+
+          <div className="l-contact-form-grid__item">
+            <p id="employer-group">
+              Are you a potential employer (or writing on behalf of a company)?
+            </p>
+            <div
+              role="radiogroup"
+              aria-labelledby="employer-group"
+              tabIndex="0"
+            >
+              <input
+                type="radio"
+                name="employer"
+                id="employer-yes"
+                value="yes"
+                defaultChecked
+                required
+                aria-checked={checked === 'yes'}
+                onClick={handleRadioClick}
+              />{' '}
+              <label htmlFor="employer-yes">Yes</label>{' '}
+              <input
+                type="radio"
+                name="employer"
+                id="employer-no"
+                value="no"
+                required
+                aria-checked={checked === 'no'}
+                onClick={handleRadioClick}
+              />{' '}
+              <label htmlFor="employer-no">No</label>
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="company-name">Company name:</label>
+            <input
+              className="c-contact-form__input"
+              type="text"
+              name="company-name"
+              id="company-name"
+              size="30"
+              maxLength="100"
+              required
+              disabled={checked === 'no'}
+              value={checked === 'yes' ? companyName.values.value : ''}
+              onChange={companyName.handleChange}
+              onBlur={companyName.handleBlur}
+            />
+            <label
+              className={getCompanyLabelClassName(
+                checked,
+                companyName.values.errorMsg
+              )}
+              htmlFor="company-name"
+              role="alert"
+            >
+              {checked === 'yes' ? companyName.values.errorMsg : ''}
+            </label>
+          </div>
+
+          <div>
+            <label htmlFor="company-url">Company website:</label>
+            <input
+              className="c-contact-form__input"
+              type="url"
+              name="company-url"
+              id="company-url"
+              size="30"
+              required
+              disabled={checked === 'no'}
+              value={checked === 'yes' ? companyUrl.values.value : ''}
+              onChange={companyUrl.handleChange}
+              onBlur={companyUrl.handleBlur}
+            />
+            <label
+              className={getCompanyLabelClassName(
+                checked,
+                companyUrl.values.errorMsg
+              )}
+              htmlFor="company-url"
+              role="alert"
+            >
+              {checked === 'yes' ? companyUrl.values.errorMsg : ''}
+            </label>
+          </div>
+
+          <div className="l-contact-form-grid__item">
+            <label htmlFor="message">Your message: </label>
+            <textarea
+              className="o-textarea c-contact-form__input"
+              name="message"
+              id="message"
+              rows="10"
+              cols="40"
+              minLength="2"
+              maxLength="3000"
+              required
+              value={message.value}
+              onChange={handleTextareaChange}
+            />
+
+            <label
+              className="c-contact-form__counter s1"
+              htmlFor="message"
+              // 'polite' because this field will validate onChange
+              aria-live="polite"
+            >
+              {message.infoMsg}
+            </label>
           </div>
         </div>
 
-        <div>
-          <label htmlFor="company-name">Company name:</label>
-          <input
-            className="c-contact-form__input"
-            type="text"
-            name="company-name"
-            id="company-name"
-            size="30"
-            maxLength="100"
-            required
-            disabled={checked === 'no'}
-            value={checked === 'yes' ? companyName.values.value : ''}
-            onChange={companyName.handleChange}
-            onBlur={companyName.handleBlur}
-          />
-          <label
-            className={getCompanyLabelClassName(
-              checked,
-              companyName.values.errorMsg
-            )}
-            htmlFor="company-name"
-            role="alert"
+        <div className="u-text-right">
+          <button
+            type="submit"
+            className="o-btn"
+            disabled={!validateAllFields(checked, inputsToValidate, message)}
           >
-            {checked === 'yes' ? companyName.values.errorMsg : ''}
-          </label>
+            Send
+          </button>
         </div>
-
-        <div>
-          <label htmlFor="company-url">Company website:</label>
-          <input
-            className="c-contact-form__input"
-            type="url"
-            name="company-url"
-            id="company-url"
-            size="30"
-            required
-            disabled={checked === 'no'}
-            value={checked === 'yes' ? companyUrl.values.value : ''}
-            onChange={companyUrl.handleChange}
-            onBlur={companyUrl.handleBlur}
-          />
-          <label
-            className={getCompanyLabelClassName(
-              checked,
-              companyUrl.values.errorMsg
-            )}
-            htmlFor="company-url"
-            role="alert"
-          >
-            {checked === 'yes' ? companyUrl.values.errorMsg : ''}
-          </label>
-        </div>
-
-        <div className="l-contact-form-grid__item">
-          <label htmlFor="message">Your message: </label>
-          <textarea
-            className="o-textarea c-contact-form__input"
-            name="message"
-            id="message"
-            rows="10"
-            cols="40"
-            minLength="2"
-            maxLength="3000"
-            required
-            value={message.value}
-            onChange={handleTextareaChange}
-          />
-
-          <label
-            className="c-contact-form__counter s1"
-            htmlFor="message"
-            // 'polite' because this field will validate onChange
-            aria-live="polite"
-          >
-            {message.infoMsg}
-          </label>
-        </div>
-      </div>
-
-      <div className="u-text-right">
-        <button
-          type="submit"
-          className="o-btn"
-          disabled={!validateAllFields(checked, inputsToValidate, message)}
-        >
-          Send
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 
