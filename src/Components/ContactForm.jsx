@@ -11,7 +11,6 @@ const encode = (data) => {
 
 // fixme: don't require company-url?
 // fixme: asterix next to required fields?
-// fixme: thank you page - modal like in astro game
 
 function ContactForm() {
   const initialValue = {
@@ -33,7 +32,8 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
-  const [successMsg, setSuccessMsg] = useState(false);
+  // fixme: change to false
+  const [successMsg, setSuccessMsg] = useState(true);
 
   function handleRadioClick(e) {
     setChecked(e.target.value);
@@ -128,7 +128,6 @@ function ContactForm() {
 
   return (
     <div>
-      {/* todo: style button */}
       <div
         className={
           successMsg
@@ -136,11 +135,22 @@ function ContactForm() {
             : 'c-success-modal'
         }
       >
-        Your message has been sent.
-        <br /> I&apos;ll respond shortly.
-        <button type="button" onClick={handleSuccessBtnClick}>
-          OK
-        </button>
+        <div className="c-success-modal__msg">
+          {/* fixme: text */}
+          Your message has been sent.
+          <br /> I&apos;ll respond shortly.
+          <br />
+          Thank you.
+          <br />
+          <br />
+          <button
+            type="button"
+            className="o-btn"
+            onClick={handleSuccessBtnClick}
+          >
+            OK
+          </button>
+        </div>
       </div>
       <form
         name="portfolio-form"

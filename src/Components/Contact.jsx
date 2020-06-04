@@ -16,6 +16,8 @@ function Contact() {
           <a
             className="o-link"
             href="https://www.linkedin.com/in/agalabonarska/"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Contact me on LinkedIn <span aria-hidden="true">&#8599;</span>{' '}
             <img

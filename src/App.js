@@ -13,9 +13,32 @@ import Footer from './Components/Footer';
 
 // fixme: test on mobile
 // fixme: nav keyboard focus
-// fixme: contact form custom modal
+// fixme: html head
+// fixme: wai aria success msg test!!
 
-// fixme: contact me on linkedin - open in new tab
+/**
+ * 
+ * function handleScroll() {
+  const sections = document.querySelectorAll('.jsSection');
+  sections.forEach((section) => {
+    if (this.pageYOffset >= section.offsetTop - 60) {
+      // fixme: access with ref?
+      linkArrows.forEach((arrow) => arrow.classList.remove('is-selected'));
+
+      const id = section.id;
+
+      const navLink = document.querySelector(`[href = "#${id}"]`);
+      const linkArrow = navLink.querySelector('.jsNavLink__arrow');
+      linkArrow.classList.add('is-selected');
+    }
+  });
+}
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 
 function App() {
   return (
@@ -29,7 +52,7 @@ function App() {
       <Ruler />
       <About />
       <Ruler /> */}
-      {/* <Contact /> */}
+      <Contact />
       {/* <Footer /> */}
     </div>
   );

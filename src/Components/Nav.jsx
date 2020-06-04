@@ -162,6 +162,7 @@ function Nav(props) {
   }, [focused]);
 
   //fixme:  https://stackoverflow.com/questions/54940399/how-target-dom-with-react-useref-in-map
+  // fixme: https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 
   const className = isExpanded ? 'is-expanded' : '';
 
