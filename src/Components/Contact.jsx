@@ -2,10 +2,10 @@ import React from 'react';
 import ContactForm from './ContactForm';
 import linkedinImg from '../img/linkedin.svg.png';
 
-function Contact() {
+function Contact(props, ref) {
   return (
     <div className="l-wrapper">
-      <section className="c-section u-pad" id="contact">
+      <section className="c-section u-pad" ref={ref} id="contact">
         <h2 className="c-section__heading t2">CONTACT:</h2>
         <p className="c-section__text">
           I&apos;d love to hear about exciting job opportunities in{' '}
@@ -40,4 +40,6 @@ function Contact() {
   );
 }
 
-export default Contact;
+const forwardedContact = React.forwardRef(Contact);
+
+export default forwardedContact;

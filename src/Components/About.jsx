@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
-function About() {
+function About(props, ref) {
   return (
     <div className="l-wrapper">
-      <section className="c-section" id="about">
+      <section className="c-section" ref={ref} id="about">
         <h2 className="c-section__heading t2">ABOUT:</h2>
 
         <article className="c-about-article">
@@ -86,4 +86,6 @@ function About() {
   );
 }
 
-export default About;
+const forwardedAbout = React.forwardRef(About);
+
+export default forwardedAbout;

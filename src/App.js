@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Ruler from './Components/Ruler';
@@ -16,36 +16,29 @@ import Footer from './Components/Footer';
 // fixme: html head
 // fixme: wai aria success msg test!!
 // fixme: focus next form input on enter!!
-
-/**
- * 
- * function handleScroll() {
-  const sections = document.querySelectorAll('.jsSection');
-  sections.forEach((section) => {
-    if (this.pageYOffset >= section.offsetTop - 60) {
-      // fixme: access with ref?
-      linkArrows.forEach((arrow) => arrow.classList.remove('is-selected'));
-
-      const id = section.id;
-
-      const navLink = document.querySelector(`[href = "#${id}"]`);
-      const linkArrow = navLink.querySelector('.jsNavLink__arrow');
-      linkArrow.classList.add('is-selected');
-    }
-  });
-}
- * 
- * 
- * 
- * 
- * 
- */
+// fixme: uninstall scroll-spy and remove from the projects desc
+// fixme: smooth scroll on link click?
 
 function App() {
+  //todo: pass id as a prop?
+  // fixme: extract wrapper here?
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
+  const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
+  const sectionRefs = useRef(navLinks.map(() => React.createRef()));
 
-  function handleScroll(e) {
-    const yOffset = window.pageYOffset;
+  function handleScroll() {
+    // For each section
+    sectionRefs.current.forEach((sectionRef, index) => {
+      // Check if the user scroll to or past the section
+      if (window.pageYOffset >= sectionRef.current.offsetTop - 60) {
+        // Remove active classes for all nav links
+        navLinkRefs.current.forEach((navLinkRef) => {
+          navLinkRef.current.classList.remove('active');
+        });
+        // And add and active class to the section currently scrolled-to/ by
+        navLinkRefs.current[index].current.classList.add('active');
+      }
+    });
   }
 
   useEffect(() => {
@@ -57,16 +50,16 @@ function App() {
 
   return (
     <div>
-      <Nav navLinks={navLinks} />
-      <Home />
+      <Nav navLinks={navLinks} ref={navLinkRefs} />
+      <Home ref={sectionRefs.current[0]} />
       <Ruler />
-      <Projects />
+      <Projects ref={sectionRefs.current[1]} />
       <Ruler />
-      <Skills />
+      <Skills ref={sectionRefs.current[2]} />
       <Ruler />
-      <About />
+      <About ref={sectionRefs.current[3]} />
       <Ruler />
-      <Contact />
+      <Contact ref={sectionRefs.current[4]} />
       <Footer />
     </div>
   );

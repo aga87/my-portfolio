@@ -8,10 +8,11 @@ import drumkitMockup from '../img/smartmockups-drumkit-450.png';
 import portfolioMockup from '../img/smartmockups-portfolio-450.png';
 import galleryMockup from '../img/smartmockups-gallery-450.png';
 
-function Projects() {
+// fixme: empty props
+function Projects(props, ref) {
   return (
     <div className="l-wrapper">
-      <section className="c-section" id="projects">
+      <section className="c-section" ref={ref} id="projects">
         <h2 className="c-section__heading t2">PROJECTS:</h2>
         <ol className="c-project-list">
           <li className="c-project-list__item">
@@ -185,4 +186,6 @@ function Projects() {
   );
 }
 
-export default Projects;
+const forwardedProjects = React.forwardRef(Projects);
+
+export default forwardedProjects;

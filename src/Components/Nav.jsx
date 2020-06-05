@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 import NavBtn from './NavBtn';
 import { getPreviousIndex, getNextIndex } from '../Utils';
 
 // fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
 
-function Nav(props) {
+function Nav(props, ref) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');
   const { navLinks } = props;
-  const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
+  // const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
   const navBtnRef = useRef(null);
 
   function handleNavBtnClick() {
@@ -157,11 +157,11 @@ function Nav(props) {
     if (focused === 'navBtn') {
       navBtnRef.current.focus();
     } else if (typeof focused === 'number') {
-      navLinkRefs.current[focused].current.focus();
+      // navLinkRefs.current[focused].current.focus();
+      ref.current[focused].current.focus();
     }
-  }, [focused]);
+  }, [focused, ref]);
 
-  //fixme:  https://stackoverflow.com/questions/54940399/how-target-dom-with-react-useref-in-map
   // fixme: https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 
   const className = isExpanded ? 'is-expanded' : '';
@@ -183,9 +183,10 @@ function Nav(props) {
         onKeyDown={handleKeyDown}
       > */}
       <a
-        activeClass="active"
+        // activeClass="active"
         href={`#${navLink}`}
-        ref={navLinkRefs.current[index]}
+        // ref={navLinkRefs.current[index]}
+        ref={ref.current[index]}
         className={`c-nav__link c-nav__link--${navLink}`}
         role="menuitem"
         data-key={navLink}
@@ -219,4 +220,7 @@ function Nav(props) {
   );
 }
 
-export default Nav;
+const forwardedNav = React.forwardRef(Nav);
+
+// export default Nav;
+export default forwardedNav;

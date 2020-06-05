@@ -5,10 +5,11 @@ import LogoJS from './LogoJS';
 import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
-function Home() {
+// fixme: pass id as a prop?
+function Home(props, ref) {
   return (
     <div className="l-wrapper">
-      <main id="home" className="c-home l-home">
+      <main ref={ref} id="home" className="c-home l-home">
         <div className="l-home__content">
           <h1 lang="pl" className="c-home__heading t1-fluid">
             Agnieszka Łabonarska
@@ -50,4 +51,6 @@ function Home() {
   );
 }
 
-export default Home;
+const forwardedHome = React.forwardRef(Home);
+
+export default forwardedHome;

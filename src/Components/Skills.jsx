@@ -6,10 +6,10 @@ import LogoJS from './LogoJS';
 import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
-function Skills() {
+function Skills(props, ref) {
   return (
     <div className="l-wrapper">
-      <section className="c-section l-section" id="skills">
+      <section className="c-section l-section" ref={ref} id="skills">
         <h2 className="c-section__heading t2">SKILLS:</h2>
 
         <div className="l-skills-grid">
@@ -166,4 +166,6 @@ function Skills() {
   );
 }
 
-export default Skills;
+const forwardedSkills = React.forwardRef(Skills);
+
+export default forwardedSkills;
