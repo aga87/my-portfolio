@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from './Components/Nav';
 import Home from './Components/Home';
 import Ruler from './Components/Ruler';
@@ -15,7 +15,7 @@ import Footer from './Components/Footer';
 // fixme: nav keyboard focus
 // fixme: html head
 // fixme: wai aria success msg test!!
-// fixme: focus next form input on enter???
+// fixme: focus next form input on enter!!
 
 /**
  * 
@@ -42,9 +42,22 @@ import Footer from './Components/Footer';
  */
 
 function App() {
+  const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
+
+  function handleScroll(e) {
+    const yOffset = window.pageYOffset;
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return function cleanup() {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <div>
-      {/* <Nav navLinks={['home', 'projects', 'skills', 'about', 'contact']} />
+      <Nav navLinks={navLinks} />
       <Home />
       <Ruler />
       <Projects />
@@ -52,9 +65,9 @@ function App() {
       <Skills />
       <Ruler />
       <About />
-      <Ruler /> */}
+      <Ruler />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -168,7 +168,7 @@ function Nav(props) {
 
   const navListItems = navLinks.map((navLink, index) => (
     <li key={navLink} className="l-nav-list__item" role="none">
-      <Link
+      {/* <Link
         activeClass="active"
         to={navLink}
         spy
@@ -181,8 +181,8 @@ function Nav(props) {
         data-key={navLink}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
-      >
-        {/* <a
+      > */}
+      <a
         activeClass="active"
         href={`#${navLink}`}
         ref={navLinkRefs.current[index]}
@@ -191,10 +191,10 @@ function Nav(props) {
         data-key={navLink}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
-      > */}
+      >
         {navLink.toUpperCase()}
-        {/* </a> */}
-      </Link>
+      </a>
+      {/* </Link> */}
     </li>
   ));
 
