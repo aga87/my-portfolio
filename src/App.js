@@ -15,6 +15,7 @@ import Footer from './Components/Footer';
 // fixme: nav keyboard focus
 // fixme: html head
 // fixme: wai aria success msg test!!
+// fixme: focus next form input on enter???
 
 /**
  * 
@@ -52,7 +53,7 @@ function App() {
       <Ruler />
       <About />
       <Ruler /> */}
-      {/* <Contact /> */}
+      <Contact />
       {/* <Footer /> */}
     </div>
   );
