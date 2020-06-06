@@ -19,9 +19,9 @@ import Footer from './Components/Footer';
 // fixme: uninstall scroll-spy and remove from the projects desc
 // fixme: smooth scroll on link click?
 // https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
+// fixme: About - Link elements - replace with native?
 
 function App() {
-  // fixme: extract wrapper here?
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
   const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
   const sectionRefs = useRef(navLinks.map(() => React.createRef()));
@@ -51,15 +51,17 @@ function App() {
   return (
     <div>
       <Nav navLinks={navLinks} ref={navLinkRefs} />
-      <Home ref={sectionRefs.current[0]} id={navLinks[0]} />
-      <Ruler />
-      <Projects ref={sectionRefs.current[1]} id={navLinks[1]} />
-      <Ruler />
-      <Skills ref={sectionRefs.current[2]} id={navLinks[2]} />
-      <Ruler />
-      <About ref={sectionRefs.current[3]} id={navLinks[3]} />
-      <Ruler />
-      <Contact ref={sectionRefs.current[4]} id={navLinks[4]} />
+      <div className="l-wrapper">
+        <Home ref={sectionRefs.current[0]} id={navLinks[0]} />
+        <Ruler />
+        <Projects ref={sectionRefs.current[1]} id={navLinks[1]} />
+        <Ruler />
+        <Skills ref={sectionRefs.current[2]} id={navLinks[2]} />
+        <Ruler />
+        <About ref={sectionRefs.current[3]} id={navLinks[3]} />
+        <Ruler />
+        <Contact ref={sectionRefs.current[4]} id={navLinks[4]} />
+      </div>
       <Footer />
     </div>
   );

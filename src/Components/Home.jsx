@@ -9,46 +9,44 @@ function Home(props, ref) {
   const { id } = props;
 
   return (
-    <div className="l-wrapper">
-      <main ref={ref} id={id} className="c-home l-home">
-        <div className="l-home__content">
-          <h1 lang="pl" className="c-home__heading t1-fluid">
-            Agnieszka Łabonarska
-          </h1>
-          <p className="c-home__descr t3">
-            <b>Front-end developer</b> <br />
-            seeking full-time job opportunities in&nbsp;<b>Amsterdam</b>.
-          </p>
+    <main ref={ref} id={id} className="c-home l-home">
+      <div className="l-home__content">
+        <h1 lang="pl" className="c-home__heading t1-fluid">
+          Agnieszka Łabonarska
+        </h1>
+        <p className="c-home__descr t3">
+          <b>Front-end developer</b> <br />
+          seeking full-time job opportunities in&nbsp;<b>Amsterdam</b>.
+        </p>
 
-          <ul className="l-home-logo-list" aria-label="skills">
-            <li className="l-home-logo-list__item">
-              {' '}
-              <span className="h-offscreen">HTML5</span>
-              <LogoHTML5 className="o-home-logo" />
-            </li>
-            <li className="l-home-logo-list__item">
-              <span className="h-offscreen">CSS3</span>
-              <LogoCSS3 className="o-home-logo" />
-            </li>
-            <li className="l-home-logo-list__item">
-              <span className="h-offscreen">JavaScript</span>
+        <ul className="l-home-logo-list" aria-label="skills">
+          <li className="l-home-logo-list__item">
+            {' '}
+            <span className="h-offscreen">HTML5</span>
+            <LogoHTML5 className="o-home-logo" />
+          </li>
+          <li className="l-home-logo-list__item">
+            <span className="h-offscreen">CSS3</span>
+            <LogoCSS3 className="o-home-logo" />
+          </li>
+          <li className="l-home-logo-list__item">
+            <span className="h-offscreen">JavaScript</span>
 
-              <LogoJS className="o-home-logo" />
-            </li>
-            <li className="l-home-logo-list__item">
-              <span className="h-offscreen">Redux</span>
+            <LogoJS className="o-home-logo" />
+          </li>
+          <li className="l-home-logo-list__item">
+            <span className="h-offscreen">Redux</span>
 
-              <LogoRedux className="o-home-logo" />
-            </li>
-            <li className="l-home-logo-list__item">
-              <span className="h-offscreen">React</span>
+            <LogoRedux className="o-home-logo" />
+          </li>
+          <li className="l-home-logo-list__item">
+            <span className="h-offscreen">React</span>
 
-              <LogoReact className="o-home-logo o-home-logo--spin" />
-            </li>
-          </ul>
-        </div>
-      </main>
-    </div>
+            <LogoReact className="o-home-logo o-home-logo--spin" />
+          </li>
+        </ul>
+      </div>
+    </main>
   );
 }
 
