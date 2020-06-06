@@ -8,11 +8,12 @@ import drumkitMockup from '../img/smartmockups-drumkit-450.png';
 import portfolioMockup from '../img/smartmockups-portfolio-450.png';
 import galleryMockup from '../img/smartmockups-gallery-450.png';
 
-// fixme: empty props
 function Projects(props, ref) {
+  const { id } = props;
+
   return (
     <div className="l-wrapper">
-      <section className="c-section" ref={ref} id="projects">
+      <section className="c-section" ref={ref} id={id}>
         <h2 className="c-section__heading t2">PROJECTS:</h2>
         <ol className="c-project-list">
           <li className="c-project-list__item">

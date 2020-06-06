@@ -3,9 +3,11 @@ import { Link } from 'react-scroll';
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
 function About(props, ref) {
+  const { id } = props;
+
   return (
     <div className="l-wrapper">
-      <section className="c-section" ref={ref} id="about">
+      <section className="c-section" ref={ref} id={id}>
         <h2 className="c-section__heading t2">ABOUT:</h2>
 
         <article className="c-about-article">

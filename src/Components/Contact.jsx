@@ -3,9 +3,11 @@ import ContactForm from './ContactForm';
 import linkedinImg from '../img/linkedin.svg.png';
 
 function Contact(props, ref) {
+  const { id } = props;
+
   return (
     <div className="l-wrapper">
-      <section className="c-section u-pad" ref={ref} id="contact">
+      <section className="c-section u-pad" ref={ref} id={id}>
         <h2 className="c-section__heading t2">CONTACT:</h2>
         <p className="c-section__text">
           I&apos;d love to hear about exciting job opportunities in{' '}

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import { Link } from 'react-scroll';
 import NavBtn from './NavBtn';
 import { getPreviousIndex, getNextIndex } from '../Utils';
 
@@ -9,7 +8,6 @@ function Nav(props, ref) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');
   const { navLinks } = props;
-  // const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
   const navBtnRef = useRef(null);
 
   function handleNavBtnClick() {
@@ -153,39 +151,30 @@ function Nav(props, ref) {
     }
   }
 
+  useEffect(
+    () => {
+      // Highlight home menu item after first render only
+      ref.current[0].current.classList.add('active');
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
+
   useEffect(() => {
     if (focused === 'navBtn') {
       navBtnRef.current.focus();
     } else if (typeof focused === 'number') {
-      // navLinkRefs.current[focused].current.focus();
+      // focus the nav link with the given index
       ref.current[focused].current.focus();
     }
   }, [focused, ref]);
-
-  // fixme: https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 
   const className = isExpanded ? 'is-expanded' : '';
 
   const navListItems = navLinks.map((navLink, index) => (
     <li key={navLink} className="l-nav-list__item" role="none">
-      {/* <Link
-        activeClass="active"
-        to={navLink}
-        spy
-        smooth
-        offset={-60}
-        duration={500}
-        ref={navLinkRefs.current[index]}
-        className={`c-nav__link c-nav__link--${navLink}`}
-        role="menuitem"
-        data-key={navLink}
-        onClick={handleClick}
-        onKeyDown={handleKeyDown}
-      > */}
       <a
-        // activeClass="active"
         href={`#${navLink}`}
-        // ref={navLinkRefs.current[index]}
         ref={ref.current[index]}
         className={`c-nav__link c-nav__link--${navLink}`}
         role="menuitem"
@@ -195,7 +184,6 @@ function Nav(props, ref) {
       >
         {navLink.toUpperCase()}
       </a>
-      {/* </Link> */}
     </li>
   ));
 
@@ -222,5 +210,4 @@ function Nav(props, ref) {
 
 const forwardedNav = React.forwardRef(Nav);
 
-// export default Nav;
 export default forwardedNav;

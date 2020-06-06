@@ -7,9 +7,11 @@ import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
 function Skills(props, ref) {
+  const { id } = props;
+
   return (
     <div className="l-wrapper">
-      <section className="c-section l-section" ref={ref} id="skills">
+      <section className="c-section l-section" ref={ref} id={id}>
         <h2 className="c-section__heading t2">SKILLS:</h2>
 
         <div className="l-skills-grid">
