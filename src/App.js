@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div>
-      <Nav navLinks={navLinks} ref={navLinkRefs} />
+      {/* <Nav navLinks={navLinks} ref={navLinkRefs} />
       <div className="l-wrapper">
         <Home ref={sectionRefs.current[0]} id={navLinks[0]} />
         <Ruler />
@@ -61,7 +61,7 @@ function App() {
         <Ruler />
         <Contact ref={sectionRefs.current[4]} id={navLinks[4]} />
       </div>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
