@@ -8,18 +8,17 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
-// todo: test wai-aria and proofread the About section
-// todo: test wai-aria on Nav
+// fixme:  test wai-aria - About & Nav
+// fixme: wai aria success msg test!! and the hidden input
+
+// fixme: add tabindex=-1 to nav links? and tabindex = 0 to parent? see in the gallery
 
 // fixme: test on mobile
-// fixme: nav keyboard focus
 // fixme: html head
-// fixme: wai aria success msg test!!
 // fixme: focus next form input on enter!!
-// fixme: uninstall scroll-spy and remove from the projects desc
 // fixme: smooth scroll on link click?
 // https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
-// fixme: About - Link elements - replace with native?
+// fixme: remove scroll-spy from the projects desc? using it in the about section
 
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];

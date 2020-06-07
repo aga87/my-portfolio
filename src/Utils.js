@@ -56,7 +56,7 @@ export function validateField(field) {
   return '';
 }
 /**
- * Validates a form field using Constraint Validation API
+ * Validates a textarea using Constraint Validation API
  * @param {HTML Textarea Element} textarea to validate
  * @returns a custom error message
  */

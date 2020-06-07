@@ -1,18 +1,24 @@
 .c-success-modal {
   display: none;
   @include fixed-full-screen();
-  background: rgba(255, 255, 255, 0.5);
+  background: $white-05;
 
   &--is-open {
     display: block;
   }
 
-  &__msg {
+  &__inner {
     display: block;
+    min-width: max-content;
     @include centerXY-absolute();
-    padding: $b-l-h * 1rem;
+    padding: $b-l-h * 1em;
     border: 4px solid $color-redux;
+    border-radius: 10px;
     background: $white;
     text-align: center;
+  }
+
+  &__msg {
+    margin-bottom: $b-l-h * 1rem;
   }
 }

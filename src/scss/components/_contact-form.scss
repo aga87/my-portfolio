@@ -13,6 +13,15 @@
     }
   }
 
+  &__label-asterisk {
+    color: $color-html;
+    font-weight: bold;
+
+    &.c-contact-form__label-asterisk--hide {
+      display: none;
+    }
+  }
+
   &__error-label {
     display: none;
     padding-left: 0.5em;

@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import NavBtn from './NavBtn';
 import { getPreviousIndex, getNextIndex } from '../Utils';
 
-// fixme: add tabindex=-1 to links? and tabindex = 0 to parent? see in the gallery
-
 function Nav(props, ref) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');

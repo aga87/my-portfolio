@@ -9,9 +9,6 @@ const encode = (data) => {
     .join('&');
 };
 
-// fixme: don't require company-url?
-// fixme: asterix next to required fields?
-
 function ContactForm() {
   const initialValue = {
     value: '',
@@ -32,8 +29,7 @@ function ContactForm() {
     valid: false,
     infoMsg: '',
   });
-  // fixme: change to false
-  const [successMsg, setSuccessMsg] = useState(true);
+  const [successMsg, setSuccessMsg] = useState(false);
 
   function handleRadioClick(e) {
     setChecked(e.target.value);
@@ -70,6 +66,15 @@ function ContactForm() {
         (input) => input !== companyName && input !== companyUrl
       );
       const inputsAreValid = inputsNonEmployer.every(
+        (input) => input.values.valid
+      );
+      return inputsAreValid && textareaIsValid;
+    }
+
+    // Little workaround: don't validate optional empty inputs even if they hadn't been touched
+    if (companyUrl.values.value === '') {
+      const inputsNonOptional = inputs.filter((input) => input !== companyUrl);
+      const inputsAreValid = inputsNonOptional.every(
         (input) => input.values.valid
       );
       return inputsAreValid && textareaIsValid;
@@ -135,14 +140,12 @@ function ContactForm() {
             : 'c-success-modal'
         }
       >
-        <div className="c-success-modal__msg">
-          {/* fixme: text */}
-          Your message has been sent.
-          <br /> I&apos;ll respond shortly.
-          <br />
-          Thank you.
-          <br />
-          <br />
+        <div className="c-success-modal__inner">
+          <p className="c-success-modal__msg">
+            Thank you for getting in touch.
+            <br /> I&apos;ll respond shortly.
+          </p>
+
           <button
             type="button"
             className="o-btn"
@@ -161,11 +164,18 @@ function ContactForm() {
         noValidate
       >
         {/* For Netlify form submissions */}
-        {/* fixme: aria hidden? */}
         <input type="hidden" name="form-name" value="portfolio-form" />
         <div className="l-contact-form-grid">
           <div>
-            <label htmlFor="full-name">Your full name:</label>
+            <label htmlFor="full-name">
+              Your full name
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <input
               className="c-contact-form__input"
               type="text"
@@ -192,7 +202,15 @@ function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="pref-name">What can I call you?</label>
+            <label htmlFor="pref-name">
+              What can I call you?
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <input
               className="c-contact-form__input"
               type="text"
@@ -219,7 +237,15 @@ function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="email">Your email:</label>
+            <label htmlFor="email">
+              Your email
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <input
               className="c-contact-form__input"
               type="email"
@@ -245,7 +271,15 @@ function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="subject">Subject:</label>
+            <label htmlFor="subject">
+              Subject
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <input
               className="c-contact-form__input"
               type="text"
@@ -275,6 +309,12 @@ function ContactForm() {
           <div className="l-contact-form-grid__item">
             <p id="employer-group">
               Are you a potential employer (or writing on behalf of a company)?
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
             </p>
             <div
               role="radiogroup"
@@ -306,7 +346,19 @@ function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="company-name">Company name:</label>
+            <label htmlFor="company-name">
+              Company name
+              <span
+                className={
+                  checked === 'yes'
+                    ? 'c-contact-form__label-asterisk'
+                    : 'c-contact-form__label-asterisk c-contact-form__label-asterisk--hide'
+                }
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <input
               className="c-contact-form__input"
               type="text"
@@ -333,14 +385,13 @@ function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="company-url">Company website:</label>
+            <label htmlFor="company-url">Company website</label>
             <input
               className="c-contact-form__input"
               type="url"
               name="company-url"
               id="company-url"
               size="30"
-              required
               disabled={checked === 'no'}
               value={checked === 'yes' ? companyUrl.values.value : ''}
               onChange={companyUrl.handleChange}
@@ -359,7 +410,15 @@ function ContactForm() {
           </div>
 
           <div className="l-contact-form-grid__item">
-            <label htmlFor="message">Your message: </label>
+            <label htmlFor="message">
+              Your message
+              <span
+                className="c-contact-form__label-asterisk"
+                aria-hidden="true"
+              >
+                *
+              </span>
+            </label>
             <textarea
               className="o-textarea c-contact-form__input"
               name="message"
