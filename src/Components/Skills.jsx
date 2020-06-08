@@ -6,7 +6,16 @@ import LogoJS from './LogoJS';
 import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
-function Skills() {
+function Skills(props) {
+  // fixme:
+  const { scrollIntoView } = props;
+
+  // fixme:
+  function handleClick(e) {
+    e.preventDefault();
+    scrollIntoView(4);
+  }
+
   return (
     <div>
       <div className="l-skills-grid">
@@ -71,7 +80,6 @@ function Skills() {
                 DOM
               </abbr>{' '}
               API
-              {/* <!--  --> */}
             </li>
             <li>
               <abbr
@@ -144,7 +152,7 @@ function Skills() {
 
       <p className="t3 u-text-center">
         Please{' '}
-        <Link
+        {/* <Link
           to="contact"
           spy
           smooth
@@ -154,7 +162,11 @@ function Skills() {
         >
           {' '}
           contact me <span aria-hidden="true">&#8595;</span>
-        </Link>{' '}
+        </Link>{' '} */}
+        <a href="#contact" className="o-link" onClick={handleClick}>
+          {' '}
+          contact me <span aria-hidden="true">&#8595;</span>
+        </a>{' '}
         if you would like to see my <b>full CV</b>.
       </p>
     </div>

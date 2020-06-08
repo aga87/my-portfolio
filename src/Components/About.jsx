@@ -2,12 +2,21 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
-function About() {
-  function handleKeyDown(e) {
-    if (e.key === 'Enter') {
-      e.target.click();
-    }
+function About(props) {
+  const { scrollIntoView } = props;
+
+  // fixme: todo:
+  function handleClick(e, index) {
+    e.preventDefault();
+    scrollIntoView(index);
   }
+
+  // fixme: DELETE THIS FUNCTION !!!!?
+  // function handleKeyDown(e) {
+  //   if (e.key === 'Enter') {
+  //     e.target.click();
+  //   }
+  // }
 
   return (
     <div className="c-about">
@@ -35,7 +44,7 @@ function About() {
           and I&nbsp;am looking forward to be a part of the diverse community of
           web developers. <b>If you are a potential employer</b>, please see the
           results of my work in the{' '}
-          <Link
+          {/* <Link
             to="projects"
             spy
             smooth
@@ -44,37 +53,39 @@ function About() {
             className="o-link"
             tabIndex="0"
             onKeyDown={handleKeyDown}
+          > */}
+          <a
+            href="#projects"
+            className="o-link"
+            onClick={(e) => {
+              handleClick(e, 1);
+            }}
           >
             projects&nbsp;<span aria-hidden="true">&#8593;</span>
-          </Link>{' '}
+          </a>{' '}
+          {/* </Link>{' '} */}
           section and
-          <Link
-            to="skills"
-            spy
-            smooth
-            offset={-60}
-            duration={500}
+          <a
+            href="#skills"
             className="o-link"
-            tabIndex="0"
-            onKeyDown={handleKeyDown}
+            onClick={(e) => {
+              handleClick(e, 2);
+            }}
           >
             {' '}
             skills&nbsp;<span aria-hidden="true">&#8593;</span>
-          </Link>{' '}
+          </a>{' '}
           I gained alongside; and do not hesitate to{' '}
-          <Link
-            to="contact"
-            spy
-            smooth
-            offset={-60}
-            duration={500}
+          <a
+            href="#contact"
             className="o-link"
-            tabIndex="0"
-            onKeyDown={handleKeyDown}
+            onClick={(e) => {
+              handleClick(e, 4);
+            }}
           >
             {' '}
             contact me&nbsp;<span aria-hidden="true">&#8595;</span>
-          </Link>{' '}
+          </a>{' '}
           .
         </p>
 

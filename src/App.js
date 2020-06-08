@@ -11,7 +11,7 @@ import Footer from './Components/Footer';
 // fixme: wai aria success msg test!!
 // fixme: test on mobile
 // fixme: html head
-// fixme: smooth scroll on link click?
+// fixme: smooth scroll on link click in the ABOUT section and SKILLS Section!!
 // https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 // fixme: remove scroll-spy from the projects desc? using it in the about section
 
@@ -83,7 +83,7 @@ function App() {
           id={navLinks[2]}
         >
           <h2 className="c-section__heading t2">SKILLS:</h2>
-          <Skills />
+          <Skills scrollIntoView={scrollIntoView} />
         </section>
         <Ruler />
 
@@ -93,7 +93,7 @@ function App() {
           id={navLinks[3]}
         >
           <h2 className="c-section__heading t2">ABOUT:</h2>
-          <About />
+          <About scrollIntoView={scrollIntoView} />
         </section>
         <Ruler />
 
