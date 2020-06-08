@@ -6,13 +6,9 @@ import LogoJS from './LogoJS';
 import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
-function Skills(props, ref) {
-  const { id } = props;
-
+function Skills() {
   return (
-    <section className="c-section l-section" ref={ref} id={id}>
-      <h2 className="c-section__heading t2">SKILLS:</h2>
-
+    <div>
       <div className="l-skills-grid">
         <div className="c-skill-group l-skills-grid__item-group1">
           <h3 className="c-skill-group__heading u-border-html t-body">
@@ -161,10 +157,8 @@ function Skills(props, ref) {
         </Link>{' '}
         if you would like to see my <b>full CV</b>.
       </p>
-    </section>
+    </div>
   );
 }
 
-const forwardedSkills = React.forwardRef(Skills);
-
-export default forwardedSkills;
+export default Skills;

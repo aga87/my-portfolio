@@ -5,11 +5,9 @@ import LogoJS from './LogoJS';
 import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
-function Home(props, ref) {
-  const { id } = props;
-
+function Home() {
   return (
-    <main ref={ref} id={id} className="c-home l-home">
+    <div className="c-home l-home">
       <div className="l-home__content">
         <h1 lang="pl" className="c-home__heading t1-fluid">
           Agnieszka Łabonarska
@@ -46,10 +44,8 @@ function Home(props, ref) {
           </li>
         </ul>
       </div>
-    </main>
+    </div>
   );
 }
 
-const forwardedHome = React.forwardRef(Home);
-
-export default forwardedHome;
+export default Home;

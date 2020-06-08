@@ -14,7 +14,6 @@ import Footer from './Components/Footer';
 // fixme: smooth scroll on link click?
 // https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 // fixme: remove scroll-spy from the projects desc? using it in the about section
-// fixme: move sections here?
 
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
@@ -49,19 +48,63 @@ function App() {
     };
   });
 
+  // fixme:
+  function scrollIntoView(index) {
+    sectionRefs.current[index].current.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <div>
-      <Nav navLinks={navLinks} ref={navLinkRefs} />
+      <Nav
+        navLinks={navLinks}
+        ref={navLinkRefs}
+        // fixme:
+        scrollIntoView={scrollIntoView}
+      />
       <div className="l-wrapper">
-        <Home ref={sectionRefs.current[0]} id={navLinks[0]} />
+        <main ref={sectionRefs.current[0]} id={navLinks[0]}>
+          <Home />
+        </main>
         <Ruler />
-        <Projects ref={sectionRefs.current[1]} id={navLinks[1]} />
+
+        <section
+          className="c-section"
+          ref={sectionRefs.current[1]}
+          id={navLinks[1]}
+        >
+          <h2 className="c-section__heading t2">PROJECTS:</h2>
+          <Projects />
+        </section>
         <Ruler />
-        <Skills ref={sectionRefs.current[2]} id={navLinks[2]} />
+
+        <section
+          className="c-section l-section"
+          ref={sectionRefs.current[2]}
+          id={navLinks[2]}
+        >
+          <h2 className="c-section__heading t2">SKILLS:</h2>
+          <Skills />
+        </section>
         <Ruler />
-        <About ref={sectionRefs.current[3]} id={navLinks[3]} />
+
+        <section
+          className="c-section"
+          ref={sectionRefs.current[3]}
+          id={navLinks[3]}
+        >
+          <h2 className="c-section__heading t2">ABOUT:</h2>
+          <About />
+        </section>
         <Ruler />
-        <Contact ref={sectionRefs.current[4]} id={navLinks[4]} />
+
+        <section
+          className="c-section u-pad"
+          ref={sectionRefs.current[4]}
+          id={navLinks[4]}
+        >
+          <h2 className="c-section__heading t2">CONTACT:</h2>
+          <Contact />
+        </section>
       </div>
       <Footer />
     </div>

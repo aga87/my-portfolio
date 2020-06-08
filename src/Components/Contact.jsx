@@ -2,20 +2,16 @@ import React from 'react';
 import ContactForm from './ContactForm';
 import linkedinImg from '../img/linkedin.svg.png';
 
-function Contact(props, ref) {
-  const { id } = props;
-
+function Contact() {
   return (
-    <section className="c-section u-pad" ref={ref} id={id}>
-      <h2 className="c-section__heading t2">CONTACT:</h2>
-      <p className="c-section__text">
+    <div>
+      <p className="u-push-dbl u-text-center">
         I&apos;d love to hear about exciting job opportunities in{' '}
         <b>Amsterdam</b>.
-      </p>
-
-      <p className="c-section__text t3">
+        <br />
+        <br />
         <a
-          className="o-link"
+          className="o-link t3"
           href="https://www.linkedin.com/in/agalabonarska/"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,15 +25,13 @@ function Contact(props, ref) {
             aria-hidden="true"
           />
         </a>
+        <br />
+        <br />
+        Or fill out the form below:
       </p>
-
-      <p className="c-section__text u-push-dbl">Or fill out the form below:</p>
-
       <ContactForm />
-    </section>
+    </div>
   );
 }
 
-const forwardedContact = React.forwardRef(Contact);
-
-export default forwardedContact;
+export default Contact;

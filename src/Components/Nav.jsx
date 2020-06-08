@@ -5,7 +5,10 @@ import { getPreviousIndex, getNextIndex } from '../Utils';
 function Nav(props, ref) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');
-  const { navLinks } = props;
+  // fixme:
+  const [clicked, setClicked] = useState(0);
+  // fixme:
+  const { navLinks, scrollIntoView } = props;
   const navBtnRef = useRef(null);
 
   function handleNavBtnClick() {
@@ -36,8 +39,16 @@ function Nav(props, ref) {
     }
   }
 
-  function handleClick() {
-    setIsExpanded(false);
+  function handleClick(e) {
+    // fixme:
+    e.preventDefault();
+    setIsExpanded(false); // close the dropdown menu on smaller screens
+    // fixme:
+    // get index of the navlink -
+    const link = e.target.getAttribute('data-key');
+    const sectionIndex = navLinks.indexOf(link);
+    setClicked(sectionIndex);
+    e.target.blur();
   }
 
   function handleKeyDown(e) {
@@ -168,6 +179,11 @@ function Nav(props, ref) {
       ref.current[focused].current.focus();
     }
   }, [focused, ref]);
+
+  //fixme:
+  useEffect(() => {
+    scrollIntoView(clicked);
+  }, [clicked, scrollIntoView]);
 
   const className = isExpanded ? 'is-expanded' : '';
 
