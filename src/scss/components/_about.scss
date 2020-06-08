@@ -1,4 +1,4 @@
-.c-about-article {
+.c-about {
   display: block;
   max-width: $b-l-h * 22rem;
   margin: 0 auto;
@@ -20,7 +20,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .l-about-article-float {
+  .l-about-float {
     display: flow-root;
     text-align: justify;
 

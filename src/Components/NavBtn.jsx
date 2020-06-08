@@ -16,7 +16,6 @@ function NavBtn(props, ref) {
       className="c-nav__btn o-nav-btn"
       id="menu-btn"
       aria-haspopup="true"
-      // fixme: controls menu?
       aria-controls="menu"
     >
       <span className={`o-nav-btn__bar ${className}`} />

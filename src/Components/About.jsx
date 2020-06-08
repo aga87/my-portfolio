@@ -15,17 +15,17 @@ function About(props, ref) {
     <section className="c-section" ref={ref} id={id}>
       <h2 className="c-section__heading t2">ABOUT:</h2>
 
-      <article className="c-about-article">
-        <h3 className="c-about-article__title">Hi & welcome,</h3>
+      <div className="c-about">
+        <h3 className="c-about__title">Hi & welcome,</h3>
 
-        <div className="l-about-article-float">
+        <div className="l-about-float">
           <img
-            className="c-about-article__img l-about-article-float__img"
+            className="c-about__img l-about-float__img"
             src={agaPic}
             alt="Portrait of Aga against a floral wall hanging"
             title="Hi, I'm Aga"
           />
-          <p className="c-about-article__text">
+          <p className="c-about__text">
             <b>I&apos;m Aga.</b> In 2017 I started out on a journey to become a{' '}
             <b>self&#x2011;taught front&#x2011;end developer</b>, and here I
             present the results of my work. I am passionate about the
@@ -34,7 +34,7 @@ function About(props, ref) {
             and Redux.
           </p>
 
-          <p className="c-about-article__text">
+          <p className="c-about__text">
             I&nbsp;am currently looking for a challenging Junior Developer role
             to utilise and further my skills. I enjoy the creative power of
             coding and I&nbsp;am looking forward to be a part of the diverse
@@ -90,7 +90,7 @@ function About(props, ref) {
             to create sustainable methods of growing food in cities.
           </p>
         </div>
-      </article>
+      </div>
     </section>
   );
 }

@@ -153,6 +153,8 @@ function Nav(props, ref) {
     () => {
       // Highlight home menu item after first render only
       ref.current[0].current.classList.add('active');
+      // Roving tabindex
+      ref.current[0].current.setAttribute('tabindex', '0');
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -179,6 +181,7 @@ function Nav(props, ref) {
         data-key={navLink}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
+        tabIndex="-1"
       >
         {navLink.toUpperCase()}
       </a>

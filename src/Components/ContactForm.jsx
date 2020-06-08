@@ -140,7 +140,7 @@ function ContactForm() {
             : 'c-success-modal'
         }
       >
-        <div className="c-success-modal__inner">
+        <div className="c-success-modal__inner" role="alert">
           <p className="c-success-modal__msg">
             Thank you for getting in touch.
             <br /> I&apos;ll respond shortly.
@@ -155,6 +155,9 @@ function ContactForm() {
           </button>
         </div>
       </div>
+      <h3 className="h-offscreen" id="form-label">
+        Contact form
+      </h3>
       <form
         name="portfolio-form"
         method="post"
@@ -162,6 +165,7 @@ function ContactForm() {
         id="jsForm"
         className="c-contact-form"
         noValidate
+        aria-labelledby="form-label"
       >
         {/* For Netlify form submissions */}
         <input type="hidden" name="form-name" value="portfolio-form" />

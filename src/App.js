@@ -8,17 +8,13 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
-// fixme:  test wai-aria - About & Nav
-// fixme: wai aria success msg test!! and the hidden input
-
-// fixme: add tabindex=-1 to nav links? and tabindex = 0 to parent? see in the gallery
-
+// fixme: wai aria success msg test!!
 // fixme: test on mobile
 // fixme: html head
-// fixme: focus next form input on enter!!
 // fixme: smooth scroll on link click?
 // https://stackoverflow.com/questions/44375093/handling-scroll-animation-in-react
 // fixme: remove scroll-spy from the projects desc? using it in the about section
+// fixme: move sections here?
 
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
@@ -34,8 +30,14 @@ function App() {
         navLinkRefs.current.forEach((navLinkRef) => {
           navLinkRef.current.classList.remove('active');
         });
+        // Roving tabindex
+        navLinkRefs.current.forEach((navLinkRef) => {
+          navLinkRef.current.setAttribute('tabindex', '-1');
+        });
         // And add and active class to the section currently scrolled-to/ by
         navLinkRefs.current[index].current.classList.add('active');
+        // Roving tabindex
+        navLinkRefs.current[index].current.setAttribute('tabindex', '0');
       }
     });
   }
@@ -49,7 +51,7 @@ function App() {
 
   return (
     <div>
-      {/* <Nav navLinks={navLinks} ref={navLinkRefs} />
+      <Nav navLinks={navLinks} ref={navLinkRefs} />
       <div className="l-wrapper">
         <Home ref={sectionRefs.current[0]} id={navLinks[0]} />
         <Ruler />
@@ -61,7 +63,7 @@ function App() {
         <Ruler />
         <Contact ref={sectionRefs.current[4]} id={navLinks[4]} />
       </div>
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
