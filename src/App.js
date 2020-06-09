@@ -11,8 +11,7 @@ import Footer from './Components/Footer';
 // fixme: wai aria success msg test!!
 // fixme: test on mobile
 // fixme: html head
-// fixme: remove scroll-spy from the projects desc? using it in the about section
-// fixme: uninstall react-scroll
+// fixme: proofread projects desc of my my website
 // fixme: nav function - letter
 
 function App() {

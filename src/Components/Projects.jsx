@@ -20,6 +20,7 @@ function Projects() {
           tags={[
             { tag: 'Create React App', category: 'React' },
             { tag: 'JSX', category: 'react' },
+            { tag: 'React Hooks', category: 'react' },
             { tag: 'Redux', category: 'Redux' },
             { tag: 'Functional programming', category: 'JS' },
             { tag: 'ES6', category: 'JS' },
@@ -105,7 +106,6 @@ function Projects() {
             { tag: 'Create React App', category: 'react' },
             { tag: 'JSX', category: 'react' },
             { tag: 'React Hooks', category: 'react' },
-            { tag: 'react-scroll', category: 'react' },
             { tag: 'WAI-ARIA', category: 'html' },
             { tag: 'SCSS', category: 'CSS' },
             { tag: 'BEM + Namespaces', category: 'CSS' },
@@ -125,10 +125,9 @@ function Projects() {
           <p>
             I use React controlled components together with the Constraint
             Validation API to implement and validate the contact form. I use
-            React Hooks to reuse stateful logic between input components; and to
-            manage focus in the composite navigation widget. The smooth
-            scrolling and scroll spy is implemented with the react-scroll
-            module.
+            React Hooks to reuse stateful logic between input components; to
+            manage focus in the composite navigation widget; and to implement
+            the scroll-spy and smooth scrolling features.
           </p>
         </Project>
       </li>
