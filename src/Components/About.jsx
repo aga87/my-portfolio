@@ -1,22 +1,13 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import agaPic from '../img/aga-profile-pic-300px.jpg';
 
 function About(props) {
   const { scrollIntoView } = props;
 
-  // fixme: todo:
   function handleClick(e, index) {
     e.preventDefault();
     scrollIntoView(index);
   }
-
-  // fixme: DELETE THIS FUNCTION !!!!?
-  // function handleKeyDown(e) {
-  //   if (e.key === 'Enter') {
-  //     e.target.click();
-  //   }
-  // }
 
   return (
     <div className="c-about">
@@ -44,16 +35,6 @@ function About(props) {
           and I&nbsp;am looking forward to be a part of the diverse community of
           web developers. <b>If you are a potential employer</b>, please see the
           results of my work in the{' '}
-          {/* <Link
-            to="projects"
-            spy
-            smooth
-            offset={-60}
-            duration={500}
-            className="o-link"
-            tabIndex="0"
-            onKeyDown={handleKeyDown}
-          > */}
           <a
             href="#projects"
             className="o-link"
@@ -63,7 +44,6 @@ function About(props) {
           >
             projects&nbsp;<span aria-hidden="true">&#8593;</span>
           </a>{' '}
-          {/* </Link>{' '} */}
           section and
           <a
             href="#skills"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-scroll';
 import LogoHTML5 from './LogoHTML5';
 import LogoCSS3 from './LogoCSS3';
 import LogoJS from './LogoJS';
@@ -7,10 +6,8 @@ import LogoRedux from './LogoRedux';
 import LogoReact from './LogoReact';
 
 function Skills(props) {
-  // fixme:
   const { scrollIntoView } = props;
 
-  // fixme:
   function handleClick(e) {
     e.preventDefault();
     scrollIntoView(4);
@@ -152,17 +149,6 @@ function Skills(props) {
 
       <p className="t3 u-text-center">
         Please{' '}
-        {/* <Link
-          to="contact"
-          spy
-          smooth
-          offset={-60}
-          duration={500}
-          className="o-link"
-        >
-          {' '}
-          contact me <span aria-hidden="true">&#8595;</span>
-        </Link>{' '} */}
         <a href="#contact" className="o-link" onClick={handleClick}>
           {' '}
           contact me <span aria-hidden="true">&#8595;</span>

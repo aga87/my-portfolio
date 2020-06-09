@@ -3,11 +3,9 @@ import NavBtn from './NavBtn';
 import { getPreviousIndex, getNextIndex } from '../Utils';
 
 function Nav(props, ref) {
+  const { navLinks, scrollIntoView } = props;
   const [isExpanded, setIsExpanded] = useState(false);
   const [focused, setFocused] = useState('');
-
-  // fixme:
-  const { navLinks, scrollIntoView } = props;
   const navBtnRef = useRef(null);
 
   function handleNavBtnClick() {
@@ -40,15 +38,11 @@ function Nav(props, ref) {
 
   function handleClick(e) {
     e.preventDefault();
-
-    // fixme:
     setIsExpanded(false); // close the dropdown menu on smaller screens
-    // fixme:
-    // get index of the navlink -
     const link = e.target.getAttribute('data-key');
     const sectionIndex = navLinks.indexOf(link);
     scrollIntoView(sectionIndex);
-    e.target.blur();
+    e.target.blur(); // remove the focus persisting after the nav link click
   }
 
   function handleKeyDown(e) {
@@ -60,14 +54,12 @@ function Nav(props, ref) {
         e.target.click();
         setFocused('navBtn');
         break;
-
       case 'Esc': // IE/Edge specific value
       case 'Escape':
         e.preventDefault();
         setIsExpanded(false);
         setFocused('navBtn');
         break;
-
       case 'Up': // IE/Edge specific value
       case 'ArrowUp':
       case 'Left': // IE/Edge specific value
@@ -162,7 +154,7 @@ function Nav(props, ref) {
 
   useEffect(
     () => {
-      // Highlight home menu item after first render only
+      // Mark first menu item as selected after first render only
       ref.current[0].current.classList.add('active');
       // Roving tabindex
       ref.current[0].current.setAttribute('tabindex', '0');
@@ -179,11 +171,6 @@ function Nav(props, ref) {
       ref.current[focused].current.focus();
     }
   }, [focused, ref]);
-
-  //fixme:
-  // useEffect(() => {
-  //   scrollIntoView(clicked);
-  // }, [clicked, scrollIntoView]);
 
   const className = isExpanded ? 'is-expanded' : '';
 
