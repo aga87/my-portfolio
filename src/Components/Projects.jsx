@@ -69,13 +69,14 @@ function Projects() {
           altName="the drum kit app"
           date="March 2020"
           tags={[
-            { tag: 'WAI-ARIA', category: 'html' },
             { tag: 'Create React App', category: 'react' },
             { tag: 'JSX', category: 'react' },
+            { tag: 'ES6', category: 'JS' },
             { tag: 'SCSS', category: 'CSS' },
             { tag: 'BEM + Namespaces', category: 'CSS' },
             { tag: 'Responsive, mobile-first', category: 'CSS' },
             { tag: 'Browser-compatibility', category: 'css' },
+            { tag: 'WAI-ARIA', category: 'html' },
           ]}
           links={[
             <ProjectLinkGitHub
@@ -106,18 +107,18 @@ function Projects() {
             { tag: 'Create React App', category: 'react' },
             { tag: 'JSX', category: 'react' },
             { tag: 'React Hooks', category: 'react' },
-            { tag: 'WAI-ARIA', category: 'html' },
+            { tag: 'ES6', category: 'js' },
+            { tag: 'Constraint Validation API', category: 'js' },
             { tag: 'SCSS', category: 'CSS' },
             { tag: 'BEM + Namespaces', category: 'CSS' },
             { tag: 'Responsive, mobile-first', category: 'CSS' },
             { tag: 'CSS Browser-compatibility', category: 'css' },
-            { tag: 'ES6', category: 'js' },
-            { tag: 'Constraint Validation API', category: 'js' },
+            { tag: 'WAI-ARIA', category: 'html' },
           ]}
           links={[
             <ProjectLinkGitHub
               name="See my portfolio (React) code on GitHub"
-              href="www.google.com"
+              href="https://github.com/aga87/my-portfolio"
             />,
           ]}
         >
@@ -139,15 +140,15 @@ function Projects() {
           altName="the image gallery"
           date="April 2020"
           tags={[
-            { tag: 'HTML5', category: 'html' },
-            { tag: 'WAI-ARIA', category: 'html' },
+            { tag: 'ES5', category: 'js' },
+            { tag: 'Vanilla JS', category: 'js' },
+            { tag: 'DOM API', category: 'js' },
             { tag: 'SCSS', category: 'CSS' },
             { tag: 'BEM + Namespaces', category: 'CSS' },
             { tag: 'Responsive, mobile-first', category: 'CSS' },
             { tag: 'Browser-compatibility', category: 'css' },
-            { tag: 'ES5', category: 'js' },
-            { tag: 'Vanilla JS', category: 'js' },
-            { tag: 'DOM API', category: 'js' },
+            { tag: 'HTML5', category: 'html' },
+            { tag: 'WAI-ARIA', category: 'html' },
           ]}
           links={[
             <ProjectLinkGitHub
