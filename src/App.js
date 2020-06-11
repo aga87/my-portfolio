@@ -11,10 +11,11 @@ import Footer from './Components/Footer';
 // fixme: wai aria success msg test!!
 // fixme: html head
 // fixme: proofread projects desc of my website
-// fixme: nav function - letter
+// fixme: nav function
 // todo: npm run build
 // fixme: test on mobile/ tablet
 // fixme: test all project links on doms tablet?
+// fixme: coma after in 2017?
 
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
@@ -55,7 +56,7 @@ function App() {
 
   return (
     <div>
-      <Nav
+      {/* <Nav
         navLinks={navLinks}
         ref={navLinkRefs}
         scrollIntoView={scrollIntoView}
@@ -105,7 +106,7 @@ function App() {
           <Contact />
         </section>
       </div>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
