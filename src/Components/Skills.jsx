@@ -151,7 +151,7 @@ function Skills(props) {
         Please{' '}
         <a href="#contact" className="o-link" onClick={handleClick}>
           {' '}
-          contact me <span aria-hidden="true">&#8595;</span>
+          contact me
         </a>{' '}
         if you would like to see my <b>full CV</b>.
       </p>

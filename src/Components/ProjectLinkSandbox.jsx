@@ -6,7 +6,7 @@ function ProjectLinkSandbox(props) {
 
   return (
     <a className="o-link" href={href} target="_blank" rel="noopener noreferrer">
-      {name} <span aria-hidden="true">&#8599;</span>
+      {name}{' '}
       <img
         className="o-link__img"
         src={sandboxLogo}

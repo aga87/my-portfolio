@@ -11,6 +11,7 @@
     display: block;
     text-decoration: none;
     color: $white;
+    padding: ($b-l-h * 0.25rem) 0;
 
     &:before {
       content: '\2752';
@@ -77,6 +78,10 @@
 
     &__btn {
       display: none;
+    }
+
+    &__link {
+      padding: 0;
     }
   }
 

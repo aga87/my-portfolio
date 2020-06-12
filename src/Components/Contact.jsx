@@ -6,8 +6,8 @@ function Contact() {
   return (
     <div>
       <p className="u-push-dbl u-text-center">
-        I&apos;d love to hear about exciting job opportunities in{' '}
-        <b>Amsterdam</b>.
+        I&apos;d love to hear about exciting job opportunities in the{' '}
+        <b>Amsterdam</b> area.
         <br />
         <br />
         <a
@@ -16,7 +16,7 @@ function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Contact me on LinkedIn <span aria-hidden="true">&#8599;</span>{' '}
+          Contact me on LinkedIn{' '}
           <img
             className="o-link__img"
             src={linkedinImg}

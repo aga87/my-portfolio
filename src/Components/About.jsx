@@ -42,9 +42,9 @@ function About(props) {
               handleClick(e, 1);
             }}
           >
-            projects&nbsp;<span aria-hidden="true">&#8593;</span>
+            projects
           </a>{' '}
-          section and
+          section and{' '}
           <a
             href="#skills"
             className="o-link"
@@ -52,8 +52,7 @@ function About(props) {
               handleClick(e, 2);
             }}
           >
-            {' '}
-            skills&nbsp;<span aria-hidden="true">&#8593;</span>
+            skills
           </a>{' '}
           I gained alongside; and do not hesitate to{' '}
           <a
@@ -64,7 +63,7 @@ function About(props) {
             }}
           >
             {' '}
-            contact me&nbsp;<span aria-hidden="true">&#8595;</span>
+            contact me
           </a>{' '}
           .
         </p>

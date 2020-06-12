@@ -14,7 +14,8 @@ function Home() {
         </h1>
         <p className="c-home__descr t3">
           <b>Front-end developer</b> <br />
-          seeking full-time job opportunities in&nbsp;<b>Amsterdam</b>.
+          seeking full-time job opportunities in&nbsp;the&nbsp;<b>Amsterdam</b>
+          &nbsp;area.
         </p>
 
         <ul className="l-home-logo-list" aria-label="skills">
