@@ -122,7 +122,7 @@ function Projects() {
             />,
           ]}
         >
-          <p>You are here &#9786;. </p>
+          <p>You are here. </p>
           <p>
             I use React controlled components together with the Constraint
             Validation API to implement and validate the contact form. I use

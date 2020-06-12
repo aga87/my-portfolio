@@ -8,12 +8,6 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 
-// fixme: wai aria success msg test!!
-// fixme: html head
-// todo: npm run build
-// fixme: test on mobile/ tablet
-// fixme: test all project links on doms tablet?
-
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
   const navLinkRefs = useRef(navLinks.map(() => React.createRef()));
