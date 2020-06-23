@@ -20,52 +20,6 @@
   }
 }
 
-.l-skills-grid {
-  display: grid;
-  gap: ($b-l-h * 1rem) 0;
-  margin-bottom: $b-l-h * 2rem;
-}
-
-@media only screen and (min-width: 800px) {
-  .l-skills-grid {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    max-width: 820px;
-    margin-right: auto;
-    margin-left: auto;
-    grid-template-areas: 'group1 group2' 'group3 group2' 'group4 group2' 'group5 group5';
-
-    &__item-group1 {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-      grid-area: group1;
-    }
-    &__item-group2 {
-      -ms-grid-row: 1;
-      -ms-grid-column: 2;
-      -ms-grid-row-span: 3;
-      grid-area: group2;
-    }
-    &__item-group3 {
-      -ms-grid-row: 2;
-      -ms-grid-column: 1;
-      grid-area: group3;
-    }
-    &__item-group4 {
-      -ms-grid-row: 3;
-      -ms-grid-column: 1;
-      grid-area: group4;
-    }
-    &__item-group5 {
-      -ms-grid-row: 4;
-      -ms-grid-column: 1;
-      -ms-grid-column-span: 2;
-      grid-area: group5;
-    }
-  }
-}
-
 @media only screen and (min-width: 850px) {
   .l-wrapper {
     width: 80%;

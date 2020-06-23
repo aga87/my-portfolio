@@ -15,7 +15,7 @@ function Skills(props) {
 
   return (
     <div>
-      <div className="l-skills-grid">
+      <div className="c-skills l-skills-grid">
         <div className="c-skill-group l-skills-grid__item-group1">
           <h3 className="c-skill-group__heading u-border-html t-body">
             Front-end technologies:

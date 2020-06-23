@@ -1,6 +1,8 @@
 .c-skill-group {
   display: block;
   padding-left: $b-l-h * 1rem;
+  // fixme:
+  padding-bottom: $b-l-h * 1rem;
 
   &__heading {
     display: inline-block;
