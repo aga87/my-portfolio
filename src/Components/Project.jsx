@@ -38,13 +38,18 @@ function Project(props) {
       <h3 className="c-project__name t3">{name}</h3>
 
       <div className="l-project-grid">
-        <img
-          className="c-project__img"
-          src={imgSrc}
-          alt={`Screenshot of ${altName} on MacBook and iPhone 8`}
-        />
+        <div className="l-project-grid__item1">
+          <img
+            className="c-project__img"
+            src={imgSrc}
+            alt={`Screenshot of ${altName} on MacBook and iPhone 8`}
+          />
+        </div>
 
-        <table className="c-project-info" role="presentation">
+        <table
+          className="c-project-info l-project-grid__item2"
+          role="presentation"
+        >
           <tbody>
             <tr>
               <th className="c-project-info__heading">Completion date:</th>

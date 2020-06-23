@@ -20,5 +20,15 @@
     grid-template-columns: 400px 1fr;
     grid-gap: 0 100px;
     gap: 0 100px;
+
+    &__item1 {
+      -ms-grid-rows: 1;
+      -ms-grid-columns: 1;
+    }
+
+    &__item2 {
+      -ms-grid-rows: 1;
+      -ms-grid-columns: 2;
+    }
   }
 }
