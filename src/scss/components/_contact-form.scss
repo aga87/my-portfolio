@@ -70,23 +70,25 @@
     &__item1 {
       -ms-grid-row: 1;
       -ms-grid-column: 1;
+      padding-right: $b-l-h * 0.5rem;
     }
 
     &__item2 {
       -ms-grid-row: 1;
       -ms-grid-column: 2;
-      padding-left: $b-l-h * 1rem;
+      padding-left: $b-l-h * 0.5rem;
     }
 
     &__item3 {
       -ms-grid-row: 2;
       -ms-grid-column: 1;
+      padding-right: $b-l-h * 0.5rem;
     }
 
     &__item4 {
       -ms-grid-row: 2;
       -ms-grid-column: 2;
-      padding-left: $b-l-h * 1rem;
+      padding-left: $b-l-h * 0.5rem;
     }
 
     &__item5 {
@@ -99,12 +101,13 @@
     &__item6 {
       -ms-grid-row: 4;
       -ms-grid-column: 1;
+      padding-right: $b-l-h * 0.5rem;
     }
 
     &__item7 {
       -ms-grid-row: 4;
       -ms-grid-column: 2;
-      padding-left: $b-l-h * 1rem;
+      padding-left: $b-l-h * 0.5rem;
     }
 
     &__item8 {
