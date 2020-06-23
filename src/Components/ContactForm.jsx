@@ -170,7 +170,7 @@ function ContactForm() {
         {/* For Netlify form submissions */}
         <input type="hidden" name="form-name" value="portfolio-form" />
         <div className="l-contact-form-grid">
-          <div>
+          <div className="l-contact-form-grid__item1">
             <label htmlFor="full-name">
               Your full name
               <span
@@ -205,7 +205,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div>
+          <div className="l-contact-form-grid__item2">
             <label htmlFor="pref-name">
               What can I call you?
               <span
@@ -240,7 +240,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div>
+          <div className="l-contact-form-grid__item3">
             <label htmlFor="email">
               Your email
               <span
@@ -274,7 +274,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div>
+          <div className="l-contact-form-grid__item4">
             <label htmlFor="subject">
               Subject
               <span
@@ -310,7 +310,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div className="l-contact-form-grid__item">
+          <div className="l-contact-form-grid__item5">
             <p id="employer-group">
               Are you a potential employer (or writing on behalf of a company)?
               <span
@@ -349,7 +349,7 @@ function ContactForm() {
             </div>
           </div>
 
-          <div>
+          <div className="l-contact-form-grid__item6">
             <label htmlFor="company-name">
               Company name
               <span
@@ -388,7 +388,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div>
+          <div className="l-contact-form-grid__item7">
             <label htmlFor="company-url">Company website</label>
             <input
               className="c-contact-form__input"
@@ -413,7 +413,7 @@ function ContactForm() {
             </label>
           </div>
 
-          <div className="l-contact-form-grid__item">
+          <div className="l-contact-form-grid__item8">
             <label htmlFor="message">
               Your message
               <span

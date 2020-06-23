@@ -42,21 +42,37 @@
 }
 
 .l-contact-form-grid {
-  display: -ms-grid;
-  display: grid;
-  grid-gap: ($b-l-h * 0.5rem);
-  gap: ($b-l-h * 0.5rem);
+  // display: -ms-grid;
+  // display: grid;
+  // grid-gap: ($b-l-h * 0.5rem);
+  // gap: ($b-l-h * 0.5rem);
+  display: block;
   margin-bottom: $b-l-h * 0.5rem;
+
+  &__item1,
+  &__item2,
+  &__item3,
+  &__item4,
+  &__item5,
+  &__item6,
+  &__item7,
+  &__item8 {
+    margin-bottom: $b-l-h * 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 800px) {
   .l-contact-form-grid {
+    // fixme:
+    display: -ms-grid;
+    display: grid;
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-gap: ($b-l-h * 0.5rem) ($b-l-h * 1rem);
     gap: ($b-l-h * 0.5rem) ($b-l-h * 1rem);
 
-    &__item {
+    &__item5,
+    &__item8 {
       grid-column-end: span 2;
     }
   }
