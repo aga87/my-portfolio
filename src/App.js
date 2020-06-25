@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div>
-      <Nav
+      {/* <Nav
         navLinks={navLinks}
         ref={navLinkRefs}
         scrollIntoView={scrollIntoView}
@@ -97,7 +97,7 @@ function App() {
           <Contact />
         </section>
       </div>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
