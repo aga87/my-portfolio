@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-// import Nav from './Components/Nav';
-// import Home from './Components/Home';
-// import Ruler from './Components/Ruler';
-// import Projects from './Components/Projects';
-// import Skills from './Components/Skills';
-// import About from './Components/About';
-// import Contact from './Components/Contact';
-// import Footer from './Components/Footer';
+import Nav from './Components/Nav';
+import Home from './Components/Home';
+import Ruler from './Components/Ruler';
+import Projects from './Components/Projects';
+import Skills from './Components/Skills';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Footer from './Components/Footer';
 
 function App() {
   const navLinks = ['home', 'projects', 'skills', 'about', 'contact'];
@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div>
-      {/* <Nav
+      <Nav
         navLinks={navLinks}
         ref={navLinkRefs}
         scrollIntoView={scrollIntoView}
@@ -97,7 +97,7 @@ function App() {
           <Contact />
         </section>
       </div>
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
