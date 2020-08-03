@@ -1,8 +1,7 @@
 import React from 'react';
 import Project from './Project';
 import ProjectLinkGitHub from './ProjectLinkGitHub';
-import ProjectLinkCodepen from './ProjectLinkCodepen';
-import ProjectLinkSandbox from './ProjectLinkSandbox';
+import ProjectLinkLive from './ProjectLinkLive';
 import astromanMockup from '../img/smartmockups-astroman-450.png';
 import drumkitMockup from '../img/smartmockups-drumkit-450.png';
 import portfolioMockup from '../img/smartmockups-portfolio-450.png';
@@ -16,7 +15,7 @@ function Projects() {
           name="Astroman - Game For Two Players"
           imgSrc={astromanMockup}
           altName="the Astroman game"
-          date="February 2020"
+          date="2020"
           tags={[
             { tag: 'Create React App', category: 'React' },
             { tag: 'JSX', category: 'react' },
@@ -31,12 +30,12 @@ function Projects() {
           ]}
           links={[
             <ProjectLinkGitHub
-              name="See Astroman (React-Redux) code on GitHub"
+              name="See the Astroman code on GitHub"
               href="https://github.com/aga87/astro-react-redux"
             />,
-            <ProjectLinkSandbox
-              name="See Astroman (React-Redux) live on CodeSandbox"
-              href="https://codesandbox.io/s/astroman-game-react-redux-fiz3b"
+            <ProjectLinkLive
+              name="www.astroman-game.com"
+              href="https://www.astroman-game.com/"
             />,
           ]}
         >
@@ -67,7 +66,7 @@ function Projects() {
           name="Drum Kit"
           imgSrc={drumkitMockup}
           altName="the drum kit app"
-          date="March 2020"
+          date="2020"
           tags={[
             { tag: 'Create React App', category: 'react' },
             { tag: 'JSX', category: 'react' },
@@ -80,19 +79,19 @@ function Projects() {
           ]}
           links={[
             <ProjectLinkGitHub
-              name="See the Drum Kit (React) code on GitHub"
+              name="See the Drum Kit code on GitHub"
               href="https://github.com/aga87/drumkit-react"
             />,
-            <ProjectLinkSandbox
-              name="See the Drum Kit (React) live on CodeSandbox"
-              href="https://codesandbox.io/s/drum-kit-create-react-app-1qx16"
+            <ProjectLinkLive
+              name="www.drumkit-react.com"
+              href="https://www.drumkit-react.com/"
             />,
           ]}
         >
           <p>
-            Press a key to play a corresponding drum kit sound. A small app
-            built with React, designated primarily for keyboard use and fully
-            accessible.
+            Press a key to play a corresponding drum kit sound. Change the drum
+            kit setup and skin from the toolbar. A small app built with React,
+            designated primarily for keyboard use and fully accessible.
           </p>
         </Project>
       </li>
@@ -102,7 +101,7 @@ function Projects() {
           name="My Portfolio Website"
           imgSrc={portfolioMockup}
           altName="my portfolio website"
-          date="June 2020"
+          date="2020"
           tags={[
             { tag: 'Create React App', category: 'react' },
             { tag: 'JSX', category: 'react' },
@@ -117,7 +116,7 @@ function Projects() {
           ]}
           links={[
             <ProjectLinkGitHub
-              name="See my portfolio (React) code on GitHub"
+              name="See my portfolio code on GitHub"
               href="https://github.com/aga87/my-portfolio"
             />,
           ]}
@@ -138,7 +137,7 @@ function Projects() {
           name="Image Gallery - Bikes"
           imgSrc={galleryMockup}
           altName="the image gallery"
-          date="April 2020"
+          date="2020"
           tags={[
             { tag: 'ES5', category: 'js' },
             { tag: 'Vanilla JS', category: 'js' },
@@ -155,9 +154,9 @@ function Projects() {
               name="See the image gallery code on GitHub"
               href="https://github.com/aga87/gallery"
             />,
-            <ProjectLinkCodepen
-              name="See the image gallery live on Codepen"
-              href="https://codepen.io/aga87/project/editor/ff6d38996f2bc7fee47490682e976e23#0"
+            <ProjectLinkLive
+              name="www.gallery-bikes.com"
+              href="https://www.gallery-bikes.com/"
             />,
           ]}
         >

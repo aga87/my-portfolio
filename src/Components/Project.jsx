@@ -73,7 +73,7 @@ function Project(props) {
 
               <tr>
                 <th rowSpan="2" className="c-project-info__heading">
-                  Code:
+                  Links:
                 </th>
                 <td className="c-project-info__text">
                   <ul className="c-project-info__link-list">
