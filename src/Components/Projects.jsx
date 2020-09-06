@@ -90,8 +90,8 @@ function Projects() {
         >
           <p>
             Press a key to play a corresponding drum kit sound. Change the drum
-            kit setup and skin from the toolbar. A small app built with React,
-            designated primarily for keyboard use and fully accessible.
+            kit setup and skin from the toolbar. A modern PWA built with
+            ReactJS, designated primarily for keyboard use and fully accessible.
           </p>
         </Project>
       </li>
@@ -164,14 +164,17 @@ function Projects() {
             Press a previous or next button to show previous/ next slide or
             choose a slide from a thumbnail gallery.
           </p>
+          <p>I use a CDN to serve optimised responsive images.</p>
           <p>
-            I use the WAI-ARIA tabs design pattern and implement keyboard
+            I follow the WAI-ARIA tabs design pattern and implement keyboard
             support to make the gallery accessible to the screen readers.
           </p>
           <p>
-            I use progressive enhancement to support all major modern browsers,
+            Built with vanilla JavaScript, following progressive enhancement
+            principles to support all major modern browsers out of the box,
             including the IE11.
           </p>
+          <p>A lightweight SPA/ PWA with full offline capabilities.</p>
         </Project>
       </li>
     </ol>

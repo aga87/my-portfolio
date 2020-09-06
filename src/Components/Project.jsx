@@ -65,9 +65,7 @@ function Project(props) {
               <tr>
                 <th className="c-project-info__heading">Tags:</th>
                 <td className="c-project-info__text">
-                  <ul className="c-project-tags s1" role="presentation">
-                    {tagListItems}
-                  </ul>
+                  <ul className="c-project-tags s1">{tagListItems}</ul>
                 </td>
               </tr>
 

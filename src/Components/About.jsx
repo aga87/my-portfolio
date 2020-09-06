@@ -25,7 +25,7 @@ function About(props) {
           <b>self&#x2011;taught front&#x2011;end developer</b>, and here I
           present the results of my work. I am passionate about the educational
           and empowering role of&nbsp;the&nbsp;Internet, and a big fan of
-          open-source. I&nbsp;am especially enjoying working with React and
+          open-source. I&nbsp;am especially enjoying working with ReactJS and
           Redux.
         </p>
 
@@ -69,8 +69,8 @@ function About(props) {
         </p>
 
         <p>
-          In my free time, I enjoy reading science-fiction, yoga, inline
-          skating, cycling, poker, drumming, crafts and visiting new places.
+          In my free time, I enjoy reading science-fiction, inline skating,
+          Bikram yoga, cycling, playing poker, crafts and visiting new places.
           I&nbsp;am also interested in the combination of DIY and technology to
           create sustainable methods of growing food in cities.
         </p>

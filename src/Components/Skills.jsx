@@ -46,7 +46,11 @@ function Skills(props) {
           </h3>
           <ul>
             <li>Web Accessibility/ WAI-ARIA</li>
-            <li>Responsive design, mobile-first</li>
+            <li>Functional programming</li>
+            <li>State management</li>
+            <li>SPAs/ PWAs</li>
+            <li>Cross-browser development</li>
+            <li>CSS Pre-processor: Sass/ SCSS</li>
             <li>
               Modular CSS - <br />
               <abbr
@@ -55,20 +59,10 @@ function Skills(props) {
               >
                 BEM
               </abbr>{' '}
-              Methodology + Namespaces
+              Methodology
             </li>
-            <li>CSS Pre-Processor: Sass/ SCSS</li>
-            <li>Functional programming</li>
-            <li>State Management</li>
-            <li>
-              <abbr
-                title="Object-oriented programming"
-                className="c-skill-group__abbr"
-              >
-                OOP
-              </abbr>{' '}
-              basics
-            </li>
+            <li>Responsive design, mobile-first</li>
+
             <li>
               <abbr
                 title="Document Object Model"
@@ -76,30 +70,26 @@ function Skills(props) {
               >
                 DOM
               </abbr>{' '}
-              API
-            </li>
-            <li>
+              and{' '}
               <abbr
                 title="Browser Object Model"
                 className="c-skill-group__abbr"
               >
                 BOM
               </abbr>{' '}
-              API
+              APIs
             </li>
-            <li>Canvas API</li>
-            <li>SVG basics</li>
-            <li>Cross-Browser Development</li>
-            <li>Terminal (Bash)</li>
+            <li>Canvas API/ SVG basics</li>
             <li>Git Version Control, GitHub</li>
+            <li>Terminal (Bash)</li>
             <li>Build tools (npm, Webpack)</li>
             <li>
-              Testing and Debugging: <br />
+              Testing and debugging: <br />
               Chrome DevTools, <br /> Redux DevTools,
               <br /> React DevTools,
               <br /> NVDA screen reader
             </li>
-            <li>Code readability</li>
+            <li>Clean code</li>
           </ul>
         </div>
 

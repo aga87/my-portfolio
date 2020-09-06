@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { validateTextarea } from '../Utils';
+import { validateTextarea } from '../apis/constraint-validation-api';
 import useFormInput from '../Hooks/useFormInput';
 
 // Netlify form submission
